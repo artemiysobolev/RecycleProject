@@ -1,24 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hHv-sa-PpB">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Лента-->
+        <scene sceneID="HVL-A7-MCm">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="ZTv-IR-XZy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KFj-QR-trJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="hRn-Af-jR0"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Лента" id="zrm-pl-8v5"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2E1-gN-9k8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-3171" y="-447"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="3Ko-Oo-XaJ">
+            <objects>
+                <tabBarController id="hHv-sa-PpB" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Uxv-ob-nHg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ZTv-IR-XZy" kind="relationship" relationship="viewControllers" id="AH3-6h-MNE"/>
+                        <segue destination="V2T-LC-YxJ" kind="relationship" relationship="viewControllers" id="0gi-d3-DiZ"/>
+                        <segue destination="DuI-le-Aya" kind="relationship" relationship="viewControllers" id="Rum-35-Xq8"/>
+                        <segue destination="fvy-aF-b5q" kind="relationship" relationship="viewControllers" id="EIJ-IH-Tuq"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UzA-4i-jIi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5010" y="507"/>
+        </scene>
+        <!--Как делить-->
+        <scene sceneID="Moc-lS-IOI">
+            <objects>
+                <viewController id="V2T-LC-YxJ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zVb-8X-h3s">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="bhk-TU-EbA"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Как делить" id="f7O-Cd-QZi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QjN-ND-Gro" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3171" y="229"/>
+        </scene>
+        <!--Куда сдавать-->
+        <scene sceneID="X8a-aK-53u">
+            <objects>
+                <viewController id="DuI-le-Aya" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pu8-kW-gfN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="OyK-xi-2RB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Куда сдавать" id="XeU-Ux-t3j"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KbY-z8-dkv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3171" y="895"/>
+        </scene>
+        <!--Настройки-->
+        <scene sceneID="uu0-qL-LgO">
+            <objects>
+                <viewController id="fvy-aF-b5q" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IiU-lR-f2T">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="AHU-xl-KK9"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Настройки" id="zGR-Vn-quR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cFl-il-ZQZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3171" y="1586"/>
         </scene>
     </scenes>
 </document>
