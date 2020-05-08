@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,7 +18,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="hRn-Af-jR0"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Лента" id="zrm-pl-8v5"/>
+                    <tabBarItem key="tabBarItem" title="Лента" image="square" catalog="system" id="zrm-pl-8v5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2E1-gN-9k8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -31,6 +32,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" name="CustomTabBarTintColor"/>
+                        <color key="selectedImageTintColor" name="CustomTabBarTintColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="ZTv-IR-XZy" kind="relationship" relationship="viewControllers" id="AH3-6h-MNE"/>
@@ -53,7 +56,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="bhk-TU-EbA"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Как делить" id="f7O-Cd-QZi"/>
+                    <tabBarItem key="tabBarItem" title="Как делить" image="arrow.3.trianglepath" catalog="system" id="f7O-Cd-QZi"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QjN-ND-Gro" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -69,7 +72,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="OyK-xi-2RB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Куда сдавать" id="XeU-Ux-t3j"/>
+                    <tabBarItem key="tabBarItem" title="Куда сдавать" image="map" catalog="system" id="XeU-Ux-t3j"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KbY-z8-dkv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -85,11 +88,20 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="AHU-xl-KK9"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Настройки" id="zGR-Vn-quR"/>
+                    <tabBarItem key="tabBarItem" title="Настройки" image="gear" catalog="system" id="zGR-Vn-quR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cFl-il-ZQZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3171" y="1586"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrow.3.trianglepath" catalog="system" width="128" height="128"/>
+        <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="map" catalog="system" width="128" height="113"/>
+        <image name="square" catalog="system" width="128" height="114"/>
+        <namedColor name="CustomTabBarTintColor">
+            <color red="0.36399999260902405" green="0.57599997520446777" blue="0.31000000238418579" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
 </document>
