@@ -11,7 +11,7 @@
         <!--Лента-->
         <scene sceneID="HVL-A7-MCm">
             <objects>
-                <viewController id="ZTv-IR-XZy" sceneMemberID="viewController">
+                <viewController id="ZTv-IR-XZy" customClass="NewsViewController" customModule="Ресайкл" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KFj-QR-trJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -98,6 +98,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2E1-gN-9k8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3172" y="-447.04433497536945"/>
+        </scene>
+        <!--Some View Controller-->
+        <scene sceneID="ard-5c-baV">
+            <objects>
+                <viewController storyboardIdentifier="SomeViewController" id="Gdy-Tf-WVW" customClass="SomeViewController" customModule="Ресайкл" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bhb-Xg-g3e">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tEk-yR-IR8">
+                                <rect key="frame" x="151.66666666666666" y="390" width="72" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="Gdy-Tf-WVW" eventType="touchUpInside" id="BOD-wI-ZLI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="CustomBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tEk-yR-IR8" firstAttribute="centerY" secondItem="a7a-gR-ipW" secondAttribute="centerY" id="QFW-OI-NZG"/>
+                            <constraint firstItem="tEk-yR-IR8" firstAttribute="centerX" secondItem="a7a-gR-ipW" secondAttribute="centerX" id="ipb-KA-Aga"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="a7a-gR-ipW"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ItT-29-Agd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1260" y="526"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="3Ko-Oo-XaJ">
