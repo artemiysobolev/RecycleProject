@@ -21,7 +21,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="CustomDarkBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewsCell" rowHeight="400" id="SUM-4R-IqB">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="400" id="SUM-4R-IqB" customClass="NewsTableViewCell" customModule="Ресайкл" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="400"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SUM-4R-IqB" id="UGz-uW-jft">
@@ -86,8 +86,19 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="CustomBackgroundColor"/>
+                                        <connections>
+                                            <outlet property="authorLabel" destination="tCD-sM-OoS" id="nKs-SY-dCD"/>
+                                            <outlet property="bodyLabel" destination="bsy-yl-a1c" id="KQR-Yx-brb"/>
+                                            <outlet property="dateLabel" destination="Vts-XL-bJl" id="kNa-nQ-aN7"/>
+                                            <outlet property="newsImage" destination="Rsv-yn-iDZ" id="foV-l7-vTm"/>
+                                            <outlet property="titleLabel" destination="ZLJ-OJ-4Ht" id="Fuv-WO-rWR"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ZTv-IR-XZy" id="J86-GA-Rad"/>
+                                    <outlet property="delegate" destination="ZTv-IR-XZy" id="TSf-8I-xnY"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" name="CustomBackgroundColor"/>
@@ -103,10 +114,10 @@
         <scene sceneID="3Ko-Oo-XaJ">
             <objects>
                 <tabBarController id="hHv-sa-PpB" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Uxv-ob-nHg">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Uxv-ob-nHg" customClass="CustomTabBar" customModule="Ресайкл" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="CustomBackgroundColor"/>
                         <color key="tintColor" name="CustomTabBarTintColor"/>
                         <color key="selectedImageTintColor" name="CustomTabBarTintColor"/>
                     </tabBar>
