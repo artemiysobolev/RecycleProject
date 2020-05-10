@@ -17,9 +17,9 @@ struct NewsItem {
     init(documentSnapshot: QueryDocumentSnapshot) {
         title = documentSnapshot["title"] as? String ?? ""
         publisher = documentSnapshot["publisher"] as? String ?? ""
-        annotation = documentSnapshot["annotation"] as? String ?? ""
-        body = documentSnapshot["body"] as? String ?? ""
-        imageUrlString = documentSnapshot["imageUrlString"] as? String ?? ""
-        date = (documentSnapshot["timestamp"] as? Timestamp)?.dateValue() ?? Date()
+        annotation = (documentSnapshot["annotation"] as? String ?? "").replacingOccurrences(of: "\\n", with: "\n")
+        body = (documentSnapshot["body"] as? String ?? "").replacingOccurrences(of: "\\n", with: "\n")
+        imageUrlString = documentSnapshot["imageUrl"] as? String ?? ""
+        date = (documentSnapshot["date"] as? Timestamp)?.dateValue() ?? Date(timeIntervalSince1970: 0)
     }
 }

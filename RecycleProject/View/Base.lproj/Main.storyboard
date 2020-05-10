@@ -28,7 +28,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SampleNewsImage" translatesAutoresizingMaskIntoConstraints="NO" id="Rsv-yn-iDZ">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rsv-yn-iDZ">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="217"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Rsv-yn-iDZ" secondAttribute="height" multiplier="375:217" id="Zyz-Ji-ahZ"/>
@@ -39,12 +39,18 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RecycleMag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCD-sM-OoS">
                                                             <rect key="frame" x="0.0" y="0.0" width="355" height="18"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="18" id="D8N-Ud-t2W"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" name="CustomTabBarTintColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Запуск «Экоразговора»" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLJ-OJ-4Ht">
                                                             <rect key="frame" x="0.0" y="26" width="355" height="20.333333333333329"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20.333333333333329" id="Qec-Uv-5td"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -58,6 +64,9 @@
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="вчера" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vts-XL-bJl">
                                                             <rect key="frame" x="0.0" y="141.66666666666669" width="355" height="17"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="17" id="i6V-9i-qFB"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" name="CustomPlaceholderTextColor"/>
                                                             <nil key="highlightedColor"/>
@@ -78,6 +87,7 @@
                                             <constraints>
                                                 <constraint firstItem="Rsv-yn-iDZ" firstAttribute="width" secondItem="UGz-uW-jft" secondAttribute="width" id="038-wx-R9o"/>
                                                 <constraint firstItem="Rsv-yn-iDZ" firstAttribute="leading" secondItem="UGz-uW-jft" secondAttribute="leading" id="3b7-ey-ho8"/>
+                                                <constraint firstAttribute="bottom" secondItem="CaB-ys-2ew" secondAttribute="bottom" constant="14.333333333333371" id="5ba-yF-Dna"/>
                                                 <constraint firstItem="CaB-ys-2ew" firstAttribute="top" secondItem="Rsv-yn-iDZ" secondAttribute="bottom" constant="10" id="JF9-rU-Lz2"/>
                                                 <constraint firstAttribute="trailing" secondItem="Rsv-yn-iDZ" secondAttribute="trailing" id="ik3-Vi-YoV"/>
                                                 <constraint firstItem="Rsv-yn-iDZ" firstAttribute="top" secondItem="UGz-uW-jft" secondAttribute="top" id="qZY-4D-kVu"/>
@@ -105,6 +115,9 @@
                         <viewLayoutGuide key="safeArea" id="hRn-Af-jR0"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Лента" image="square" catalog="system" id="zrm-pl-8v5"/>
+                    <connections>
+                        <outlet property="tableView" destination="taC-TR-OfB" id="ALe-04-mcc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2E1-gN-9k8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -451,7 +464,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="SampleNewsImage" width="943" height="720"/>
         <image name="arrow.3.trianglepath" catalog="system" width="128" height="128"/>
         <image name="gear" catalog="system" width="128" height="119"/>
         <image name="map" catalog="system" width="128" height="113"/>
