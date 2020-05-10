@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5029F145AF08780B5160089D /* Pods_RecycleProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C22BC092EBB98058483472 /* Pods_RecycleProject.framework */; };
 		BA7788DD2467485600545B8D /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7788DC2467485600545B8D /* NewsViewController.swift */; };
 		BA7788E22467497500545B8D /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7788E12467497500545B8D /* UserDefaults+Extension.swift */; };
 		BA7788E424674C4200545B8D /* FirstLaunch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA7788E324674C4200545B8D /* FirstLaunch.storyboard */; };
@@ -21,9 +22,11 @@
 		BA95FDB32465E10A001E112A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA95FDB12465E10A001E112A /* Main.storyboard */; };
 		BA95FDB52465E10E001E112A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA95FDB42465E10E001E112A /* Assets.xcassets */; };
 		BA95FDB82465E10E001E112A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA95FDB62465E10E001E112A /* LaunchScreen.storyboard */; };
+		BAAE50A52468550000979F2D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAAE50A42468550000979F2D /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D5908EE33800C9506C4A98C /* Pods-RecycleProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecycleProject.debug.xcconfig"; path = "Target Support Files/Pods-RecycleProject/Pods-RecycleProject.debug.xcconfig"; sourceTree = "<group>"; };
 		BA7788DC2467485600545B8D /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		BA7788E12467497500545B8D /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		BA7788E324674C4200545B8D /* FirstLaunch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstLaunch.storyboard; sourceTree = "<group>"; };
@@ -40,6 +43,9 @@
 		BA95FDB42465E10E001E112A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA95FDB72465E10E001E112A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA95FDB92465E10E001E112A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAAE50A42468550000979F2D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C9C22BC092EBB98058483472 /* Pods_RecycleProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecycleProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF6580FD979C52371D7A7A34 /* Pods-RecycleProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecycleProject.release.xcconfig"; path = "Target Support Files/Pods-RecycleProject/Pods-RecycleProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,12 +53,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5029F145AF08780B5160089D /* Pods_RecycleProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1930FF25F88DFB359C23ACEB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9C22BC092EBB98058483472 /* Pods_RecycleProject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BA7788E02467496100545B8D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +91,8 @@
 			children = (
 				BA95FDAA2465E10A001E112A /* RecycleProject */,
 				BA95FDA92465E10A001E112A /* Products */,
+				D9CF15E8D19AF70AF4EF7F7E /* Pods */,
+				1930FF25F88DFB359C23ACEB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,9 +151,20 @@
 				BA95FDAD2465E10A001E112A /* SceneDelegate.swift */,
 				BA95FDB42465E10E001E112A /* Assets.xcassets */,
 				BA95FDB62465E10E001E112A /* LaunchScreen.storyboard */,
+				BAAE50A42468550000979F2D /* GoogleService-Info.plist */,
 				BA95FDB92465E10E001E112A /* Info.plist */,
 			);
 			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		D9CF15E8D19AF70AF4EF7F7E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9D5908EE33800C9506C4A98C /* Pods-RecycleProject.debug.xcconfig */,
+				FF6580FD979C52371D7A7A34 /* Pods-RecycleProject.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,9 +174,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA95FDBC2465E10E001E112A /* Build configuration list for PBXNativeTarget "RecycleProject" */;
 			buildPhases = (
+				B0DF82E32F53AE68D7AA4857 /* [CP] Check Pods Manifest.lock */,
 				BA95FDA42465E10A001E112A /* Sources */,
 				BA95FDA52465E10A001E112A /* Frameworks */,
 				BA95FDA62465E10A001E112A /* Resources */,
+				C30ABCC4E9E9ED29472F80AA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -199,12 +229,55 @@
 			files = (
 				BA95FDB82465E10E001E112A /* LaunchScreen.storyboard in Resources */,
 				BA7788E424674C4200545B8D /* FirstLaunch.storyboard in Resources */,
+				BAAE50A52468550000979F2D /* GoogleService-Info.plist in Resources */,
 				BA95FDB52465E10E001E112A /* Assets.xcassets in Resources */,
 				BA95FDB32465E10A001E112A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B0DF82E32F53AE68D7AA4857 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RecycleProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C30ABCC4E9E9ED29472F80AA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RecycleProject/Pods-RecycleProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RecycleProject/Pods-RecycleProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RecycleProject/Pods-RecycleProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BA95FDA42465E10A001E112A /* Sources */ = {
@@ -362,6 +435,7 @@
 		};
 		BA95FDBD2465E10E001E112A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D5908EE33800C9506C4A98C /* Pods-RecycleProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -380,6 +454,7 @@
 		};
 		BA95FDBE2465E10E001E112A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF6580FD979C52371D7A7A34 /* Pods-RecycleProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
