@@ -28,7 +28,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rsv-yn-iDZ">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SampleNewsImage" translatesAutoresizingMaskIntoConstraints="NO" id="Rsv-yn-iDZ">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="217"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Rsv-yn-iDZ" secondAttribute="height" multiplier="375:217" id="Zyz-Ji-ahZ"/>
@@ -464,6 +464,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="SampleNewsImage" width="943" height="720"/>
         <image name="arrow.3.trianglepath" catalog="system" width="128" height="128"/>
         <image name="gear" catalog="system" width="128" height="119"/>
         <image name="map" catalog="system" width="128" height="113"/>
