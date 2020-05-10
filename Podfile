@@ -8,5 +8,6 @@ target 'RecycleProject' do
   # Pods for RecycleProject
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
+  pod 'Firebase/Storage'
 
 end

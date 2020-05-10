@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,7 @@
 		BA95FDB52465E10E001E112A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA95FDB42465E10E001E112A /* Assets.xcassets */; };
 		BA95FDB82465E10E001E112A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA95FDB62465E10E001E112A /* LaunchScreen.storyboard */; };
 		BAAE50A52468550000979F2D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAAE50A42468550000979F2D /* GoogleService-Info.plist */; };
+		BAC41B8524688BB700DAEAA4 /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC41B8424688BB700DAEAA4 /* NewsItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		BA95FDB72465E10E001E112A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA95FDB92465E10E001E112A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAAE50A42468550000979F2D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BAC41B8424688BB700DAEAA4 /* NewsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = "<group>"; };
 		C9C22BC092EBB98058483472 /* Pods_RecycleProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecycleProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF6580FD979C52371D7A7A34 /* Pods-RecycleProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecycleProject.release.xcconfig"; path = "Target Support Files/Pods-RecycleProject/Pods-RecycleProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +121,7 @@
 		BA95FDBF24661950001E112A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BAC41B8424688BB700DAEAA4 /* NewsItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -163,7 +166,6 @@
 				9D5908EE33800C9506C4A98C /* Pods-RecycleProject.debug.xcconfig */,
 				FF6580FD979C52371D7A7A34 /* Pods-RecycleProject.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -292,6 +294,7 @@
 				BA95FDAE2465E10A001E112A /* SceneDelegate.swift in Sources */,
 				BA7788E22467497500545B8D /* UserDefaults+Extension.swift in Sources */,
 				BA7788DD2467485600545B8D /* NewsViewController.swift in Sources */,
+				BAC41B8524688BB700DAEAA4 /* NewsItem.swift in Sources */,
 				BA7788E924674DC400545B8D /* NameViewController.swift in Sources */,
 				BA7788EB24674DD500545B8D /* CityViewController.swift in Sources */,
 			);
