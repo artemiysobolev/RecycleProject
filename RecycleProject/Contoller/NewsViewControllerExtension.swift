@@ -19,23 +19,15 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
         
         let newsItem = news[indexPath.row]
         
+        cell.newsImageView.image = nil
         cell.titleLabel.text = newsItem.title
         cell.publisherLabel.text = newsItem.publisher
         cell.annotationLabel.text = newsItem.annotation
         cell.dateLabel.text = dateFormatter.string(from: newsItem.date)
         
-        cell.newsImageView.image = nil
-        let maxSize: Int64 = 1 * 1024 * 1024
-        DispatchQueue.global().async {
-            Storage.storage().reference(forURL: newsItem.imageUrlString).getData(maxSize: maxSize) { (data, error) in
-                guard let imageData = data,
-                    error == nil else {
-                        print(error!.localizedDescription)
-                        return
-                }
-                DispatchQueue.main.async {
-                    cell.newsImageView.image = UIImage(data: imageData)
-                }
+        FirebaseImageService.downloadImage(urlString: newsItem.imageUrlString) { data in
+            DispatchQueue.main.async {
+                cell.newsImageView.image = UIImage(data: data)
             }
         }
     }

@@ -27,18 +27,10 @@ class NewsItemViewController: UIViewController {
         publisherLabel.text = newsItem.publisher
         bodyLabel.text = newsItem.body
         dateLabel.text = dateFormatter.string(from: newsItem.date)
-
-        let maxSize: Int64 = 1 * 1024 * 1024
-        DispatchQueue.global().async {
-            Storage.storage().reference(forURL: self.newsItem.imageUrlString).getData(maxSize: maxSize) { (data, error) in
-                guard let imageData = data,
-                    error == nil else {
-                        print(error!.localizedDescription)
-                        return
-                }
-                DispatchQueue.main.async {
-                    self.newsImageView.image = UIImage(data: imageData)
-                }
+        
+        FirebaseImageService.downloadImage(urlString: newsItem.imageUrlString) { data in
+            DispatchQueue.main.async {
+                self.newsImageView.image = UIImage(data: data)
             }
         }
     }
