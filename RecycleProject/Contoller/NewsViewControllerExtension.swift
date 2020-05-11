@@ -20,8 +20,8 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
         let newsItem = news[indexPath.row]
         
         cell.titleLabel.text = newsItem.title
-        cell.authorLabel.text = newsItem.publisher
-        cell.bodyLabel.text = "В Москве стартует проект об экологии и разумном потреблении «Экоразговор». В рамках проекта жители города смогут посмотреть онлайн-лекции в течение мая" // newsItem.annotation
+        cell.publisherLabel.text = newsItem.publisher
+        cell.annotationLabel.text = newsItem.annotation
         cell.dateLabel.text = dateFormatter.string(from: newsItem.date)
         
         
@@ -34,7 +34,7 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
                         return
                 }
                 DispatchQueue.main.async {
-                    cell.newsImage.image = UIImage(data: imageData)
+                    cell.newsImageView.image = UIImage(data: imageData)
                 }
             }
         }
