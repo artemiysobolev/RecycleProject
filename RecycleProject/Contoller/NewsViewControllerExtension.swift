@@ -25,17 +25,15 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
         cell.annotationLabel.text = newsItem.annotation
         cell.dateLabel.text = dateFormatter.string(from: newsItem.date)
         
-        FirebaseService.downloadImage(urlString: newsItem.imageUrlString) { data in
-            DispatchQueue.main.async {
-                cell.newsImageView.image = UIImage(data: data)
-            }
+        FirebaseService.downloadImage(urlString: newsItem.imageUrlString) { image in
+            cell.newsImageView.image = image
         }
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 15
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         1
     }

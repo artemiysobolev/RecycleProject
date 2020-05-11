@@ -28,10 +28,8 @@ class NewsItemViewController: UIViewController {
         bodyTextView.text = newsItem.body
         dateLabel.text = dateFormatter.string(from: newsItem.date)
         
-        FirebaseService.downloadImage(urlString: newsItem.imageUrlString) { data in
-            DispatchQueue.main.async {
-                self.newsImageView.image = UIImage(data: data)
-            }
+        FirebaseService.downloadImage(urlString: newsItem.imageUrlString) { image in
+                self.newsImageView.image = image
         }
     }
 }
