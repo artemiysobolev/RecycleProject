@@ -17,7 +17,7 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
     
     private func configureCell (cell: NewsTableViewCell, for indexPath: IndexPath) {
         
-        let newsItem = news[indexPath.row]
+        let newsItem = news[indexPath.section]
         
         cell.newsImageView.image = nil
         cell.titleLabel.text = newsItem.title
@@ -32,8 +32,23 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-    
+    // Set the spacing between sections
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 15
+    }
+
+    // Make the background color show through
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+        return headerView
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        1
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         news.count
     }
     
@@ -46,9 +61,28 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        currentNewsItem = news[indexPath.row]
+        currentNewsItem = news[indexPath.section]
         performSegue(withIdentifier: "NewsItemSegue", sender: self)
         
     }
+    
+//
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        news.count
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! NewsTableViewCell
+//        configureCell(cell: cell, for: indexPath)
+//        return cell
+//
+//    }
+//
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//
+//        currentNewsItem = news[indexPath.row]
+//        performSegue(withIdentifier: "NewsItemSegue", sender: self)
+//
+//    }
     
 }
