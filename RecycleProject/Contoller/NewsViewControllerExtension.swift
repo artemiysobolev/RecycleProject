@@ -32,16 +32,8 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-    // Set the spacing between sections
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 15
-    }
-
-    // Make the background color show through
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView()
-        headerView.backgroundColor = UIColor.clear
-        return headerView
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -65,24 +57,5 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
         performSegue(withIdentifier: "NewsItemSegue", sender: self)
         
     }
-    
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        news.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! NewsTableViewCell
-//        configureCell(cell: cell, for: indexPath)
-//        return cell
-//
-//    }
-//
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//
-//        currentNewsItem = news[indexPath.row]
-//        performSegue(withIdentifier: "NewsItemSegue", sender: self)
-//
-//    }
     
 }
