@@ -18,14 +18,14 @@ class NewsItemViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var publisherLabel: UILabel!
-    @IBOutlet weak var bodyLabel: UILabel!
+    @IBOutlet weak var bodyTextView: UITextView!
     
     var newsItem: NewsItem!
     
     override func viewDidLoad() {
         titleLabel.text = newsItem.title
         publisherLabel.text = newsItem.publisher
-        bodyLabel.text = newsItem.body
+        bodyTextView.text = newsItem.body
         dateLabel.text = dateFormatter.string(from: newsItem.date)
         
         FirebaseService.downloadImage(urlString: newsItem.imageUrlString) { data in
