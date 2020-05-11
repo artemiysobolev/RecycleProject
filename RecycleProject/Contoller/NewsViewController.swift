@@ -17,7 +17,7 @@ class NewsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.estimatedRowHeight = 44
+        tableView.estimatedRowHeight = 300
         tableView.rowHeight = UITableView.automaticDimension
     
         db.collection("News").whereField("publisher", in: publishers).getDocuments { (snapshot, error) in

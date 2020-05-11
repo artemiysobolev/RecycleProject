@@ -21,7 +21,7 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.titleLabel.text = newsItem.title
         cell.authorLabel.text = newsItem.publisher
-        cell.bodyLabel.text = newsItem.annotation
+        cell.bodyLabel.text = "В Москве стартует проект об экологии и разумном потреблении «Экоразговор». В рамках проекта жители города смогут посмотреть онлайн-лекции в течение мая" // newsItem.annotation
         cell.dateLabel.text = dateFormatter.string(from: newsItem.date)
         
         
