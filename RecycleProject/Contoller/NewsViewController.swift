@@ -6,13 +6,13 @@
 import UIKit
 import Firebase
 
-
 class NewsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    let db = Firestore.firestore()
-    let publishers = ["99recycle", "RecycleMag"]
+    private let db = Firestore.firestore()
+//    private let publishers = ["99recycle", "RecycleMag"]
     var news: [NewsItem] = []
+    var currentNewsItem: NewsItem?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,8 @@ class NewsViewController: UIViewController {
         tableView.estimatedRowHeight = 300
         tableView.rowHeight = UITableView.automaticDimension
     
-        db.collection("News").whereField("publisher", in: publishers).getDocuments { (snapshot, error) in
+        db.collection("News").getDocuments { (snapshot, error) in
+//        db.collection("News").whereField("publisher", in: publishers).getDocuments { (snapshot, error) in
             guard let snapshot = snapshot,
                 error == nil else {
                     print(error!.localizedDescription)
@@ -42,5 +43,11 @@ class NewsViewController: UIViewController {
         }
         
         print("NewsViewController did load")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "NewsItemSegue",
+            let newsItemVC = segue.destination as? NewsItemViewController  else { return }
+        newsItemVC.newsItem = currentNewsItem
     }
 }

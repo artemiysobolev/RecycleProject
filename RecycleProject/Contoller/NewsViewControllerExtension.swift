@@ -24,7 +24,7 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
         cell.annotationLabel.text = newsItem.annotation
         cell.dateLabel.text = dateFormatter.string(from: newsItem.date)
         
-        
+        cell.newsImageView.image = nil
         let maxSize: Int64 = 1 * 1024 * 1024
         DispatchQueue.global().async {
             Storage.storage().reference(forURL: newsItem.imageUrlString).getData(maxSize: maxSize) { (data, error) in
@@ -52,6 +52,11 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
         
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        currentNewsItem = news[indexPath.row]
+        performSegue(withIdentifier: "NewsItemSegue", sender: self)
+        
+    }
     
 }
