@@ -6,7 +6,7 @@
 import UIKit
 import Firebase
 
-class FirebaseImageService {
+class FirebaseService {
     
     static func downloadImage (urlString: String, completionHandler: @escaping(_ imageData: Data)->()) {
         

@@ -25,7 +25,7 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
         cell.annotationLabel.text = newsItem.annotation
         cell.dateLabel.text = dateFormatter.string(from: newsItem.date)
         
-        FirebaseImageService.downloadImage(urlString: newsItem.imageUrlString) { data in
+        FirebaseService.downloadImage(urlString: newsItem.imageUrlString) { data in
             DispatchQueue.main.async {
                 cell.newsImageView.image = UIImage(data: data)
             }
