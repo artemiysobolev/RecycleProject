@@ -41,7 +41,7 @@
                                         <rect key="frame" x="0.0" y="353.5" width="394" height="52"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="33"/>
                                         <state key="normal" title="ОК">
-                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleColor" name="CustomTabBarTintColor"/>
                                         </state>
                                         <connections>
                                             <action selector="okButtonTapped:" destination="cYE-eO-2Tj" eventType="touchUpInside" id="E23-yr-Q3i"/>
@@ -99,6 +99,7 @@
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Введи своё имя..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KNr-Pb-xRp">
                                         <rect key="frame" x="0.0" y="157" width="374" height="40.5"/>
+                                        <color key="tintColor" name="CustomTabBarTintColor"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="33"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -110,7 +111,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="33"/>
                                         <state key="normal" title="Далее">
-                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleColor" name="CustomTabBarTintColor"/>
                                         </state>
                                         <connections>
                                             <action selector="nextButtonTapped:" destination="hua-qe-mB5" eventType="touchUpInside" id="YGG-bd-Kqf"/>
@@ -179,7 +180,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="33"/>
                                         <state key="normal" title="Готово">
-                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleColor" name="CustomTabBarTintColor"/>
                                         </state>
                                         <connections>
                                             <action selector="doneButtonTapped:" destination="pBl-Ev-Upt" eventType="touchUpInside" id="1N5-Kd-FCo"/>
@@ -212,6 +213,7 @@
                     <navigationItem key="navigationItem" id="EDC-fd-QbU"/>
                     <connections>
                         <outlet property="activityIndicator" destination="Aaa-0b-9sE" id="Ddg-G1-1nN"/>
+                        <outlet property="doneButton" destination="qDG-62-Otl" id="dXJ-XQ-qMe"/>
                         <outlet property="regionPickerView" destination="WCG-Fm-GyQ" id="0Ad-hF-iVa"/>
                     </connections>
                 </viewController>
@@ -224,6 +226,9 @@
         <image name="LaunchscreenTrashcans" width="375" height="105"/>
         <namedColor name="CustomBackgroundColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CustomTabBarTintColor">
+            <color red="0.36399999260902405" green="0.57599997520446777" blue="0.31000000238418579" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

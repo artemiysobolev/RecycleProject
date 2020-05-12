@@ -6,17 +6,17 @@
 import Foundation
 import Firebase
 
-struct Region: Codable {
+struct Region: Codable, genericFirebaseDataProtocol {
     let code: Int
     let name: String
     
-    init(documentSnapshot: QueryDocumentSnapshot) {
-        name = documentSnapshot["name"] as? String ?? ""
-        code = documentSnapshot["code"] as? Int ?? 0
-    }
-    
-    init(name: String, code: Int) {
-        self.name = name
+    init?(documentSnapshot: QueryDocumentSnapshot) {
+        guard let code = documentSnapshot["code"] as? Int,
+            let name = documentSnapshot["name"] as? String else {
+                return nil
+        }
         self.code = code
+        self.name = name
     }
+
 }

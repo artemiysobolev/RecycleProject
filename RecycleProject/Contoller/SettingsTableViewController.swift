@@ -92,8 +92,9 @@ class SettingsTableViewController: UITableViewController, SettingsTableViewContr
     private func showNameChangeAlertController () {
         let alert = UIAlertController(title: "Новое имя", message: "Введи новое имя:", preferredStyle: .alert)
         alert.addTextField(configurationHandler: nil)
+        alert.textFields?.first?.tintColor = UIColor(named: "CustomTabBarTintColor")
         alert.addAction(UIAlertAction(title: "Отменить", style: .destructive))
-        alert.addAction(UIAlertAction(title: "Сохранить", style: .cancel, handler: { [weak self] _ in
+        let saveAction = UIAlertAction(title: "Сохранить", style: .cancel, handler: { [weak self] _ in
             guard let self = self,
                 let newUsername = alert.textFields?.first?.text,
                 newUsername != "" else { return }
@@ -102,7 +103,9 @@ class SettingsTableViewController: UITableViewController, SettingsTableViewContr
                 self.usernameLabel.text = UserDefaults.standard.getUsername()
                 self.usernamePlaceholderLabel.text = UserDefaults.standard.getUsername()
             }
-        }))
+        })
+        saveAction.setValue(UIColor(named: "CustomTabBarTintColor"), forKey: "titleTextColor")
+        alert.addAction(saveAction)
         present(alert, animated: true)
     }
     

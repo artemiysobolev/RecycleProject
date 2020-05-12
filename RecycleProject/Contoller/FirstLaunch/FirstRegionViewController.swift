@@ -7,6 +7,7 @@ import UIKit
 
 class FirstRegionViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
+    @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var regionPickerView: UIPickerView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     private var regions: [Region] = []
@@ -16,13 +17,15 @@ class FirstRegionViewController: UIViewController, UIPickerViewDataSource, UIPic
         regionPickerView.alpha = 0
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
+        doneButton.isEnabled = false
         
-        FirebaseService.getRegions { [weak self] (regions) in
+        FirebaseService.getData(collectionPath: "Regions") { [weak self]  (data: [Region]) in
             guard let self = self else { return }
-            self.regions = regions
+            self.regions = data
             self.regionPickerView.reloadAllComponents()
             self.activityIndicator.stopAnimating()
             self.regionPickerView.alpha = 1
+            self.doneButton.isEnabled = true
         }
     }
     

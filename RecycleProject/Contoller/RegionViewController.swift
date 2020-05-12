@@ -14,9 +14,10 @@ class RegionViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        FirebaseService.getRegions { [weak self] (regions) in
+        
+        FirebaseService.getData(collectionPath: "Regions") { [weak self] (data: [Region]) in
             guard let self = self else { return }
-            self.regions = regions
+            self.regions = data
             self.tableView.reloadData()
         }
     }

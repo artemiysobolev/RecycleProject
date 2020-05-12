@@ -6,6 +6,10 @@
 import UIKit
 import Firebase
 
+protocol genericFirebaseDataProtocol {
+    init?(documentSnapshot: QueryDocumentSnapshot)
+}
+
 var imageCache = NSCache<NSString, UIImage>()
 
 class FirebaseService {
@@ -34,23 +38,25 @@ class FirebaseService {
         }
     }
     
-    
-    static func getRegions (completionHandler: @escaping(_ regions: [Region])->()) {
+    static func getData<T: genericFirebaseDataProtocol> (collectionPath: String, completionHandler: @escaping(_ data: [T])->()) {
         DispatchQueue.global().async {
-            Firestore.firestore().collection("Regions").getDocuments { (snapshot, error) in
+            Firestore.firestore().collection(collectionPath).getDocuments { (snapshot, error) in
                 guard let snapshot = snapshot,
                     error == nil else {
                         print(error!.localizedDescription)
                         return
                 }
                 
-                var regions: [Region] = []
+                var data: [T] = []
                 for document in snapshot.documents {
-                    let region = Region(documentSnapshot: document)
-                    regions.append(region)
+                    if let dataItem = T(documentSnapshot: document) {
+                        data.append(dataItem)
+                    } else {
+                        print("Some problem with init this document: \(document.documentID)")
+                    }
                 }
                 DispatchQueue.main.async {
-                    completionHandler(regions)
+                    completionHandler(data)
                 }
             }
         }
