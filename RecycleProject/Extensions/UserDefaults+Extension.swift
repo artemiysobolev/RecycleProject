@@ -34,7 +34,7 @@ extension UserDefaults {
     }
     
     func getFavoritePublishers() -> [String] {
-        return array(forKey: UserDefaultsKeys.favoritePublishers.rawValue) as! [String]
+        return array(forKey: UserDefaultsKeys.favoritePublishers.rawValue) as? [String] ?? []
     }
     
     //MARK: - Is application launched before
@@ -49,12 +49,16 @@ extension UserDefaults {
     
     //MARK: - Region
     
-    func setRegion(value: String) {
-        set(value, forKey: UserDefaultsKeys.region.rawValue)
+    func setRegion(value: Region) {
+        if let encoded = try? JSONEncoder().encode(value) {
+            set(encoded, forKey: UserDefaultsKeys.region.rawValue)
+        }
     }
     
-    func getRegion() -> String? {
-        return string(forKey: UserDefaultsKeys.region.rawValue)
+    func getRegion() -> Region? {
+        guard let savedValue = UserDefaults.standard.object(forKey: UserDefaultsKeys.region.rawValue) as? Data,
+            let loadedValue = try? JSONDecoder().decode(Region.self, from: savedValue) else { return nil }
+        return loadedValue
     }
     
     //MARK: - Username

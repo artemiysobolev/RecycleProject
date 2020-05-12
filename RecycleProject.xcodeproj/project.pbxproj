@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		5029F145AF08780B5160089D /* Pods_RecycleProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C22BC092EBB98058483472 /* Pods_RecycleProject.framework */; };
 		BA47BBB4246ABD4B00218493 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47BBB3246ABD4B00218493 /* SettingsTableViewController.swift */; };
-		BA47BBB8246AF44400218493 /* KeyboardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47BBB7246AF44400218493 /* KeyboardService.swift */; };
+		BA47BBBA246B038000218493 /* RegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47BBB9246B038000218493 /* RegionViewController.swift */; };
+		BA47BBBC246B041800218493 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47BBBB246B041800218493 /* Region.swift */; };
+		BA47BBBE246B332500218493 /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47BBBD246B332500218493 /* Publisher.swift */; };
 		BA7788DD2467485600545B8D /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7788DC2467485600545B8D /* NewsViewController.swift */; };
 		BA7788E22467497500545B8D /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7788E12467497500545B8D /* UserDefaults+Extension.swift */; };
 		BA7788E424674C4200545B8D /* FirstLaunch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA7788E324674C4200545B8D /* FirstLaunch.storyboard */; };
-		BA7788E724674DB400545B8D /* FirstLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7788E624674DB400545B8D /* FirstLaunchViewController.swift */; };
-		BA7788E924674DC400545B8D /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7788E824674DC400545B8D /* NameViewController.swift */; };
-		BA7788EB24674DD500545B8D /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7788EA24674DD500545B8D /* CityViewController.swift */; };
+		BA7788E724674DB400545B8D /* FirstPresentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7788E624674DB400545B8D /* FirstPresentViewController.swift */; };
+		BA7788E924674DC400545B8D /* FirstUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7788E824674DC400545B8D /* FirstUsernameViewController.swift */; };
+		BA7788EB24674DD500545B8D /* FirstRegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7788EA24674DD500545B8D /* FirstRegionViewController.swift */; };
 		BA7788ED2467533600545B8D /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7788EC2467533600545B8D /* NewsTableViewCell.swift */; };
 		BA7788EF2467542900545B8D /* NewsViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7788EE2467542900545B8D /* NewsViewControllerExtension.swift */; };
 		BA95FDAC2465E10A001E112A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA95FDAB2465E10A001E112A /* AppDelegate.swift */; };
@@ -32,13 +34,15 @@
 /* Begin PBXFileReference section */
 		9D5908EE33800C9506C4A98C /* Pods-RecycleProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecycleProject.debug.xcconfig"; path = "Target Support Files/Pods-RecycleProject/Pods-RecycleProject.debug.xcconfig"; sourceTree = "<group>"; };
 		BA47BBB3246ABD4B00218493 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		BA47BBB7246AF44400218493 /* KeyboardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardService.swift; sourceTree = "<group>"; };
+		BA47BBB9246B038000218493 /* RegionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionViewController.swift; sourceTree = "<group>"; };
+		BA47BBBB246B041800218493 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
+		BA47BBBD246B332500218493 /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
 		BA7788DC2467485600545B8D /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		BA7788E12467497500545B8D /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		BA7788E324674C4200545B8D /* FirstLaunch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstLaunch.storyboard; sourceTree = "<group>"; };
-		BA7788E624674DB400545B8D /* FirstLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchViewController.swift; sourceTree = "<group>"; };
-		BA7788E824674DC400545B8D /* NameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
-		BA7788EA24674DD500545B8D /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
+		BA7788E624674DB400545B8D /* FirstPresentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPresentViewController.swift; sourceTree = "<group>"; };
+		BA7788E824674DC400545B8D /* FirstUsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstUsernameViewController.swift; sourceTree = "<group>"; };
+		BA7788EA24674DD500545B8D /* FirstRegionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRegionViewController.swift; sourceTree = "<group>"; };
 		BA7788EC2467533600545B8D /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		BA7788EE2467542900545B8D /* NewsViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewControllerExtension.swift; sourceTree = "<group>"; };
 		BA95FDA82465E10A001E112A /* Ресайкл.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ресайкл.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,9 +91,9 @@
 		BA7788E524674D7E00545B8D /* FirstLaunch */ = {
 			isa = PBXGroup;
 			children = (
-				BA7788E624674DB400545B8D /* FirstLaunchViewController.swift */,
-				BA7788E824674DC400545B8D /* NameViewController.swift */,
-				BA7788EA24674DD500545B8D /* CityViewController.swift */,
+				BA7788E624674DB400545B8D /* FirstPresentViewController.swift */,
+				BA7788E824674DC400545B8D /* FirstUsernameViewController.swift */,
+				BA7788EA24674DD500545B8D /* FirstRegionViewController.swift */,
 			);
 			path = FirstLaunch;
 			sourceTree = "<group>";
@@ -129,6 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				BAC41B8424688BB700DAEAA4 /* NewsItem.swift */,
+				BA47BBBB246B041800218493 /* Region.swift */,
+				BA47BBBD246B332500218493 /* Publisher.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -151,6 +157,7 @@
 				BA7788EE2467542900545B8D /* NewsViewControllerExtension.swift */,
 				BAA305CB2469782F0042EE97 /* NewsItemViewController.swift */,
 				BA47BBB3246ABD4B00218493 /* SettingsTableViewController.swift */,
+				BA47BBB9246B038000218493 /* RegionViewController.swift */,
 			);
 			path = Contoller;
 			sourceTree = "<group>";
@@ -172,7 +179,6 @@
 			isa = PBXGroup;
 			children = (
 				BAA305CE2469B7210042EE97 /* FirebaseService.swift */,
-				BA47BBB7246AF44400218493 /* KeyboardService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -303,20 +309,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA47BBB8246AF44400218493 /* KeyboardService.swift in Sources */,
 				BA95FDAC2465E10A001E112A /* AppDelegate.swift in Sources */,
 				BA47BBB4246ABD4B00218493 /* SettingsTableViewController.swift in Sources */,
 				BA7788EF2467542900545B8D /* NewsViewControllerExtension.swift in Sources */,
-				BA7788E724674DB400545B8D /* FirstLaunchViewController.swift in Sources */,
+				BA7788E724674DB400545B8D /* FirstPresentViewController.swift in Sources */,
+				BA47BBBA246B038000218493 /* RegionViewController.swift in Sources */,
 				BA7788ED2467533600545B8D /* NewsTableViewCell.swift in Sources */,
 				BAA305CC2469782F0042EE97 /* NewsItemViewController.swift in Sources */,
 				BA95FDAE2465E10A001E112A /* SceneDelegate.swift in Sources */,
+				BA47BBBE246B332500218493 /* Publisher.swift in Sources */,
 				BAA305CF2469B7210042EE97 /* FirebaseService.swift in Sources */,
 				BA7788E22467497500545B8D /* UserDefaults+Extension.swift in Sources */,
+				BA47BBBC246B041800218493 /* Region.swift in Sources */,
 				BA7788DD2467485600545B8D /* NewsViewController.swift in Sources */,
 				BAC41B8524688BB700DAEAA4 /* NewsItem.swift in Sources */,
-				BA7788E924674DC400545B8D /* NameViewController.swift in Sources */,
-				BA7788EB24674DD500545B8D /* CityViewController.swift in Sources */,
+				BA7788E924674DC400545B8D /* FirstUsernameViewController.swift in Sources */,
+				BA7788EB24674DD500545B8D /* FirstRegionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

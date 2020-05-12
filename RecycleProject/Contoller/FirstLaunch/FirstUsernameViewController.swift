@@ -5,7 +5,7 @@
 
 import UIKit
 
-class NameViewController: UIViewController {
+class FirstUsernameViewController: UIViewController {
 
     @IBOutlet weak var nameTextField: UITextField!
     

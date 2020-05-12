@@ -23,7 +23,7 @@
                                 <color key="separatorColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="362" id="SUM-4R-IqB" customClass="NewsTableViewCell" customModule="Ресайкл" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewsCell" rowHeight="362" id="SUM-4R-IqB" customClass="NewsTableViewCell" customModule="Ресайкл" customModuleProvider="target">
                                         <rect key="frame" x="15" y="55.333332061767578" width="345" height="362"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SUM-4R-IqB" id="UGz-uW-jft">
@@ -314,7 +314,7 @@
             </objects>
             <point key="canvasLocation" x="-3172" y="894.82758620689663"/>
         </scene>
-        <!--Settings Table View Controller-->
+        <!--Настройки-->
         <scene sceneID="Xjp-bn-47Y">
             <objects>
                 <tableViewController id="YIS-HT-WWh" customClass="SettingsTableViewController" customModule="Ресайкл" customModuleProvider="target" sceneMemberID="viewController">
@@ -599,45 +599,71 @@
                             <outlet property="delegate" destination="YIS-HT-WWh" id="5ae-RP-Zq2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="JBJ-bA-rD6"/>
+                    <navigationItem key="navigationItem" title="Настройки" id="JBJ-bA-rD6"/>
                     <connections>
                         <outlet property="notificationsSwitch" destination="7l7-o0-CPS" id="cmu-WS-VfE"/>
                         <outlet property="regionPlaceholderLabel" destination="kt9-pS-L9i" id="SWm-3C-CRG"/>
                         <outlet property="usernameLabel" destination="gHh-iS-cAI" id="V0v-4Z-wIu"/>
                         <outlet property="usernamePlaceholderLabel" destination="Yuy-Ob-pO7" id="F30-Q7-hoA"/>
+                        <segue destination="84o-E0-nAd" kind="show" identifier="regionSegue" id="SI3-fJ-uEx"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g03-Xx-7Ku" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2201" y="1650"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="KH9-iP-t3J">
+        <!--Region View Controller-->
+        <scene sceneID="rlm-iW-lgw">
             <objects>
-                <tableViewController id="VIj-Wm-NX2" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="YFg-Y1-GPd">
+                <viewController id="84o-E0-nAd" customClass="RegionViewController" customModule="Ресайкл" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eRC-h1-nZq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Bhx-ap-qea">
-                                <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bhx-ap-qea" id="yBS-Lb-4QF">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="VIj-Wm-NX2" id="QPN-yN-4bu"/>
-                            <outlet property="delegate" destination="VIj-Wm-NX2" id="rod-UI-uiD"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kFD-H6-QrJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="onP-TA-vEs">
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <color key="backgroundColor" name="CustomDarkBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RegionCell" id="PTF-at-vlB">
+                                        <rect key="frame" x="0.0" y="55.333332061767578" width="375" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PTF-at-vlB" id="a4a-hM-4DG">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="tintColor" name="CustomTabBarTintColor"/>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="84o-E0-nAd" id="N1b-31-sXu"/>
+                                    <outlet property="delegate" destination="84o-E0-nAd" id="LgP-Ah-0M9"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" name="CustomDarkBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="onP-TA-vEs" firstAttribute="top" secondItem="bKd-VN-0nL" secondAttribute="top" id="0ZG-af-BxV"/>
+                            <constraint firstItem="onP-TA-vEs" firstAttribute="leading" secondItem="bKd-VN-0nL" secondAttribute="leading" id="3XF-oo-SNb"/>
+                            <constraint firstItem="onP-TA-vEs" firstAttribute="trailing" secondItem="bKd-VN-0nL" secondAttribute="trailing" id="9VY-Vo-30U"/>
+                            <constraint firstItem="onP-TA-vEs" firstAttribute="bottom" secondItem="bKd-VN-0nL" secondAttribute="bottom" id="Myo-a9-2Oi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bKd-VN-0nL"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fP1-WZ-t6b">
+                        <barButtonItem key="rightBarButtonItem" title="Сохранить" id="fFu-Be-Wa0">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="84o-E0-nAd" id="0A1-gL-SSd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="onP-TA-vEs" id="f3Z-jv-Zjk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Npp-Ra-SHe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1266" y="1650"/>
+            <point key="canvasLocation" x="-1143.2" y="1650"/>
         </scene>
         <!--Лента-->
         <scene sceneID="Zb3-5a-wj5">
@@ -668,6 +694,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0fd-Yu-DYN">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="CustomTabBarTintColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

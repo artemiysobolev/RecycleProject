@@ -16,6 +16,13 @@ class NewsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(UserDefaults.standard.getRegion())
+        print(UserDefaults.standard.isLaunchedBefore())
+        print(UserDefaults.standard.getFavoritePublishers())
+        print(UserDefaults.standard.overridedUserInterfaceStyle)
+        print(UserDefaults.standard.isNotificationsEnabled())
+        print(UserDefaults.standard.getUsername())
+
         
         UserDefaults.standard.setFavoritePublishers(value: ["99recycle", "RecycleMag","РазДельный Сбор"])
         publishers = UserDefaults.standard.getFavoritePublishers()

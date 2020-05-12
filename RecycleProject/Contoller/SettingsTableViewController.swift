@@ -18,7 +18,11 @@ enum UIStyle: Int {
     case dark
 }
 
-class SettingsTableViewController: UITableViewController {
+protocol SettingsTableViewControllerDelegate {
+    func changeRegion(newRegion: Region)
+}
+
+class SettingsTableViewController: UITableViewController, SettingsTableViewControllerDelegate {
     
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var usernamePlaceholderLabel: UILabel!
@@ -44,9 +48,23 @@ class SettingsTableViewController: UITableViewController {
         super.viewDidLoad()
         usernameLabel.text = UserDefaults.standard.getUsername()
         usernamePlaceholderLabel.text = UserDefaults.standard.getUsername()
-        regionPlaceholderLabel.text = UserDefaults.standard.getRegion()
+        regionPlaceholderLabel.text = UserDefaults.standard.getRegion()?.name
         notificationsSwitch.setOn(UserDefaults.standard.isNotificationsEnabled(), animated: false)
     }
+    
+    func changeRegion(newRegion: Region) {
+        UserDefaults.standard.setRegion(value: newRegion)
+        regionPlaceholderLabel.text = newRegion.name
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "regionSegue",
+            let regionVC = segue.destination as? RegionViewController else { return }
+        regionVC.delegate = self
+    }
+    
+    
+    //MARK: - Work with table
     
     private func removeCheckmarks(except exceptedRow: Int) {
         for i in 0..<tableView.numberOfRows(inSection: colorThemeSection) {
@@ -93,13 +111,13 @@ class SettingsTableViewController: UITableViewController {
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         changeColorTheme(row: indexPath.row)
         removeCheckmarks(except: indexPath.row)
-        print(UserDefaults.standard.overridedUserInterfaceStyle.rawValue)
     }
     
     func configureProfileSectionCells(at indexPath: IndexPath) {
         if indexPath.row == 0 {
             showNameChangeAlertController()
-            
+        } else if indexPath.row == 1 {
+            performSegue(withIdentifier: "regionSegue", sender: self)
         }
     }
     

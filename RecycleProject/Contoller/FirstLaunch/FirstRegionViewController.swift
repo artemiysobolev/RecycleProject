@@ -5,26 +5,37 @@
 
 import UIKit
 
-class CityViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class FirstRegionViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    @IBOutlet weak var cityPickerView: UIPickerView!
-    let regions = ["Санкт-Петербург", "Москва", "Хантымансийский автономный округ", "Череповец"]
+    @IBOutlet weak var regionPickerView: UIPickerView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    private var regions: [Region] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        regionPickerView.alpha = 0
+        activityIndicator.startAnimating()
+        activityIndicator.hidesWhenStopped = true
+        
+        FirebaseService.getRegions { [weak self] (regions) in
+            guard let self = self else { return }
+            self.regions = regions
+            self.regionPickerView.reloadAllComponents()
+            self.activityIndicator.stopAnimating()
+            self.regionPickerView.alpha = 1
+        }
     }
     
     @IBAction func doneButtonTapped(_ sender: UIButton) {
         UserDefaults.standard.setLaunchedBefore(value: true)
-        UserDefaults.standard.setRegion(value: regions[cityPickerView.selectedRow(inComponent: 0)])
-
-        
+        let region = regions[regionPickerView.selectedRow(inComponent: 0)]
+        UserDefaults.standard.setRegion(value: region)
+            
         DispatchQueue.main.async {
             let sb = UIStoryboard(name: "Main", bundle: nil)
             let mainVC = sb.instantiateInitialViewController() as! UITabBarController
             mainVC.modalPresentationStyle = .fullScreen
             self.present(mainVC, animated: false)
-            
         }
     }
     
@@ -38,6 +49,6 @@ class CityViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         guard regions.indices.contains(row) else { return nil }
-        return regions[row]
+        return regions[row].name
     }
 }

@@ -12,7 +12,6 @@ class FirebaseService {
     
     static func downloadImage (urlString: String, completionHandler: @escaping(_ imageData: UIImage)->()) {
         
-        
         if let cachedImage = imageCache.object(forKey: urlString as NSString) {
             completionHandler(cachedImage)
         } else {
@@ -30,6 +29,28 @@ class FirebaseService {
                     DispatchQueue.main.async {
                         completionHandler(image)
                     }
+                }
+            }
+        }
+    }
+    
+    
+    static func getRegions (completionHandler: @escaping(_ regions: [Region])->()) {
+        DispatchQueue.global().async {
+            Firestore.firestore().collection("Regions").getDocuments { (snapshot, error) in
+                guard let snapshot = snapshot,
+                    error == nil else {
+                        print(error!.localizedDescription)
+                        return
+                }
+                
+                var regions: [Region] = []
+                for document in snapshot.documents {
+                    let region = Region(documentSnapshot: document)
+                    regions.append(region)
+                }
+                DispatchQueue.main.async {
+                    completionHandler(regions)
                 }
             }
         }

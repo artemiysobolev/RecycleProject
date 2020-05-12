@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--First Launch View Controller-->
+        <!--First Present View Controller-->
         <scene sceneID="jr8-mD-MyK">
             <objects>
-                <viewController storyboardIdentifier="FirstLaunchViewController" id="cYE-eO-2Tj" customClass="FirstLaunchViewController" customModule="Ресайкл" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstLaunchViewController" id="cYE-eO-2Tj" customClass="FirstPresentViewController" customModule="Ресайкл" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nov-By-9zZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,10 +80,10 @@
             </objects>
             <point key="canvasLocation" x="-959" y="7"/>
         </scene>
-        <!--Name View Controller-->
+        <!--First Username View Controller-->
         <scene sceneID="mSn-1u-jHg">
             <objects>
-                <viewController modalPresentationStyle="pageSheet" id="hua-qe-mB5" customClass="NameViewController" customModule="Ресайкл" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="pageSheet" id="hua-qe-mB5" customClass="FirstUsernameViewController" customModule="Ресайкл" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="whe-e6-THt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -144,10 +144,10 @@
             </objects>
             <point key="canvasLocation" x="-220" y="7"/>
         </scene>
-        <!--City View Controller-->
+        <!--First Region View Controller-->
         <scene sceneID="26z-Iu-hks">
             <objects>
-                <viewController modalPresentationStyle="pageSheet" id="pBl-Ev-Upt" customClass="CityViewController" customModule="Ресайкл" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="pageSheet" id="pBl-Ev-Upt" customClass="FirstRegionViewController" customModule="Ресайкл" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Oni-5R-eZo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -190,19 +190,29 @@
                                     <constraint firstItem="WCG-Fm-GyQ" firstAttribute="width" secondItem="4pC-5D-BEO" secondAttribute="width" id="f4c-Fl-jGL"/>
                                 </constraints>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Aaa-0b-9sE">
+                                <rect key="frame" x="197" y="394" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="R6j-U6-eL4"/>
+                                    <constraint firstAttribute="width" constant="20" id="Usa-hC-fdm"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" name="CustomBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="4pC-5D-BEO" firstAttribute="leading" secondItem="Oni-5R-eZo" secondAttribute="leading" id="5O0-aU-ut7"/>
+                            <constraint firstItem="Aaa-0b-9sE" firstAttribute="centerY" secondItem="Sn7-rX-CIE" secondAttribute="centerY" id="SPV-hJ-wws"/>
                             <constraint firstItem="4pC-5D-BEO" firstAttribute="centerX" secondItem="Sn7-rX-CIE" secondAttribute="centerX" id="bju-eU-M9R"/>
                             <constraint firstItem="Sn7-rX-CIE" firstAttribute="trailing" secondItem="4pC-5D-BEO" secondAttribute="trailing" id="nbX-x4-EEN"/>
                             <constraint firstItem="4pC-5D-BEO" firstAttribute="centerY" secondItem="Sn7-rX-CIE" secondAttribute="centerY" id="tpu-Pm-1do"/>
+                            <constraint firstItem="Aaa-0b-9sE" firstAttribute="centerX" secondItem="Sn7-rX-CIE" secondAttribute="centerX" id="whe-jz-Tt7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Sn7-rX-CIE"/>
                     </view>
                     <navigationItem key="navigationItem" id="EDC-fd-QbU"/>
                     <connections>
-                        <outlet property="cityPickerView" destination="WCG-Fm-GyQ" id="0Ad-hF-iVa"/>
+                        <outlet property="activityIndicator" destination="Aaa-0b-9sE" id="Ddg-G1-1nN"/>
+                        <outlet property="regionPickerView" destination="WCG-Fm-GyQ" id="0Ad-hF-iVa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EZN-H5-LF7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -5,7 +5,7 @@
 
 import UIKit
 
-class FirstLaunchViewController: UIViewController {
+class FirstPresentViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
