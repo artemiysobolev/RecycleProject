@@ -9,11 +9,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
+    func changeUIStyle(UIStyle: UIUserInterfaceStyle) {
+        UserDefaults.standard.overridedUserInterfaceStyle = UIStyle
+        window?.overrideUserInterfaceStyle = UIStyle
+    }
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
+                
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
+        window?.overrideUserInterfaceStyle = UserDefaults.standard.overridedUserInterfaceStyle
         if UserDefaults.standard.isLaunchedBefore() {
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
             window?.rootViewController = vc

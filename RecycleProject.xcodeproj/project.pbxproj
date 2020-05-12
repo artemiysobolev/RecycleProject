@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5029F145AF08780B5160089D /* Pods_RecycleProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C22BC092EBB98058483472 /* Pods_RecycleProject.framework */; };
+		BA47BBB4246ABD4B00218493 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47BBB3246ABD4B00218493 /* SettingsTableViewController.swift */; };
 		BA7788DD2467485600545B8D /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7788DC2467485600545B8D /* NewsViewController.swift */; };
 		BA7788E22467497500545B8D /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7788E12467497500545B8D /* UserDefaults+Extension.swift */; };
 		BA7788E424674C4200545B8D /* FirstLaunch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA7788E324674C4200545B8D /* FirstLaunch.storyboard */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		9D5908EE33800C9506C4A98C /* Pods-RecycleProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecycleProject.debug.xcconfig"; path = "Target Support Files/Pods-RecycleProject/Pods-RecycleProject.debug.xcconfig"; sourceTree = "<group>"; };
+		BA47BBB3246ABD4B00218493 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		BA7788DC2467485600545B8D /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		BA7788E12467497500545B8D /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		BA7788E324674C4200545B8D /* FirstLaunch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstLaunch.storyboard; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				BA7788DC2467485600545B8D /* NewsViewController.swift */,
 				BA7788EE2467542900545B8D /* NewsViewControllerExtension.swift */,
 				BAA305CB2469782F0042EE97 /* NewsItemViewController.swift */,
+				BA47BBB3246ABD4B00218493 /* SettingsTableViewController.swift */,
 			);
 			path = Contoller;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA95FDAC2465E10A001E112A /* AppDelegate.swift in Sources */,
+				BA47BBB4246ABD4B00218493 /* SettingsTableViewController.swift in Sources */,
 				BA7788EF2467542900545B8D /* NewsViewControllerExtension.swift in Sources */,
 				BA7788E724674DB400545B8D /* FirstLaunchViewController.swift in Sources */,
 				BA7788ED2467533600545B8D /* NewsTableViewCell.swift in Sources */,

@@ -28,7 +28,6 @@ class CityViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         }
     }
     
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1
     }

@@ -317,7 +317,7 @@
         <!--Настройки-->
         <scene sceneID="Xjp-bn-47Y">
             <objects>
-                <tableViewController id="YIS-HT-WWh" sceneMemberID="viewController">
+                <tableViewController id="YIS-HT-WWh" customClass="SettingsTableViewController" customModule="Ресайкл" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="lfV-5Y-hLa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -391,6 +391,9 @@
                                                                 <constraint firstAttribute="width" constant="49" id="HH1-vL-oCV"/>
                                                             </constraints>
                                                             <color key="onTintColor" name="CustomTabBarTintColor"/>
+                                                            <connections>
+                                                                <action selector="notificationsSwitchValueChanged:" destination="YIS-HT-WWh" eventType="valueChanged" id="AmW-6k-Bgd"/>
+                                                            </connections>
                                                         </switch>
                                                     </subviews>
                                                 </stackView>
@@ -505,15 +508,15 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Оформление" id="Xa6-sv-KvZ">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" rowHeight="50" id="ie0-8v-i2h">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="50" id="ie0-8v-i2h">
                                         <rect key="frame" x="16" y="546" width="343" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ie0-8v-i2h" id="xSz-kF-zOe">
-                                            <rect key="frame" x="0.0" y="0.0" width="304" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Из настроек телефона" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98g-6F-GRA">
-                                                    <rect key="frame" x="20" y="14.666666666666664" width="264" height="21"/>
+                                                    <rect key="frame" x="20" y="14.666666666666664" width="303" height="21"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -535,7 +538,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тёмное" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lME-vt-Ghv">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Светлое" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lME-vt-Ghv">
                                                     <rect key="frame" x="20" y="14.666666666666664" width="303" height="21"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                                     <nil key="textColor"/>
@@ -558,7 +561,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Светлое" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJU-VQ-a9T">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тёмное" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJU-VQ-a9T">
                                                     <rect key="frame" x="20" y="14.666666666666664" width="303" height="21"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                                     <nil key="textColor"/>
@@ -583,6 +586,12 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Настройки" image="gear" catalog="system" id="Msw-bY-Imc"/>
+                    <connections>
+                        <outlet property="notificationsSwitch" destination="7l7-o0-CPS" id="cmu-WS-VfE"/>
+                        <outlet property="regionPlaceholderLabel" destination="kt9-pS-L9i" id="SWm-3C-CRG"/>
+                        <outlet property="usernameLabel" destination="gHh-iS-cAI" id="V0v-4Z-wIu"/>
+                        <outlet property="usernamePlaceholderLabel" destination="Yuy-Ob-pO7" id="F30-Q7-hoA"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g03-Xx-7Ku" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
