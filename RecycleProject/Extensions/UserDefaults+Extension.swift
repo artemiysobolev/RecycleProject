@@ -29,12 +29,16 @@ extension UserDefaults {
     
     //MARK: - Favorite publishers
     
-    func setFavoritePublishers(value: [String]) {
-        set(value, forKey: UserDefaultsKeys.favoritePublishers.rawValue)
+    func setFavoritePublishers(value: [Publisher]) {
+        if let encoded = try? JSONEncoder().encode(value) {
+            set(encoded, forKey: UserDefaultsKeys.favoritePublishers.rawValue)
+        }
     }
     
-    func getFavoritePublishers() -> [String] {
-        return array(forKey: UserDefaultsKeys.favoritePublishers.rawValue) as? [String] ?? []
+    func getFavoritePublishers() -> [Publisher] {
+        guard let savedValue = UserDefaults.standard.object(forKey: UserDefaultsKeys.favoritePublishers.rawValue) as? Data,
+            let loadedValue = try? JSONDecoder().decode([Publisher].self, from: savedValue) else { return [] }
+        return loadedValue
     }
     
     //MARK: - Is application launched before

@@ -5,24 +5,13 @@
 
 import UIKit
 
-enum tableViewSections: Int {
-    case usernameSection
-    case notificationSection
-    case profileSection
-    case colorThemeSection
-}
-
-enum UIStyle: Int {
-    case unspecified
-    case light
-    case dark
-}
-
 protocol SettingsTableViewControllerDelegate {
     func changeRegion(newRegion: Region)
+    func changeFavoritePublishers(newPublishers: [Publisher])
 }
 
 class SettingsTableViewController: UITableViewController, SettingsTableViewControllerDelegate {
+
     
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var usernamePlaceholderLabel: UILabel!
@@ -57,10 +46,21 @@ class SettingsTableViewController: UITableViewController, SettingsTableViewContr
         regionPlaceholderLabel.text = newRegion.name
     }
     
+    func changeFavoritePublishers(newPublishers: [Publisher]) {
+        UserDefaults.standard.setFavoritePublishers(value: newPublishers)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "regionSegue",
-            let regionVC = segue.destination as? RegionViewController else { return }
-        regionVC.delegate = self
+        
+        switch segue.identifier {
+        case "regionSegue":
+            guard let regionVC = segue.destination as? RegionViewController else { return }
+            regionVC.delegate = self
+        default:
+            guard let publisherVC = segue.destination as? PublisherViewController else { return }
+            publisherVC.delegate = self
+        }
+        
     }
     
     
@@ -117,17 +117,22 @@ class SettingsTableViewController: UITableViewController, SettingsTableViewContr
     }
     
     func configureProfileSectionCells(at indexPath: IndexPath) {
-        if indexPath.row == 0 {
+        switch ProfileSection(rawValue: indexPath.row) {
+        case .usernameCell:
             showNameChangeAlertController()
-        } else if indexPath.row == 1 {
+        case .regionCell:
             performSegue(withIdentifier: "regionSegue", sender: self)
+        case .publishersCell:
+            performSegue(withIdentifier: "publishersSegue", sender: self)
+        default:
+            break
         }
     }
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        switch tableViewSections(rawValue: indexPath.section) {
+        switch TableViewSections(rawValue: indexPath.section) {
         case .profileSection:
             configureProfileSectionCells(at: indexPath)
         case .colorThemeSection:

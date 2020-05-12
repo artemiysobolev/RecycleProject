@@ -607,6 +607,7 @@
                         <outlet property="usernameLabel" destination="gHh-iS-cAI" id="V0v-4Z-wIu"/>
                         <outlet property="usernamePlaceholderLabel" destination="Yuy-Ob-pO7" id="F30-Q7-hoA"/>
                         <segue destination="84o-E0-nAd" kind="show" identifier="regionSegue" id="SI3-fJ-uEx"/>
+                        <segue destination="VmM-bN-CTG" kind="show" identifier="publishersSegue" id="KNt-ci-Uln"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g03-Xx-7Ku" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -659,12 +660,64 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="tableView" destination="onP-TA-vEs" id="f3Z-jv-Zjk"/>
+                        <outlet property="tableView" destination="onP-TA-vEs" id="5HX-Jz-cIR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Npp-Ra-SHe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1143.2" y="1650"/>
+            <point key="canvasLocation" x="-900" y="1401"/>
+        </scene>
+        <!--Publisher View Controller-->
+        <scene sceneID="vgG-KE-PVw">
+            <objects>
+                <viewController id="VmM-bN-CTG" customClass="PublisherViewController" customModule="Ресайкл" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aBB-lQ-TMI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Thm-NO-sbJ">
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <color key="backgroundColor" name="CustomDarkBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PublisherCell" id="2pE-zI-nQK">
+                                        <rect key="frame" x="0.0" y="55.333332061767578" width="375" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2pE-zI-nQK" id="eXV-b1-Clg">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="tintColor" name="CustomTabBarTintColor"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="VmM-bN-CTG" id="8AO-dM-CJD"/>
+                                    <outlet property="delegate" destination="VmM-bN-CTG" id="AGx-Hb-8ei"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" name="CustomDarkBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Thm-NO-sbJ" firstAttribute="bottom" secondItem="M4O-qL-Kw9" secondAttribute="bottom" id="YAm-sd-4Lz"/>
+                            <constraint firstItem="Thm-NO-sbJ" firstAttribute="top" secondItem="M4O-qL-Kw9" secondAttribute="top" id="dbF-5R-Eie"/>
+                            <constraint firstItem="Thm-NO-sbJ" firstAttribute="trailing" secondItem="M4O-qL-Kw9" secondAttribute="trailing" id="ljL-9K-gWO"/>
+                            <constraint firstItem="Thm-NO-sbJ" firstAttribute="leading" secondItem="M4O-qL-Kw9" secondAttribute="leading" id="xYE-XG-sOX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="M4O-qL-Kw9"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6SE-cA-Pbs">
+                        <barButtonItem key="rightBarButtonItem" title="Сохранить" id="aHN-gx-vkN">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="VmM-bN-CTG" id="XMv-Ol-ACJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Thm-NO-sbJ" id="cYI-DZ-fE1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BQg-Hi-NOe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-900" y="2118.4729064039411"/>
         </scene>
         <!--Лента-->
         <scene sceneID="Zb3-5a-wj5">

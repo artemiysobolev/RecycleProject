@@ -6,7 +6,7 @@
 import UIKit
 import Firebase
 
-struct Publisher: genericFirebaseDataProtocol {
+struct Publisher: genericFirebaseDataProtocol, Codable {
     let id: Int
     let name: String
     

@@ -12,6 +12,8 @@
 		BA47BBBA246B038000218493 /* RegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47BBB9246B038000218493 /* RegionViewController.swift */; };
 		BA47BBBC246B041800218493 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47BBBB246B041800218493 /* Region.swift */; };
 		BA47BBBE246B332500218493 /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47BBBD246B332500218493 /* Publisher.swift */; };
+		BA47BBC6246B545B00218493 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47BBC5246B545B00218493 /* Settings.swift */; };
+		BA47BBC8246B5CB400218493 /* PublisherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47BBC7246B5CB400218493 /* PublisherViewController.swift */; };
 		BA7788DD2467485600545B8D /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7788DC2467485600545B8D /* NewsViewController.swift */; };
 		BA7788E22467497500545B8D /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7788E12467497500545B8D /* UserDefaults+Extension.swift */; };
 		BA7788E424674C4200545B8D /* FirstLaunch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA7788E324674C4200545B8D /* FirstLaunch.storyboard */; };
@@ -37,6 +39,8 @@
 		BA47BBB9246B038000218493 /* RegionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionViewController.swift; sourceTree = "<group>"; };
 		BA47BBBB246B041800218493 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		BA47BBBD246B332500218493 /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
+		BA47BBC5246B545B00218493 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		BA47BBC7246B5CB400218493 /* PublisherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublisherViewController.swift; sourceTree = "<group>"; };
 		BA7788DC2467485600545B8D /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		BA7788E12467497500545B8D /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		BA7788E324674C4200545B8D /* FirstLaunch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstLaunch.storyboard; sourceTree = "<group>"; };
@@ -135,6 +139,7 @@
 				BAC41B8424688BB700DAEAA4 /* NewsItem.swift */,
 				BA47BBBB246B041800218493 /* Region.swift */,
 				BA47BBBD246B332500218493 /* Publisher.swift */,
+				BA47BBC5246B545B00218493 /* Settings.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -158,6 +163,7 @@
 				BAA305CB2469782F0042EE97 /* NewsItemViewController.swift */,
 				BA47BBB3246ABD4B00218493 /* SettingsTableViewController.swift */,
 				BA47BBB9246B038000218493 /* RegionViewController.swift */,
+				BA47BBC7246B5CB400218493 /* PublisherViewController.swift */,
 			);
 			path = Contoller;
 			sourceTree = "<group>";
@@ -312,6 +318,7 @@
 				BA95FDAC2465E10A001E112A /* AppDelegate.swift in Sources */,
 				BA47BBB4246ABD4B00218493 /* SettingsTableViewController.swift in Sources */,
 				BA7788EF2467542900545B8D /* NewsViewControllerExtension.swift in Sources */,
+				BA47BBC6246B545B00218493 /* Settings.swift in Sources */,
 				BA7788E724674DB400545B8D /* FirstPresentViewController.swift in Sources */,
 				BA47BBBA246B038000218493 /* RegionViewController.swift in Sources */,
 				BA7788ED2467533600545B8D /* NewsTableViewCell.swift in Sources */,
@@ -325,6 +332,7 @@
 				BAC41B8524688BB700DAEAA4 /* NewsItem.swift in Sources */,
 				BA7788E924674DC400545B8D /* FirstUsernameViewController.swift in Sources */,
 				BA7788EB24674DD500545B8D /* FirstRegionViewController.swift in Sources */,
+				BA47BBC8246B5CB400218493 /* PublisherViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
