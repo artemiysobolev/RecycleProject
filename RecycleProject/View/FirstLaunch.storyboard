@@ -83,13 +83,13 @@
         <!--Name View Controller-->
         <scene sceneID="mSn-1u-jHg">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="hua-qe-mB5" customClass="NameViewController" customModule="Ресайкл" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="pageSheet" id="hua-qe-mB5" customClass="NameViewController" customModule="Ресайкл" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="whe-e6-THt">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="118" translatesAutoresizingMaskIntoConstraints="NO" id="uX7-ae-3DH">
-                                <rect key="frame" x="20" y="269.5" width="374" height="367.5"/>
+                                <rect key="frame" x="20" y="220.5" width="374" height="367.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Как тебя зовут?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHS-CP-ufj">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="39"/>
@@ -147,13 +147,13 @@
         <!--City View Controller-->
         <scene sceneID="26z-Iu-hks">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="pBl-Ev-Upt" customClass="CityViewController" customModule="Ресайкл" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="pageSheet" id="pBl-Ev-Upt" customClass="CityViewController" customModule="Ресайкл" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Oni-5R-eZo">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="4pC-5D-BEO">
-                                <rect key="frame" x="0.0" y="282.5" width="414" height="341"/>
+                                <rect key="frame" x="0.0" y="233.5" width="414" height="341"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выбери регион" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZJ-2X-cKC">
                                         <rect key="frame" x="92.5" y="0.0" width="229" height="39"/>
@@ -166,6 +166,10 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="216" id="tK1-ul-vTE"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="dataSource" destination="pBl-Ev-Upt" id="fHN-c9-JWs"/>
+                                            <outlet property="delegate" destination="pBl-Ev-Upt" id="iA2-xa-mBe"/>
+                                        </connections>
                                     </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDG-62-Otl">
                                         <rect key="frame" x="121.5" y="289" width="171" height="52"/>

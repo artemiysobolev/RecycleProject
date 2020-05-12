@@ -16,6 +16,9 @@ class NameViewController: UIViewController {
     }
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {
+        guard let username = nameTextField.text, username != "" else { return }
+        
+        UserDefaults.standard.setUsername(value: username)
     }
     
 }

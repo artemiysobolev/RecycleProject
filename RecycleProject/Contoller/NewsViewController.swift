@@ -37,14 +37,7 @@ class NewsViewController: UIViewController {
             }
             self.news = _news
             self.tableView.reloadData()
-            
-            for i in self.news {
-                print(i)
-            }
-            
         }
-        
-        print("NewsViewController did load")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
