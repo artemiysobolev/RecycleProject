@@ -5,6 +5,13 @@
 
 import UIKit
 
+enum tableViewSections: Int {
+    case usernameSection
+    case notificationSection
+    case profileSection
+    case colorThemeSection
+}
+
 enum UIStyle: Int {
     case unspecified
     case light
@@ -23,7 +30,7 @@ class SettingsTableViewController: UITableViewController {
     }
     
     @IBAction func notificationsSwitchValueChanged(_ sender: UISwitch) {
-
+        
         if notificationsSwitch.isOn {
             UserDefaults.standard.setNotificationsEnabled(value: true)
             print("Notifications enabled")
@@ -41,14 +48,6 @@ class SettingsTableViewController: UITableViewController {
         notificationsSwitch.setOn(UserDefaults.standard.isNotificationsEnabled(), animated: false)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-//        let currentIndexPath = IndexPath(row: UserDefaults.standard.overridedUserInterfaceStyle.rawValue,
-//                                         section: colorThemeSection)
-//        tableView.cellForRow(at: currentIndexPath)?.accessoryType = .checkmark
-//        removeCheckmarks(except: currentIndexPath.row)
-    }
-    
     private func removeCheckmarks(except exceptedRow: Int) {
         for i in 0..<tableView.numberOfRows(inSection: colorThemeSection) {
             if i != exceptedRow {
@@ -56,31 +55,67 @@ class SettingsTableViewController: UITableViewController {
             }
         }
     }
-
+    
     private func changeColorTheme(row: Int) {
         guard let scene = self.view.window?.windowScene?.delegate as? SceneDelegate else { return }
-
-        switch row {
-        case UIStyle.unspecified.rawValue :
+        
+        switch UIStyle(rawValue: row) {
+        case .unspecified:
             scene.changeUIStyle(UIStyle: .unspecified)
-        case UIStyle.light.rawValue :
+        case .light:
             scene.changeUIStyle(UIStyle: .light)
-        case UIStyle.dark.rawValue :
+        case .dark:
             scene.changeUIStyle(UIStyle: .dark)
         default:
             break
         }
     }
     
+    private func showNameChangeAlertController () {
+        let alert = UIAlertController(title: "Новое имя", message: "Введи новое имя:", preferredStyle: .alert)
+        alert.addTextField(configurationHandler: nil)
+        alert.addAction(UIAlertAction(title: "Отменить", style: .destructive))
+        alert.addAction(UIAlertAction(title: "Сохранить", style: .cancel, handler: { [weak self] _ in
+            guard let self = self,
+                let newUsername = alert.textFields?.first?.text,
+                newUsername != "" else { return }
+            UserDefaults.standard.setUsername(value: newUsername)
+            DispatchQueue.main.async {
+                self.usernameLabel.text = UserDefaults.standard.getUsername()
+                self.usernamePlaceholderLabel.text = UserDefaults.standard.getUsername()
+            }
+        }))
+        present(alert, animated: true)
+    }
+    
+    private func configureThemeSectionCells(at indexPath: IndexPath) {
+        
+        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+        changeColorTheme(row: indexPath.row)
+        removeCheckmarks(except: indexPath.row)
+        print(UserDefaults.standard.overridedUserInterfaceStyle.rawValue)
+    }
+    
+    func configureProfileSectionCells(at indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            showNameChangeAlertController()
+            
+        }
+    }
+    
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == colorThemeSection {
-            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-            tableView.deselectRow(at: indexPath, animated: true)
-            changeColorTheme(row: indexPath.row)
-            removeCheckmarks(except: indexPath.row)
-            print(UserDefaults.standard.overridedUserInterfaceStyle.rawValue)
+        
+        switch tableViewSections(rawValue: indexPath.section) {
+        case .profileSection:
+            configureProfileSectionCells(at: indexPath)
+        case .colorThemeSection:
+            configureThemeSectionCells(at: indexPath)
+        default:
+            break
         }
+        tableView.deselectRow(at: indexPath, animated: true)
+        
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
