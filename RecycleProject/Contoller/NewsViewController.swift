@@ -29,7 +29,10 @@ class NewsViewController: UIViewController {
         FirebaseService.getData(collectionPath: "News", filterBy: "publisher", filterArray: favoritePublishers) { [weak self] (data: [NewsItem]) in
             guard let self = self else { return }
             self.news.removeAll()
-            self.news = data
+            let sortedData = data.sorted { (item1, item2) -> Bool in
+                item1.date > item2.date
+            }
+            self.news = sortedData
             self.tableView.reloadData()
             if self.news.count == 0 {
                 self.emptyFeedLabel.isHidden = false
