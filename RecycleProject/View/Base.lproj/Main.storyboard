@@ -30,7 +30,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="345" height="362"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rsv-yn-iDZ">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rsv-yn-iDZ" customClass="UIImageViewFromFirebase" customModule="Ресайкл" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="345" height="215.66666666666666"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Rsv-yn-iDZ" secondAttribute="height" multiplier="16:10" id="mjZ-71-aTR"/>
@@ -157,7 +157,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o3q-7l-NvF">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="blD-R3-a7Y">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="blD-R3-a7Y" customClass="UIImageViewFromFirebase" customModule="Ресайкл" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="234.33333333333334"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="blD-R3-a7Y" secondAttribute="height" multiplier="16:10" id="urA-0R-LsI"/>

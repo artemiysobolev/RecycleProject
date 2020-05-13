@@ -14,7 +14,7 @@ class NewsItemViewController: UIViewController {
         return df
     }
     
-    @IBOutlet weak var newsImageView: UIImageView!
+    @IBOutlet weak var newsImageView: UIImageViewFromFirebase!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var publisherLabel: UILabel!
@@ -27,9 +27,6 @@ class NewsItemViewController: UIViewController {
         publisherLabel.text = newsItem.publisher
         bodyTextView.text = newsItem.body
         dateLabel.text = dateFormatter.string(from: newsItem.date)
-        
-        FirebaseService.downloadImage(urlString: newsItem.imageUrlString) { image in
-                self.newsImageView.image = image
-        }
+        newsImageView.loadImageUsingUrlString(urlString: newsItem.imageUrlString)
     }
 }

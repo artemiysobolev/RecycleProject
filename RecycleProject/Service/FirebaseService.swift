@@ -11,37 +11,9 @@ protocol genericFirebaseDataProtocol {
 }
 
 var imageCache = NSCache<NSString, UIImage>()
+let maxSize: Int64 = 5 * 1024 * 1024 // 5 MB
 
 class FirebaseService {
-    
-    static func downloadImage (urlString: String, completionHandler: @escaping(_ imageData: UIImage)->()) {
-        
-        let imageUrlString = urlString
-        
-        if let cachedImage = imageCache.object(forKey: urlString as NSString) {
-            completionHandler(cachedImage)
-        } else {
-            let maxSize: Int64 = 1 * 1024 * 1024
-            
-            DispatchQueue.global().async {
-                Storage.storage().reference(forURL: urlString).getData(maxSize: maxSize) { (data, error) in
-                    guard let imageData = data,
-                        error == nil else {
-                            print(error!.localizedDescription)
-                            return
-                    }
-                    DispatchQueue.main.async {
-                        guard let image = UIImage(data: imageData) else { return }
-                        if imageUrlString == urlString {
-                            completionHandler(image)
-                        }
-                        imageCache.setObject(image, forKey: urlString as NSString)
-                        completionHandler(image)
-                    }
-                }
-            }
-        }
-    }
     
     static func getData<T: genericFirebaseDataProtocol>(collectionPath: String, filterBy: String? = nil, filterArray: [String]? = nil, completionHandler: @escaping(_ data: [T])->()) {
         
@@ -80,4 +52,43 @@ class FirebaseService {
             }
         }
     }
+}
+
+class UIImageViewFromFirebase: UIImageView {
+    
+    var imageUrlString: String?
+    
+    func loadImageUsingUrlString(urlString: String) {
+        
+        imageUrlString = urlString
+        
+        guard let url = URL(string: urlString) else { return }
+        
+        image = nil
+        
+        if let imageFromCache = imageCache.object(forKey: urlString as NSString) {
+            self.image = imageFromCache
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url, completionHandler: { (data, respones, error) in
+            
+            if error != nil {
+                print(error ?? "")
+                return
+            }
+            
+            DispatchQueue.main.async {
+                guard let imageToCache = UIImage(data: data!) else { return }
+                
+                if self.imageUrlString == urlString {
+                    self.image = imageToCache
+                }
+                
+                imageCache.setObject(imageToCache, forKey: urlString as NSString)
+            }
+            
+        }).resume()
+    }
+    
 }

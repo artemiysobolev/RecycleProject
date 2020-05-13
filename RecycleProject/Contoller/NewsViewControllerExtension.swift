@@ -24,10 +24,7 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
         cell.publisherLabel.text = newsItem.publisher
         cell.annotationLabel.text = newsItem.annotation
         cell.dateLabel.text = dateFormatter.string(from: newsItem.date)
-        
-        FirebaseService.downloadImage(urlString: newsItem.imageUrlString) { image in
-            cell.newsImageView.image = image
-        }
+        cell.newsImageView.loadImageUsingUrlString(urlString: newsItem.imageUrlString)
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
