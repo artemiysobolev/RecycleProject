@@ -16,6 +16,8 @@ class FirebaseService {
     
     static func downloadImage (urlString: String, completionHandler: @escaping(_ imageData: UIImage)->()) {
         
+        let imageUrlString = urlString
+        
         if let cachedImage = imageCache.object(forKey: urlString as NSString) {
             completionHandler(cachedImage)
         } else {
@@ -28,9 +30,12 @@ class FirebaseService {
                             print(error!.localizedDescription)
                             return
                     }
-                    guard let image = UIImage(data: imageData) else { return }
-                    imageCache.setObject(image, forKey: urlString as NSString)
                     DispatchQueue.main.async {
+                        guard let image = UIImage(data: imageData) else { return }
+                        if imageUrlString == urlString {
+                            completionHandler(image)
+                        }
+                        imageCache.setObject(image, forKey: urlString as NSString)
                         completionHandler(image)
                     }
                 }
