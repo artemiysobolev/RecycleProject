@@ -38,9 +38,18 @@ class FirebaseService {
         }
     }
     
-    static func getData<T: genericFirebaseDataProtocol> (collectionPath: String, completionHandler: @escaping(_ data: [T])->()) {
+    static func getData<T: genericFirebaseDataProtocol>(collectionPath: String, filterBy: String? = nil, filterArray: [String]? = nil, completionHandler: @escaping(_ data: [T])->()) {
+        
+        var query: Query
+        
+        if let filterBy = filterBy, let filterArray = filterArray {
+            query = Firestore.firestore().collection(collectionPath).whereField(filterBy, in: filterArray)
+        } else {
+            query = Firestore.firestore().collection(collectionPath)
+        }
+        
         DispatchQueue.global().async {
-            Firestore.firestore().collection(collectionPath).getDocuments { (snapshot, error) in
+            query.getDocuments { (snapshot, error) in
                 guard let snapshot = snapshot,
                     error == nil else {
                         print(error!.localizedDescription)
@@ -61,4 +70,29 @@ class FirebaseService {
             }
         }
     }
+    
+//
+//    static func getData<T: genericFirebaseDataProtocol> (collectionPath: String, completionHandler: @escaping(_ data: [T])->()) {
+//        DispatchQueue.global().async {
+//            Firestore.firestore().collection(collectionPath).getDocuments { (snapshot, error) in
+//                guard let snapshot = snapshot,
+//                    error == nil else {
+//                        print(error!.localizedDescription)
+//                        return
+//                }
+//
+//                var data: [T] = []
+//                for document in snapshot.documents {
+//                    if let dataItem = T(documentSnapshot: document) {
+//                        data.append(dataItem)
+//                    } else {
+//                        print("Some problem with init this document: \(document.documentID)")
+//                    }
+//                }
+//                DispatchQueue.main.async {
+//                    completionHandler(data)
+//                }
+//            }
+//        }
+//    }
 }

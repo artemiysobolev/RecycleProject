@@ -17,14 +17,21 @@ class NewsViewController: UIViewController {
 
 
     override func viewDidLoad() {
+        var favoritePublishers = [String]()
+        for publisher in UserDefaults.standard.getFavoritePublishers() {
+            favoritePublishers.append(publisher.name)
+        }
+        
         tableView.estimatedRowHeight = 300
         tableView.rowHeight = UITableView.automaticDimension
         
-        FirebaseService.getData(collectionPath: "News") { [weak self] (data: [NewsItem]) in
+        
+        FirebaseService.getData(collectionPath: "News", filterBy: "publisher", filterArray: favoritePublishers) { [weak self] (data: [NewsItem]) in
             guard let self = self else { return }
             self.news = data
             self.tableView.reloadData()
         }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
