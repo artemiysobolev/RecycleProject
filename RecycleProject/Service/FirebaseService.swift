@@ -48,6 +48,11 @@ class FirebaseService {
         var query: Query
         
         if let filterBy = filterBy, let filterArray = filterArray {
+            if filterArray.isEmpty {
+                let result: [T] = []
+                completionHandler(result)
+                return
+            }
             query = Firestore.firestore().collection(collectionPath).whereField(filterBy, in: filterArray)
         } else {
             query = Firestore.firestore().collection(collectionPath)

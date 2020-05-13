@@ -7,14 +7,14 @@ import UIKit
 import Firebase
 
 extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
-    
+        
     private var dateFormatter: DateFormatter {
         let df = DateFormatter()
         df.dateFormat = "dd.MM.yy"
         return df
     }
     
-    
+
     private func configureCell (cell: NewsTableViewCell, for indexPath: IndexPath) {
         
         let newsItem = news[indexPath.section]
@@ -39,7 +39,7 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        news.count
+        return news.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

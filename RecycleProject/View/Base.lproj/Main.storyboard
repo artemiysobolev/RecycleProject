@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="taC-TR-OfB">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="taC-TR-OfB">
                                 <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                                 <color key="backgroundColor" name="CustomDarkBackgroundColor"/>
                                 <color key="separatorColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -114,6 +114,17 @@
                                     <outlet property="delegate" destination="ZTv-IR-XZy" id="TSf-8I-xnY"/>
                                 </connections>
                             </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Новостей нет  🙁" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PD9-bu-aB8">
+                                <rect key="frame" x="0.0" y="356" width="375" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="Y2y-NR-iGM"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="oHd-Es-4WM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" name="CustomDarkBackgroundColor"/>
                         <constraints>
@@ -126,6 +137,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Лента" id="URq-pv-1rF"/>
                     <connections>
+                        <outlet property="emptyFeedLabel" destination="PD9-bu-aB8" id="DG3-5S-Kif"/>
                         <outlet property="tableView" destination="taC-TR-OfB" id="ALe-04-mcc"/>
                         <segue destination="HkV-W3-mqj" kind="show" identifier="NewsItemSegue" id="pGe-71-75Y"/>
                     </connections>
