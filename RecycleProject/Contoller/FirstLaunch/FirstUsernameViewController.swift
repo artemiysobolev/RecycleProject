@@ -11,14 +11,32 @@ class FirstUsernameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        nameTextField.delegate = self
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        view.addGestureRecognizer(tapGesture)
 
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func nextButtonTapped(_ sender: UIButton) {
-        guard let username = nameTextField.text, username != "" else { return }
+    @objc private func handleTap() {
+        view.endEditing(true)
         
-        UserDefaults.standard.setUsername(value: username)
     }
     
+    @IBAction func nextButtonTapped(_ sender: UIButton) {
+        if let username = nameTextField.text,
+            !username.isEmptyOrWhitespace() {
+            UserDefaults.standard.setUsername(value: username.trimmingCharacters(in: .whitespacesAndNewlines))
+            performSegue(withIdentifier: "toRegionSegue", sender: self)
+        }
+        
+    }
+    
+}
+
+extension FirstUsernameViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

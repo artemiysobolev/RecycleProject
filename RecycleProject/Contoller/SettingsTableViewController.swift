@@ -5,10 +5,14 @@
 
 import UIKit
 
+
+//MARK: - Delegate for refresh UserDefaults
 protocol SettingsTableViewControllerDelegate {
     func changeRegion(newRegion: Region)
     func changeFavoritePublishers(newPublishers: [Publisher])
 }
+
+//MARK: - Class
 
 class SettingsTableViewController: UITableViewController, SettingsTableViewControllerDelegate {
 
@@ -62,9 +66,20 @@ class SettingsTableViewController: UITableViewController, SettingsTableViewContr
         }
         
     }
+}
+
+//MARK: - UTTextFieldDelegate
+
+extension SettingsTableViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
     
-    
-    //MARK: - Work with table
+//MARK: - TableView methods
+
+extension SettingsTableViewController {
     
     private func removeCheckmarks(except exceptedRow: Int) {
         for i in 0..<tableView.numberOfRows(inSection: colorThemeSection) {
@@ -73,7 +88,7 @@ class SettingsTableViewController: UITableViewController, SettingsTableViewContr
             }
         }
     }
-    
+
     private func changeColorTheme(row: Int) {
         guard let scene = self.view.window?.windowScene?.delegate as? SceneDelegate else { return }
         
@@ -93,11 +108,12 @@ class SettingsTableViewController: UITableViewController, SettingsTableViewContr
         let alert = UIAlertController(title: "Новое имя", message: "Введи новое имя:", preferredStyle: .alert)
         alert.addTextField(configurationHandler: nil)
         alert.textFields?.first?.tintColor = UIColor(named: "CustomTabBarTintColor")
+        alert.textFields?.first?.delegate = self
         alert.addAction(UIAlertAction(title: "Отменить", style: .destructive))
         let saveAction = UIAlertAction(title: "Сохранить", style: .cancel, handler: { [weak self] _ in
             guard let self = self,
-                let newUsername = alert.textFields?.first?.text,
-                newUsername != "" else { return }
+                let newUsername = alert.textFields?.first?.text?.trimmingCharacters(in: .whitespacesAndNewlines),
+                !newUsername.isEmptyOrWhitespace()  else { return }
             UserDefaults.standard.setUsername(value: newUsername)
             DispatchQueue.main.async {
                 self.usernameLabel.text = UserDefaults.standard.getUsername()

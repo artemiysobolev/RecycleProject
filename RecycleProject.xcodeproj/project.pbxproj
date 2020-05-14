@@ -31,6 +31,10 @@
 		BAA305CF2469B7210042EE97 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA305CE2469B7210042EE97 /* FirebaseService.swift */; };
 		BAAE50A52468550000979F2D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAAE50A42468550000979F2D /* GoogleService-Info.plist */; };
 		BAC41B8524688BB700DAEAA4 /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC41B8424688BB700DAEAA4 /* NewsItem.swift */; };
+		BAEB5703246DBFF600DB3E57 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEB5702246DBFF600DB3E57 /* String+Extension.swift */; };
+		BAEB5705246DF2B600DB3E57 /* HandbookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEB5704246DF2B600DB3E57 /* HandbookTableViewCell.swift */; };
+		BAEB5707246DF2E500DB3E57 /* HandbookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEB5706246DF2E500DB3E57 /* HandbookCollectionViewCell.swift */; };
+		BAEB5709246DF30700DB3E57 /* HandbookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEB5708246DF30700DB3E57 /* HandbookViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +64,10 @@
 		BAA305CE2469B7210042EE97 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		BAAE50A42468550000979F2D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BAC41B8424688BB700DAEAA4 /* NewsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = "<group>"; };
+		BAEB5702246DBFF600DB3E57 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		BAEB5704246DF2B600DB3E57 /* HandbookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookTableViewCell.swift; sourceTree = "<group>"; };
+		BAEB5706246DF2E500DB3E57 /* HandbookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookCollectionViewCell.swift; sourceTree = "<group>"; };
+		BAEB5708246DF30700DB3E57 /* HandbookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookViewController.swift; sourceTree = "<group>"; };
 		C9C22BC092EBB98058483472 /* Pods_RecycleProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecycleProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF6580FD979C52371D7A7A34 /* Pods-RecycleProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecycleProject.release.xcconfig"; path = "Target Support Files/Pods-RecycleProject/Pods-RecycleProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				BA7788E12467497500545B8D /* UserDefaults+Extension.swift */,
+				BAEB5702246DBFF600DB3E57 /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -150,6 +159,8 @@
 				BA95FDB12465E10A001E112A /* Main.storyboard */,
 				BA7788E324674C4200545B8D /* FirstLaunch.storyboard */,
 				BA7788EC2467533600545B8D /* NewsTableViewCell.swift */,
+				BAEB5704246DF2B600DB3E57 /* HandbookTableViewCell.swift */,
+				BAEB5706246DF2E500DB3E57 /* HandbookCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -164,6 +175,7 @@
 				BA47BBB3246ABD4B00218493 /* SettingsTableViewController.swift */,
 				BA47BBB9246B038000218493 /* RegionViewController.swift */,
 				BA47BBC7246B5CB400218493 /* PublisherViewController.swift */,
+				BAEB5708246DF30700DB3E57 /* HandbookViewController.swift */,
 			);
 			path = Contoller;
 			sourceTree = "<group>";
@@ -316,19 +328,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA95FDAC2465E10A001E112A /* AppDelegate.swift in Sources */,
+				BAEB5703246DBFF600DB3E57 /* String+Extension.swift in Sources */,
 				BA47BBB4246ABD4B00218493 /* SettingsTableViewController.swift in Sources */,
 				BA7788EF2467542900545B8D /* NewsViewControllerExtension.swift in Sources */,
 				BA47BBC6246B545B00218493 /* Settings.swift in Sources */,
 				BA7788E724674DB400545B8D /* FirstPresentViewController.swift in Sources */,
 				BA47BBBA246B038000218493 /* RegionViewController.swift in Sources */,
 				BA7788ED2467533600545B8D /* NewsTableViewCell.swift in Sources */,
+				BAEB5709246DF30700DB3E57 /* HandbookViewController.swift in Sources */,
 				BAA305CC2469782F0042EE97 /* NewsItemViewController.swift in Sources */,
 				BA95FDAE2465E10A001E112A /* SceneDelegate.swift in Sources */,
 				BA47BBBE246B332500218493 /* Publisher.swift in Sources */,
 				BAA305CF2469B7210042EE97 /* FirebaseService.swift in Sources */,
 				BA7788E22467497500545B8D /* UserDefaults+Extension.swift in Sources */,
+				BAEB5707246DF2E500DB3E57 /* HandbookCollectionViewCell.swift in Sources */,
 				BA47BBBC246B041800218493 /* Region.swift in Sources */,
 				BA7788DD2467485600545B8D /* NewsViewController.swift in Sources */,
+				BAEB5705246DF2B600DB3E57 /* HandbookTableViewCell.swift in Sources */,
 				BAC41B8524688BB700DAEAA4 /* NewsItem.swift in Sources */,
 				BA7788E924674DC400545B8D /* FirstUsernameViewController.swift in Sources */,
 				BA7788EB24674DD500545B8D /* FirstRegionViewController.swift in Sources */,

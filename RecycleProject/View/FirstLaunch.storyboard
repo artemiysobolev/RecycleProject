@@ -115,7 +115,6 @@
                                         </state>
                                         <connections>
                                             <action selector="nextButtonTapped:" destination="hua-qe-mB5" eventType="touchUpInside" id="YGG-bd-Kqf"/>
-                                            <segue destination="pBl-Ev-Upt" kind="show" id="gbh-gU-C6S"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -139,6 +138,7 @@
                     <navigationItem key="navigationItem" id="Ggg-wo-1ab"/>
                     <connections>
                         <outlet property="nameTextField" destination="KNr-Pb-xRp" id="DLW-lX-nQx"/>
+                        <segue destination="pBl-Ev-Upt" kind="show" identifier="toRegionSegue" id="hkw-BN-EIm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kiO-Gf-uBI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

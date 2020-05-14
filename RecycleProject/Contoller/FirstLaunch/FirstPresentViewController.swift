@@ -15,6 +15,10 @@ class FirstPresentViewController: UIViewController {
     
     @IBAction func okButtonTapped(_ sender: Any) {
         //TODO: Networking checking
+        
+        FirebaseService.getData(collectionPath: "Publishers") { (data: [Publisher]) in
+            UserDefaults.standard.setFavoritePublishers(value: data)
+        }
     }
 
 }
