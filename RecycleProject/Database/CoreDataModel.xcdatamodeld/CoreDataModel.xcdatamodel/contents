@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E266" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Material" representedClassName="Material" syncable="YES" codeGenerationType="class">
+        <attribute name="anotherNames" optional="YES" attributeType="String"/>
         <attribute name="code" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="examples" optional="YES" attributeType="String"/>
+        <attribute name="fullDescription" optional="YES" attributeType="String"/>
         <attribute name="fullName" optional="YES" attributeType="String"/>
-        <attribute name="materialDescription" optional="YES" attributeType="String"/>
+        <attribute name="howToPrepare" optional="YES" attributeType="String"/>
         <attribute name="numberOfRecyclePoints" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="shortDesctiption" optional="YES" attributeType="String"/>
         <attribute name="shortName" optional="YES" attributeType="String"/>
         <relationship name="materialType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MaterialType" inverseName="materials" inverseEntity="MaterialType"/>
     </entity>
@@ -14,7 +18,7 @@
         <relationship name="materials" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Material" inverseName="materialType" inverseEntity="Material"/>
     </entity>
     <elements>
-        <element name="Material" positionX="-362.1640625" positionY="10.11328125" width="128" height="133"/>
-        <element name="MaterialType" positionX="-56.18359375" positionY="55.5234375" width="128" height="88"/>
+        <element name="Material" positionX="3187.421875" positionY="4739.97265625" width="128" height="193"/>
+        <element name="MaterialType" positionX="3436.8125" positionY="4783.0625" width="128" height="88"/>
     </elements>
 </model>
