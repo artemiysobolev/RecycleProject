@@ -3,24 +3,40 @@
 <plist version="1.0">
 <array>
 	<dict>
-		<key>code</key>
-		<integer>1</integer>
-		<key>numberOfRecyclePoints</key>
-		<integer>0</integer>
-		<key>shortName</key>
-		<string>PET</string>
-		<key>shortDescription</key>
-		<string>Распространённая в России упаковка из пластика, популярная у заготовителей и переработчиков.</string>
-		<key>fullName</key>
-		<string>Полиэтилентерефталат</string>
-		<key>fullDescription</key>
-		<string>PET-упаковка бывает трёх видов:\n - Выдувная(банки и бутылки с характерной точкой на дне)\n- PET-коррекс (листовой пластик, из которого выдавливают упаковку типа контейнеров)\n- Плёнка.\nКаждая из разновидностей имеет разную плотность, поэтому перерабатывается отдельно друг от друга.Листовой PET и плёнку принимают намного реже и на это нужно обращать внимание при выборе пункта приёма.\n\nPET-бутылки от напитков собирают повсеместно — это наиболее популярный вид пластика у заготовителей «бытового» вторсырья, соперничать с которым могут разве что макулатура и металлы, поэтому PET-бутылки от напитков можно сдать во всех контейнерах и пунктах приёма, которые заявляют, что принимают пластик. Часто это вообще единственный вид пластика, который принимают.</string>
-		<key>anotherNames</key>
-		<string>PETE, ПЭТ, ПЭТФ</string>
-		<key>examples</key>
-		<string>Бутылки для жидкостей (бытовой химии, напитков), контейнеров для еды (принимаются намного реже)</string>
-		<key>howToPrepare</key>
-		<string>- Помой упаковку\n- Сожми упаковку\n- Сними этикетки (по желанию)\n- Сними крышечки и кольца(по желанию)</string>
+		<key>name</key>
+		<string>Пластик</string>
+		<key>imageName</key>
+		<string>plastic.png</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Макулатура</string>
+		<key>imageName</key>
+		<string>wastepaper.png</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Стекло</string>
+		<key>imageName</key>
+		<string>glass.png</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Металл</string>
+		<key>imageName</key>
+		<string>metal.png</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Смешанные материалы</string>
+		<key>imageName</key>
+		<string>composite.png</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Другие</string>
+		<key>imageName</key>
+		<string>other.png</string>
 	</dict>
 </array>
 </plist>
