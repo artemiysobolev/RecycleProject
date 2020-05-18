@@ -69,6 +69,7 @@ class CoreDataService {
             material.fullDescription = materialDict["fullDescription"] as? String
             material.anotherNames = materialDict["anotherNames"] as? String
             material.examples = materialDict["examples"] as? String
+            material.howToPrepare = materialDict["howToPrepare"] as? String
             material.numberOfRecyclePoints = materialDict["numberOfRecyclePoints"] as? Int16 ?? 0
             if let imageName = materialDict["imageName"] as? String,
                 let image = UIImage(named: imageName),

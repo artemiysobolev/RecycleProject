@@ -16,12 +16,19 @@ class HandbookTableViewCell: UITableViewCell {
         }
     }
     var materialType: MaterialType!
+    weak var delegate: showMaterialDelegate?
+    
 }
 
 extension HandbookTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let count = materialType.materials?.count else { return 0 }
         return count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let material = materialType.materials?[indexPath.item] as? Material else { return }
+        delegate?.collectionViewCellSelected(with: material)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

@@ -6,10 +6,17 @@
 import UIKit
 import CoreData
 
-class HandbookViewController: UIViewController {
+protocol showMaterialDelegate: class {
+    func collectionViewCellSelected(with material: Material)
+}
+
+class HandbookViewController: UIViewController, showMaterialDelegate {
+
+    
     @IBOutlet weak var tableView: UITableView!
     var materialsArray: [Material] = []
     var materialsTypeArray: [MaterialType] = []
+    var currentMaterial: Material?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +43,18 @@ class HandbookViewController: UIViewController {
         
         tableView.reloadData()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "ShowMaterialSegue",
+            let materialVC = segue.destination as? MaterialViewController else { return }
+        
+        materialVC.material = currentMaterial
+    }
+    
+    func collectionViewCellSelected(with material: Material) {
+        currentMaterial = material
+        performSegue(withIdentifier: "ShowMaterialSegue", sender: self)
+    }
 }
 
 extension HandbookViewController: UITableViewDelegate, UITableViewDataSource {
@@ -50,6 +69,8 @@ extension HandbookViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HandbookTableCell", for: indexPath) as! HandbookTableViewCell
+        
+        cell.delegate = self
         
         let materialType = materialsTypeArray[indexPath.section]
         cell.materialType = materialType

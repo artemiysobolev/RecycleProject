@@ -165,17 +165,18 @@
                     <navigationItem key="navigationItem" title="Как делить" id="CSu-S0-xue"/>
                     <connections>
                         <outlet property="tableView" destination="sYA-6x-hRk" id="IiC-Dm-2KP"/>
+                        <segue destination="6c1-JT-SxD" kind="show" identifier="ShowMaterialSegue" id="vB4-D8-fD8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5CH-zh-pI2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3170" y="139"/>
         </scene>
-        <!--View Controller-->
+        <!--Material View Controller-->
         <scene sceneID="uSO-dJ-uzV">
             <objects>
-                <viewController id="6c1-JT-SxD" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="unn-Ke-uOF">
+                <viewController storyboardIdentifier="MaterialVC" id="6c1-JT-SxD" customClass="MaterialViewController" customModule="Ресайкл" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="unn-Ke-uOF" customClass="MaterialView" customModule="Ресайкл" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -185,24 +186,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P72-ni-51t">
                                         <rect key="frame" x="0.0" y="20" width="375" height="190.33333333333334"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Полиэтилентерефталат" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6l2-ej-wl7">
-                                                <rect key="frame" x="160" y="15" width="205" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="qh1-rt-uoh"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пункт приёма на переработку придётся поискать" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6d-aB-E1f">
-                                                <rect key="frame" x="160" y="129.33333333333334" width="205" height="61"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="61" id="S9V-Nc-RbP"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" name="NormalRecycleStatusColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CmS-Rr-TLO">
                                                 <rect key="frame" x="5" y="0.0" width="150" height="190.33333333333334"/>
                                                 <subviews>
@@ -239,6 +222,24 @@
                                                     <constraint firstAttribute="bottom" secondItem="Rho-e6-btR" secondAttribute="bottom" id="wQD-hX-4YK"/>
                                                 </constraints>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Полиэтилентерефталат" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6l2-ej-wl7">
+                                                <rect key="frame" x="160" y="15" width="205" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="qh1-rt-uoh"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пункт приёма на переработку придётся поискать" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6d-aB-E1f">
+                                                <rect key="frame" x="160" y="129.33333333333334" width="205" height="61"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="61" id="S9V-Nc-RbP"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" name="NormalRecycleStatusColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PETE, ПЭТ, ПЭТФ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zyf-MT-pKI">
                                                 <rect key="frame" x="160" y="85.333333333333329" width="205" height="20"/>
                                                 <constraints>
@@ -411,8 +412,26 @@
                             <constraint firstItem="dfq-JX-n02" firstAttribute="trailing" secondItem="rrP-3d-jwJ" secondAttribute="trailing" id="lOy-bF-awt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rrP-3d-jwJ"/>
+                        <connections>
+                            <outlet property="anotherNameLabel" destination="zyf-MT-pKI" id="ruo-NA-8AX"/>
+                            <outlet property="codeLabel" destination="YIP-AV-dmf" id="RoW-vQ-kHg"/>
+                            <outlet property="forExampleLabel" destination="JKP-ab-ugc" id="4Ch-Va-Iip"/>
+                            <outlet property="forExampleStackView" destination="oDk-IO-wuF" id="J00-wa-eHl"/>
+                            <outlet property="fullDescriptionStackView" destination="EDb-Ve-iQw" id="fQx-0d-6d8"/>
+                            <outlet property="fullDescriptionTextView" destination="9fz-8j-e4J" id="crv-Ou-7oe"/>
+                            <outlet property="fullNameLabel" destination="6l2-ej-wl7" id="zHm-Xt-8hC"/>
+                            <outlet property="howToPrepareStackView" destination="95k-XB-bYm" id="3Ce-VQ-Jgf"/>
+                            <outlet property="howToPrepareTextView" destination="G2p-47-t5A" id="aDm-e2-JiP"/>
+                            <outlet property="recycleDifficultyLabel" destination="D6d-aB-E1f" id="JUw-VB-YTV"/>
+                            <outlet property="recycleSymbolImage" destination="5e8-jW-Rqg" id="sg0-JR-qJe"/>
+                            <outlet property="shortDescriptionTextView" destination="p1p-td-clx" id="wAM-OZ-l7m"/>
+                            <outlet property="shortNameLabel" destination="Rho-e6-btR" id="Dks-jy-fdU"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="AqF-9f-jgX"/>
+                    <connections>
+                        <outlet property="materialView" destination="unn-Ke-uOF" id="FrL-59-CnX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Vx-VI-hIg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -432,7 +451,7 @@
             <color red="0.36500000953674316" green="0.57599997520446777" blue="0.31000000238418579" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="NormalRecycleStatusColor">
-            <color red="0.65490196078431373" green="0.5607843137254902" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.65499997138977051" green="0.56099998950958252" blue="0.23100000619888306" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>
