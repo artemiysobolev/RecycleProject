@@ -18,29 +18,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="xJn-5Q-Cym">
-                                <rect key="frame" x="0.0" y="44" width="320" height="387"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" name="CustomDarkBackgroundColor"/>
                                 <color key="separatorColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewsCell" rowHeight="362" id="cPG-f8-Lej" customClass="NewsTableViewCell" customModule="Ресайкл" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="55.5" width="290" height="362"/>
+                                        <rect key="frame" x="20" y="55.5" width="374" height="362"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cPG-f8-Lej" id="i7h-ER-5Ao">
-                                            <rect key="frame" x="0.0" y="0.0" width="290" height="362"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="362"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MDC-fh-yNE" customClass="UIImageViewFromFirebase" customModule="Ресайкл" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="290" height="181.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="234"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="MDC-fh-yNE" secondAttribute="height" multiplier="16:10" id="3If-fJ-QPF"/>
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0Q1-lJ-bQt">
-                                                    <rect key="frame" x="15" y="191.5" width="260" height="160.5"/>
+                                                    <rect key="frame" x="20" y="244" width="334" height="108"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Publisher" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pQ-A4-Wyn">
-                                                            <rect key="frame" x="0.0" y="0.0" width="260" height="23"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="334" height="23"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="23" id="G1k-Ay-laB"/>
                                                             </constraints>
@@ -49,7 +49,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WmQ-Xe-Xq0">
-                                                            <rect key="frame" x="0.0" y="31" width="260" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="31" width="334" height="20.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="vI6-jw-TaI"/>
                                                             </constraints>
@@ -58,7 +58,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Annotation" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Nu-PO-pbS">
-                                                            <rect key="frame" x="0.0" y="59.5" width="260" height="76.5"/>
+                                                            <rect key="frame" x="0.0" y="59.5" width="334" height="24"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="qhs-nW-Dyq"/>
                                                             </constraints>
@@ -67,7 +67,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiJ-Fb-pqr">
-                                                            <rect key="frame" x="0.0" y="144" width="260" height="16.5"/>
+                                                            <rect key="frame" x="0.0" y="91.5" width="334" height="16.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="16.5" id="DL4-9u-Oqc"/>
                                                             </constraints>

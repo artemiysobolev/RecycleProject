@@ -12,7 +12,6 @@
         <!--Как делить-->
         <scene sceneID="ERb-D5-g9W">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ncH-al-qOH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fQx-Td-gGr" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Как делить" image="arrow.3.trianglepath" catalog="system" id="Ef9-j6-L2F"/>
                     <toolbarItems/>
@@ -26,6 +25,7 @@
                         <segue destination="b8m-QI-0Bn" kind="relationship" relationship="rootViewController" id="yUB-OM-O1s"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ncH-al-qOH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-4112" y="139"/>
         </scene>
