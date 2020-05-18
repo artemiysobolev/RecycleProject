@@ -11,8 +11,13 @@ class MaterialView: UIView {
     @IBOutlet weak var codeLabel: UILabel!
     @IBOutlet weak var shortNameLabel: UILabel!
     
+    
+    @IBOutlet weak var fullNameStackView: UIStackView!
     @IBOutlet weak var fullNameLabel: UILabel!
+    
+    @IBOutlet weak var anotherNameStackView: UIStackView!
     @IBOutlet weak var anotherNameLabel: UILabel!
+    
     @IBOutlet weak var recycleDifficultyLabel: UILabel!
     
     @IBOutlet weak var shortDescriptionTextView: UITextView!
@@ -44,9 +49,19 @@ class MaterialView: UIView {
         }
         
         shortNameLabel.text = material.shortName
-        fullNameLabel.text = material.fullName
-        anotherNameLabel.text = material.anotherNames
-        //        recycleDifficultyLabel.text = String(material.numberOfRecyclePoints) 
+        //        recycleDifficultyLabel.text = String(material.numberOfRecyclePoints)
+        
+        if let fullName = material.fullName, !(fullName.isEmptyOrWhitespace()) {
+            fullNameLabel.text = fullName
+        } else {
+            fullNameStackView.isHidden = true
+        }
+        
+        if let anotherNames = material.anotherNames, !(anotherNames.isEmptyOrWhitespace()) {
+            anotherNameLabel.text = anotherNames
+        } else {
+            anotherNameStackView.isHidden = true
+        }
         
         if let shortDescription = material.shortDesctiption {
             shortDescriptionTextView.text = shortDescription

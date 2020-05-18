@@ -223,49 +223,89 @@
                                                     <constraint firstAttribute="bottom" secondItem="Rho-e6-btR" secondAttribute="bottom" id="wQD-hX-4YK"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Полиэтилентерефталат" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6l2-ej-wl7">
-                                                <rect key="frame" x="160" y="15" width="205" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="qh1-rt-uoh"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Придётся поискать, куда это можно сдать в твоём регионе" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6d-aB-E1f">
-                                                <rect key="frame" x="160" y="129.33333333333334" width="205" height="61"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="61" id="S9V-Nc-RbP"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" name="NormalRecycleStatusColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PETE, ПЭТ, ПЭТФ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zyf-MT-pKI">
-                                                <rect key="frame" x="160" y="85.333333333333329" width="205" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="20" id="caT-xF-wfa"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pJ6-QT-Rge">
+                                                <rect key="frame" x="160" y="8" width="200" height="182.33333333333334"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gUW-to-vdT">
+                                                        <rect key="frame" x="0.0" y="0.0" width="192.33333333333334" height="55.333333333333336"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Полное название" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkO-fn-D1Q">
+                                                                <rect key="frame" x="0.0" y="0.0" width="192.33333333333334" height="15.333333333333334"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="15.333333333333334" id="Pae-RJ-ERY"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                                                <color key="textColor" name="CustomPlaceholderTextColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Полиэтилентерефталат" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="6l2-ej-wl7">
+                                                                <rect key="frame" x="0.0" y="20.333333333333336" width="192.33333333333334" height="35"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="35" id="Pp5-d4-dRH"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="wkO-fn-D1Q" secondAttribute="trailing" id="C95-l7-Wek"/>
+                                                            <constraint firstAttribute="trailing" secondItem="6l2-ej-wl7" secondAttribute="trailing" id="Pgw-CJ-9vW"/>
+                                                            <constraint firstItem="wkO-fn-D1Q" firstAttribute="leading" secondItem="gUW-to-vdT" secondAttribute="leading" id="RR3-AC-lA9"/>
+                                                            <constraint firstItem="6l2-ej-wl7" firstAttribute="leading" secondItem="gUW-to-vdT" secondAttribute="leading" id="Zsn-48-uzK"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="cnx-ZT-Oa4">
+                                                        <rect key="frame" x="0.0" y="65.333333333333329" width="138" height="40.666666666666671"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Другие обозначения" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3VH-w0-Jdt">
+                                                                <rect key="frame" x="0.0" y="0.0" width="138" height="15.333333333333334"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="15.333333333333334" id="wEe-4l-N9r"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                                                <color key="textColor" name="CustomPlaceholderTextColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PETE, ПЭТ, ПЭТФ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zyf-MT-pKI">
+                                                                <rect key="frame" x="0.0" y="20.333333333333343" width="138" height="20.333333333333329"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="20.333333333333329" id="BVK-CE-615"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="3VH-w0-Jdt" secondAttribute="trailing" id="SUB-4P-97E"/>
+                                                            <constraint firstAttribute="trailing" secondItem="zyf-MT-pKI" secondAttribute="trailing" id="V9K-5v-y2n"/>
+                                                            <constraint firstItem="3VH-w0-Jdt" firstAttribute="leading" secondItem="cnx-ZT-Oa4" secondAttribute="leading" id="Vtt-L2-ktC"/>
+                                                            <constraint firstItem="zyf-MT-pKI" firstAttribute="leading" secondItem="cnx-ZT-Oa4" secondAttribute="leading" id="aol-cy-pQ5"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Придётся поискать, куда это можно сдать в твоём регионе" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6d-aB-E1f">
+                                                        <rect key="frame" x="0.0" y="116" width="200" height="66.333333333333314"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="61" id="S9V-Nc-RbP"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" name="NormalRecycleStatusColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" name="CustomBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="zyf-MT-pKI" secondAttribute="trailing" constant="10" id="4xo-df-UCy"/>
-                                            <constraint firstAttribute="trailing" secondItem="D6d-aB-E1f" secondAttribute="trailing" constant="10" id="6xR-uW-m7j"/>
-                                            <constraint firstItem="D6d-aB-E1f" firstAttribute="leading" secondItem="CmS-Rr-TLO" secondAttribute="trailing" constant="5" id="A4m-w4-ru8"/>
-                                            <constraint firstItem="zyf-MT-pKI" firstAttribute="centerY" secondItem="P72-ni-51t" secondAttribute="centerY" id="Cv7-zS-y0Q"/>
-                                            <constraint firstItem="6l2-ej-wl7" firstAttribute="leading" secondItem="CmS-Rr-TLO" secondAttribute="trailing" constant="5" id="MCV-YY-Dbk"/>
+                                            <constraint firstAttribute="bottom" secondItem="pJ6-QT-Rge" secondAttribute="bottom" id="9Wp-nC-Kkz"/>
+                                            <constraint firstAttribute="trailing" secondItem="pJ6-QT-Rge" secondAttribute="trailing" constant="15" id="LH0-0H-PTG"/>
                                             <constraint firstItem="CmS-Rr-TLO" firstAttribute="leading" secondItem="P72-ni-51t" secondAttribute="leading" constant="5" id="UV5-TY-a58"/>
-                                            <constraint firstAttribute="bottom" secondItem="D6d-aB-E1f" secondAttribute="bottom" id="VLM-Cd-cSw"/>
-                                            <constraint firstAttribute="trailing" secondItem="6l2-ej-wl7" secondAttribute="trailing" constant="10" id="WER-7R-2He"/>
                                             <constraint firstItem="CmS-Rr-TLO" firstAttribute="top" secondItem="P72-ni-51t" secondAttribute="top" id="YJB-zA-QMt"/>
                                             <constraint firstItem="CmS-Rr-TLO" firstAttribute="width" secondItem="P72-ni-51t" secondAttribute="width" multiplier="0.4" id="ZAl-DJ-CBW"/>
                                             <constraint firstAttribute="height" constant="190.33333333333334" id="cv4-Xo-Av2"/>
-                                            <constraint firstItem="6l2-ej-wl7" firstAttribute="top" secondItem="P72-ni-51t" secondAttribute="top" constant="15" id="sLD-Re-fpX"/>
-                                            <constraint firstItem="zyf-MT-pKI" firstAttribute="leading" secondItem="CmS-Rr-TLO" secondAttribute="trailing" constant="5" id="vQZ-1V-c8K"/>
+                                            <constraint firstItem="pJ6-QT-Rge" firstAttribute="leading" secondItem="CmS-Rr-TLO" secondAttribute="trailing" constant="5" id="dcp-1H-ltL"/>
+                                            <constraint firstItem="pJ6-QT-Rge" firstAttribute="top" secondItem="P72-ni-51t" secondAttribute="top" constant="8" id="gCh-8x-nKL"/>
                                             <constraint firstAttribute="bottom" secondItem="CmS-Rr-TLO" secondAttribute="bottom" id="yUO-Ko-Bew"/>
                                         </constraints>
                                     </view>
@@ -411,12 +451,14 @@
                         <viewLayoutGuide key="safeArea" id="rrP-3d-jwJ"/>
                         <connections>
                             <outlet property="anotherNameLabel" destination="zyf-MT-pKI" id="ruo-NA-8AX"/>
+                            <outlet property="anotherNameStackView" destination="cnx-ZT-Oa4" id="Yld-iJ-IYG"/>
                             <outlet property="codeLabel" destination="YIP-AV-dmf" id="RoW-vQ-kHg"/>
                             <outlet property="forExampleLabel" destination="JKP-ab-ugc" id="4Ch-Va-Iip"/>
                             <outlet property="forExampleStackView" destination="oDk-IO-wuF" id="J00-wa-eHl"/>
                             <outlet property="fullDescriptionStackView" destination="EDb-Ve-iQw" id="fQx-0d-6d8"/>
                             <outlet property="fullDescriptionTextView" destination="9fz-8j-e4J" id="crv-Ou-7oe"/>
                             <outlet property="fullNameLabel" destination="6l2-ej-wl7" id="zHm-Xt-8hC"/>
+                            <outlet property="fullNameStackView" destination="gUW-to-vdT" id="Mtt-we-jj2"/>
                             <outlet property="howToPrepareStackView" destination="95k-XB-bYm" id="3Ce-VQ-Jgf"/>
                             <outlet property="howToPrepareTextView" destination="G2p-47-t5A" id="aDm-e2-JiP"/>
                             <outlet property="recycleDifficultyLabel" destination="D6d-aB-E1f" id="JUw-VB-YTV"/>
@@ -443,6 +485,9 @@
         </namedColor>
         <namedColor name="CustomDarkBackgroundColor">
             <color red="0.94700002670288086" green="0.94300001859664917" blue="0.95200002193450928" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="CustomPlaceholderTextColor">
+            <color red="0.75400000810623169" green="0.75400000810623169" blue="0.75400000810623169" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="CustomTabBarTintColor">
             <color red="0.36500000953674316" green="0.57599997520446777" blue="0.31000000238418579" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
