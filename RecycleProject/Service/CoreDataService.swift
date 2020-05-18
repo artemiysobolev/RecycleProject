@@ -21,6 +21,7 @@ class CoreDataService {
         getMaterial(fileName: "Glass", typeName: "Стекло")
         getMaterial(fileName: "Metal", typeName: "Металл")
         getMaterial(fileName: "Composite", typeName: "Смешанные материалы")
+        getMaterial(fileName: "Other", typeName: "Другие")
     }
     
     
@@ -61,9 +62,7 @@ class CoreDataService {
             
             let materialDict = dict as! [String: AnyObject]
             
-            guard let materialCode = materialDict["code"] as? Int16 else { return }
-            material.code = materialCode
-            
+            material.code = materialDict["code"] as? Int16 ?? 0
             material.shortName = materialDict["shortName"] as? String
             material.fullName = materialDict["fullName"] as? String
             material.shortDesctiption = materialDict["shortDescription"] as? String
@@ -71,6 +70,11 @@ class CoreDataService {
             material.anotherNames = materialDict["anotherNames"] as? String
             material.examples = materialDict["examples"] as? String
             material.numberOfRecyclePoints = materialDict["numberOfRecyclePoints"] as? Int16 ?? 0
+            if let imageName = materialDict["imageName"] as? String,
+                let image = UIImage(named: imageName),
+                let imageData = image.pngData() {
+                material.imageData = imageData
+            }
             
             
             let fetchRequest: NSFetchRequest<MaterialType> = MaterialType.fetchRequest()

@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<array/>
+<array>
+	<dict>
+		<key>imageName</key>
+		<string>coffeeCup.png</string>
+		<key>code</key>
+		<integer>0</integer>
+		<key>numberOfRecyclePoints</key>
+		<integer>0</integer>
+		<key>shortName</key>
+		<string>Кофейные стаканчики</string>
+		<key>shortDescription</key>
+		<string></string>
+		<key>fullName</key>
+		<string></string>
+		<key>fullDescription</key>
+		<string></string>
+		<key>anotherNames</key>
+		<string></string>
+		<key>examples</key>
+		<string></string>
+		<key>howToPrepare</key>
+		<string></string>
+	</dict>
+</array>
 </plist>

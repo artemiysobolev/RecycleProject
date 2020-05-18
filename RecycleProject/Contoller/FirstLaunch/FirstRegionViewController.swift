@@ -31,6 +31,7 @@ class FirstRegionViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     
     @IBAction func doneButtonTapped(_ sender: UIButton) {
+        CoreDataService.shared.getDataFromFile()
         UserDefaults.standard.setLaunchedBefore(value: true)
         let region = regions[regionPickerView.selectedRow(inComponent: 0)]
         UserDefaults.standard.setRegion(value: region)

@@ -14,7 +14,6 @@ class HandbookViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        CoreDataService.shared.getDataFromFile()
         fetchData()
     }
     

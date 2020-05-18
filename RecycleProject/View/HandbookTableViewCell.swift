@@ -27,8 +27,24 @@ extension HandbookTableViewCell: UICollectionViewDataSource, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HandbookCollectionCell", for: indexPath) as! HandbookCollectionViewCell
         guard let material = materialType.materials?[indexPath.item] as? Material else { return cell }
-        print(material.shortName)
-        cell.codeLabel.text = String(material.code)
+        
+        switch material.code {
+        case 0:
+            cell.codeLabel.text = nil
+        case ..<10:
+            cell.codeLabel.text = "0\(material.code)"
+        default:
+            cell.codeLabel.text = "\(material.code)"
+        }
+        
+        if let imageData = material.imageData {
+            cell.imageView.contentMode = .scaleAspectFill
+            cell.imageView.image = UIImage(data: imageData)
+        }
+        else {
+            cell.imageView.contentMode = .scaleAspectFit
+            cell.imageView.image = UIImage(named: "recycleSymbol")
+        }
         cell.nameLabel.text = material.shortName
         return cell
     }

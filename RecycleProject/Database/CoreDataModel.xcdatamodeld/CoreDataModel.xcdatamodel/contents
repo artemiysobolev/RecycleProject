@@ -7,6 +7,7 @@
         <attribute name="fullDescription" optional="YES" attributeType="String"/>
         <attribute name="fullName" optional="YES" attributeType="String"/>
         <attribute name="howToPrepare" optional="YES" attributeType="String"/>
+        <attribute name="imageData" optional="YES" attributeType="Binary"/>
         <attribute name="numberOfRecyclePoints" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="shortDesctiption" optional="YES" attributeType="String"/>
         <attribute name="shortName" optional="YES" attributeType="String"/>
@@ -18,7 +19,7 @@
         <relationship name="materials" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Material" inverseName="materialType" inverseEntity="Material"/>
     </entity>
     <elements>
-        <element name="Material" positionX="3187.421875" positionY="4739.97265625" width="128" height="193"/>
+        <element name="Material" positionX="3187.421875" positionY="4739.97265625" width="128" height="208"/>
         <element name="MaterialType" positionX="3436.8125" positionY="4783.0625" width="128" height="88"/>
     </elements>
 </model>
