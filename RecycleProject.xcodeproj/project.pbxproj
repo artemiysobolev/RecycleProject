@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5029F145AF08780B5160089D /* Pods_RecycleProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C22BC092EBB98058483472 /* Pods_RecycleProject.framework */; };
+		BA22AA71247295AB009BBC5E /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA22AA70247295AB009BBC5E /* Settings.storyboard */; };
+		BA22AA74247295C2009BBC5E /* Newsfeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA22AA73247295C2009BBC5E /* Newsfeed.storyboard */; };
+		BA22AA76247295CE009BBC5E /* Handbook.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA22AA75247295CE009BBC5E /* Handbook.storyboard */; };
+		BA22AA78247295E2009BBC5E /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA22AA77247295E2009BBC5E /* Map.storyboard */; };
 		BA47BBB4246ABD4B00218493 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47BBB3246ABD4B00218493 /* SettingsTableViewController.swift */; };
 		BA47BBBA246B038000218493 /* RegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47BBB9246B038000218493 /* RegionViewController.swift */; };
 		BA47BBBC246B041800218493 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47BBBB246B041800218493 /* Region.swift */; };
@@ -49,6 +53,10 @@
 
 /* Begin PBXFileReference section */
 		9D5908EE33800C9506C4A98C /* Pods-RecycleProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecycleProject.debug.xcconfig"; path = "Target Support Files/Pods-RecycleProject/Pods-RecycleProject.debug.xcconfig"; sourceTree = "<group>"; };
+		BA22AA70247295AB009BBC5E /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		BA22AA73247295C2009BBC5E /* Newsfeed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Newsfeed.storyboard; sourceTree = "<group>"; };
+		BA22AA75247295CE009BBC5E /* Handbook.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Handbook.storyboard; sourceTree = "<group>"; };
+		BA22AA77247295E2009BBC5E /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		BA47BBB3246ABD4B00218493 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		BA47BBB9246B038000218493 /* RegionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionViewController.swift; sourceTree = "<group>"; };
 		BA47BBBB246B041800218493 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
@@ -112,6 +120,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BA22AA6F24729586009BBC5E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				BA95FDB12465E10A001E112A /* Main.storyboard */,
+				BA7788E324674C4200545B8D /* FirstLaunch.storyboard */,
+				BA22AA70247295AB009BBC5E /* Settings.storyboard */,
+				BA22AA73247295C2009BBC5E /* Newsfeed.storyboard */,
+				BA22AA75247295CE009BBC5E /* Handbook.storyboard */,
+				BA22AA77247295E2009BBC5E /* Map.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		BA7788E02467496100545B8D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +173,7 @@
 		BA95FDAA2465E10A001E112A /* RecycleProject */ = {
 			isa = PBXGroup;
 			children = (
+				BA22AA6F24729586009BBC5E /* Storyboards */,
 				BAA2FD74246F172B00153D7B /* Database */,
 				BAA305CD2469B6F30042EE97 /* Service */,
 				BA7788E02467496100545B8D /* Extensions */,
@@ -177,8 +199,6 @@
 		BA95FDC024661957001E112A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BA95FDB12465E10A001E112A /* Main.storyboard */,
-				BA7788E324674C4200545B8D /* FirstLaunch.storyboard */,
 				BA7788EC2467533600545B8D /* NewsTableViewCell.swift */,
 				BAEB5704246DF2B600DB3E57 /* HandbookTableViewCell.swift */,
 				BAEB5706246DF2E500DB3E57 /* HandbookCollectionViewCell.swift */,
@@ -311,14 +331,18 @@
 				BAA2FD78246FCF7200153D7B /* Plastic.plist in Resources */,
 				BA95FDB82465E10E001E112A /* LaunchScreen.storyboard in Resources */,
 				BAA2FD7E2470270A00153D7B /* Glass.plist in Resources */,
+				BA22AA78247295E2009BBC5E /* Map.storyboard in Resources */,
+				BA22AA76247295CE009BBC5E /* Handbook.storyboard in Resources */,
 				BAA2FD84247028BA00153D7B /* Other.plist in Resources */,
 				BA7788E424674C4200545B8D /* FirstLaunch.storyboard in Resources */,
 				BAAE50A52468550000979F2D /* GoogleService-Info.plist in Resources */,
 				BAA2FD7C2470270A00153D7B /* Metal.plist in Resources */,
 				BAA2FD83247028BA00153D7B /* Composite.plist in Resources */,
 				BA95FDB52465E10E001E112A /* Assets.xcassets in Resources */,
+				BA22AA74247295C2009BBC5E /* Newsfeed.storyboard in Resources */,
 				BAA2FD82247028BA00153D7B /* MaterialTypes.plist in Resources */,
 				BAA2FD7D2470270A00153D7B /* Wastepaper.plist in Resources */,
+				BA22AA71247295AB009BBC5E /* Settings.storyboard in Resources */,
 				BA95FDB32465E10A001E112A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

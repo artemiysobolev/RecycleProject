@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fQx-Td-gGr">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Как делить-->
+        <scene sceneID="ERb-D5-g9W">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ncH-al-qOH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fQx-Td-gGr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Как делить" image="arrow.3.trianglepath" catalog="system" id="Ef9-j6-L2F"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="miU-2m-gbe">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="b8m-QI-0Bn" kind="relationship" relationship="rootViewController" id="yUB-OM-O1s"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-4112" y="139"/>
+        </scene>
+        <!--Как делить-->
+        <scene sceneID="rz8-tw-8dt">
+            <objects>
+                <viewController id="b8m-QI-0Bn" customClass="HandbookViewController" customModule="Ресайкл" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0pY-nb-8eU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" allowsSelection="NO" rowHeight="168" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="sYA-6x-hRk">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" name="CustomDarkBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HandbookTableCell" rowHeight="168" id="OEU-YN-pYV" customClass="HandbookTableViewCell" customModule="Ресайкл" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="55.5" width="374" height="168"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OEU-YN-pYV" id="hr8-fN-0kl">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="168"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пластик" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sk5-jN-spj">
+                                                    <rect key="frame" x="15" y="10" width="339" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="SRa-Tb-f1H"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gw5-Rj-ZWp">
+                                                    <rect key="frame" x="0.0" y="40" width="374" height="128"/>
+                                                    <color key="backgroundColor" name="CustomBackgroundColor"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="30" minimumInteritemSpacing="10" id="1cF-sz-dMd">
+                                                        <size key="itemSize" width="80" height="95"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HandbookCollectionCell" id="FSW-QT-Pgd" customClass="HandbookCollectionViewCell" customModule="Ресайкл" customModuleProvider="target">
+                                                            <rect key="frame" x="15" y="16.5" width="80" height="95"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="aRH-aC-D3O">
+                                                                <rect key="frame" x="0.0" y="0.0" width="80" height="95"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="recycleSymbol" translatesAutoresizingMaskIntoConstraints="NO" id="mdx-bu-xkh">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="60"/>
+                                                                        <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="60" id="Ce0-jn-LbL"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PET" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="RXa-7E-hGX">
+                                                                        <rect key="frame" x="0.0" y="64" width="80" height="26"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="31" id="4nE-sj-8ZB"/>
+                                                                            <constraint firstAttribute="height" constant="26" id="sD0-f7-YJV"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5d-Gl-Sqh">
+                                                                        <rect key="frame" x="26.5" y="18" width="27" height="38"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="38" id="Kjc-Fh-8Np"/>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="27" id="fVJ-AI-BYb"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="20"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="mdx-bu-xkh" secondAttribute="trailing" id="3vl-a5-z84"/>
+                                                                    <constraint firstItem="RXa-7E-hGX" firstAttribute="leading" secondItem="aRH-aC-D3O" secondAttribute="leading" id="BTm-ZW-A80"/>
+                                                                    <constraint firstItem="mdx-bu-xkh" firstAttribute="top" secondItem="aRH-aC-D3O" secondAttribute="top" id="BZy-dl-pqC"/>
+                                                                    <constraint firstItem="mdx-bu-xkh" firstAttribute="leading" secondItem="aRH-aC-D3O" secondAttribute="leading" id="MhP-j3-pcd"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="RXa-7E-hGX" secondAttribute="bottom" constant="5" id="RTR-Ev-Bci"/>
+                                                                    <constraint firstItem="v5d-Gl-Sqh" firstAttribute="top" secondItem="aRH-aC-D3O" secondAttribute="top" constant="18" id="gt8-af-OLI"/>
+                                                                    <constraint firstItem="v5d-Gl-Sqh" firstAttribute="centerX" secondItem="aRH-aC-D3O" secondAttribute="centerX" id="kEv-Id-gGL"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="RXa-7E-hGX" secondAttribute="trailing" id="luB-75-fOt"/>
+                                                                </constraints>
+                                                            </collectionViewCellContentView>
+                                                            <color key="backgroundColor" name="CustomBackgroundColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="15"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <outlet property="codeLabel" destination="v5d-Gl-Sqh" id="SYh-ml-1Qa"/>
+                                                                <outlet property="imageView" destination="mdx-bu-xkh" id="dui-Vx-Gg8"/>
+                                                                <outlet property="nameLabel" destination="RXa-7E-hGX" id="SBF-Wq-Guc"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="oAD-ma-ioC">
+                                                            <rect key="frame" x="125" y="16.5" width="80" height="95"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jNT-lo-PLC">
+                                                                <rect key="frame" x="0.0" y="0.0" width="80" height="95"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </collectionViewCellContentView>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                </collectionView>
+                                            </subviews>
+                                            <color key="backgroundColor" name="CustomBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="gw5-Rj-ZWp" secondAttribute="bottom" id="2YR-zB-NPj"/>
+                                                <constraint firstAttribute="trailing" secondItem="gw5-Rj-ZWp" secondAttribute="trailing" id="3KQ-RE-2b8"/>
+                                                <constraint firstAttribute="trailing" secondItem="sk5-jN-spj" secondAttribute="trailing" constant="20" id="A6O-ZX-dNb"/>
+                                                <constraint firstItem="gw5-Rj-ZWp" firstAttribute="top" secondItem="sk5-jN-spj" secondAttribute="bottom" id="LiH-OQ-zAy"/>
+                                                <constraint firstItem="gw5-Rj-ZWp" firstAttribute="leading" secondItem="hr8-fN-0kl" secondAttribute="leading" id="NTY-hK-iPg"/>
+                                                <constraint firstItem="sk5-jN-spj" firstAttribute="top" secondItem="hr8-fN-0kl" secondAttribute="top" constant="10" id="RKK-hz-K57"/>
+                                                <constraint firstItem="sk5-jN-spj" firstAttribute="leading" secondItem="hr8-fN-0kl" secondAttribute="leading" constant="15" id="eOf-Th-cVo"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="CustomDarkBackgroundColor"/>
+                                        <connections>
+                                            <outlet property="codesCollectionView" destination="gw5-Rj-ZWp" id="5vF-Nj-I9S"/>
+                                            <outlet property="materialLabel" destination="sk5-jN-spj" id="LQb-Ae-bPO"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="b8m-QI-0Bn" id="c6O-mA-rzN"/>
+                                    <outlet property="delegate" destination="b8m-QI-0Bn" id="A7c-RP-PaA"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" name="CustomDarkBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sYA-6x-hRk" firstAttribute="leading" secondItem="uGg-fk-4da" secondAttribute="leading" id="9Gh-QZ-t21"/>
+                            <constraint firstItem="sYA-6x-hRk" firstAttribute="top" secondItem="uGg-fk-4da" secondAttribute="top" id="glI-Sh-hQu"/>
+                            <constraint firstItem="sYA-6x-hRk" firstAttribute="trailing" secondItem="uGg-fk-4da" secondAttribute="trailing" id="vbx-aB-5cJ"/>
+                            <constraint firstItem="sYA-6x-hRk" firstAttribute="bottom" secondItem="uGg-fk-4da" secondAttribute="bottom" id="wqQ-i1-sgo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uGg-fk-4da"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Как делить" id="CSu-S0-xue"/>
+                    <connections>
+                        <outlet property="tableView" destination="sYA-6x-hRk" id="IiC-Dm-2KP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5CH-zh-pI2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3170" y="139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.3.trianglepath" catalog="system" width="128" height="128"/>
+        <image name="recycleSymbol" width="300" height="300"/>
+        <namedColor name="CustomBackgroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CustomDarkBackgroundColor">
+            <color red="0.94700002670288086" green="0.94300001859664917" blue="0.95200002193450928" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

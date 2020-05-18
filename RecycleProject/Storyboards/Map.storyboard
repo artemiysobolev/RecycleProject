@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dcg-Cf-gCF">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Куда сдавать-->
+        <scene sceneID="Qej-Gf-Fly">
+            <objects>
+                <viewController id="Dcg-Cf-gCF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="agh-wt-Lr3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wuy-KW-yEc">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" name="CustomBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wuy-KW-yEc" firstAttribute="trailing" secondItem="6U7-qd-iq5" secondAttribute="trailing" id="7fW-eB-cim"/>
+                            <constraint firstAttribute="bottom" secondItem="wuy-KW-yEc" secondAttribute="bottom" id="pym-K0-csF"/>
+                            <constraint firstItem="wuy-KW-yEc" firstAttribute="top" secondItem="agh-wt-Lr3" secondAttribute="top" id="um9-n9-mGq"/>
+                            <constraint firstItem="wuy-KW-yEc" firstAttribute="leading" secondItem="6U7-qd-iq5" secondAttribute="leading" id="wBc-QR-lXW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6U7-qd-iq5"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Куда сдавать" image="map" catalog="system" id="zpm-lf-kce"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TNH-Ta-1PX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3143" y="906"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="map" catalog="system" width="128" height="113"/>
+        <namedColor name="CustomBackgroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
