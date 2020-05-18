@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fQx-Td-gGr">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -17,8 +17,9 @@
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="miU-2m-gbe">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="CustomTabBarTintColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -34,15 +35,15 @@
             <objects>
                 <viewController id="b8m-QI-0Bn" customClass="HandbookViewController" customModule="Ресайкл" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0pY-nb-8eU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" allowsSelection="NO" rowHeight="168" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="sYA-6x-hRk">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="643"/>
                                 <color key="backgroundColor" name="CustomDarkBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HandbookTableCell" rowHeight="168" id="OEU-YN-pYV" customClass="HandbookTableViewCell" customModule="Ресайкл" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="55.5" width="374" height="168"/>
+                                        <rect key="frame" x="20" y="55.333332061767578" width="374" height="168"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OEU-YN-pYV" id="hr8-fN-0kl">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="168"/>
@@ -54,6 +55,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="SRa-Tb-f1H"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                                    <color key="textColor" name="CustomTabBarTintColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gw5-Rj-ZWp">
@@ -67,7 +69,7 @@
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HandbookCollectionCell" id="FSW-QT-Pgd" customClass="HandbookCollectionViewCell" customModule="Ресайкл" customModuleProvider="target">
-                                                            <rect key="frame" x="15" y="16.5" width="80" height="95"/>
+                                                            <rect key="frame" x="15" y="16.666666666666668" width="80" height="95"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="aRH-aC-D3O">
                                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="95"/>
@@ -91,7 +93,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5d-Gl-Sqh">
-                                                                        <rect key="frame" x="26.5" y="18" width="27" height="38"/>
+                                                                        <rect key="frame" x="26.666666666666671" y="18" width="27" height="38"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="38" id="Kjc-Fh-8Np"/>
                                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="27" id="fVJ-AI-BYb"/>
@@ -123,14 +125,6 @@
                                                                 <outlet property="imageView" destination="mdx-bu-xkh" id="dui-Vx-Gg8"/>
                                                                 <outlet property="nameLabel" destination="RXa-7E-hGX" id="SBF-Wq-Guc"/>
                                                             </connections>
-                                                        </collectionViewCell>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="oAD-ma-ioC">
-                                                            <rect key="frame" x="125" y="16.5" width="80" height="95"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jNT-lo-PLC">
-                                                                <rect key="frame" x="0.0" y="0.0" width="80" height="95"/>
-                                                                <autoresizingMask key="autoresizingMask"/>
-                                                            </collectionViewCellContentView>
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
@@ -177,6 +171,253 @@
             </objects>
             <point key="canvasLocation" x="-3170" y="139"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="uSO-dJ-uzV">
+            <objects>
+                <viewController id="6c1-JT-SxD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="unn-Ke-uOF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dfq-JX-n02">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P72-ni-51t">
+                                        <rect key="frame" x="0.0" y="20" width="375" height="190.33333333333334"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Полиэтилентерефталат" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6l2-ej-wl7">
+                                                <rect key="frame" x="160" y="15" width="205" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="qh1-rt-uoh"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пункт приёма на переработку придётся поискать" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6d-aB-E1f">
+                                                <rect key="frame" x="160" y="129.33333333333334" width="205" height="61"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="61" id="S9V-Nc-RbP"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" name="NormalRecycleStatusColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CmS-Rr-TLO">
+                                                <rect key="frame" x="5" y="0.0" width="150" height="190.33333333333334"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="recycleSymbol" translatesAutoresizingMaskIntoConstraints="NO" id="5e8-jW-Rqg">
+                                                        <rect key="frame" x="15" y="10" width="120" height="120"/>
+                                                        <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="120" id="MqE-hQ-gJR"/>
+                                                            <constraint firstAttribute="width" secondItem="5e8-jW-Rqg" secondAttribute="height" multiplier="1:1" id="Uuf-JD-eUe"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIP-AV-dmf">
+                                                        <rect key="frame" x="0.0" y="55" width="150" height="60"/>
+                                                        <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="40"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PET" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rho-e6-btR">
+                                                        <rect key="frame" x="0.0" y="155.33333333333334" width="150" height="35"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" name="CustomBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="YIP-AV-dmf" firstAttribute="leading" secondItem="CmS-Rr-TLO" secondAttribute="leading" id="3lb-Y9-tFm"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Rho-e6-btR" secondAttribute="trailing" id="5ng-95-Vnq"/>
+                                                    <constraint firstItem="Rho-e6-btR" firstAttribute="leading" secondItem="CmS-Rr-TLO" secondAttribute="leading" id="8tO-hJ-yv6"/>
+                                                    <constraint firstAttribute="trailing" secondItem="YIP-AV-dmf" secondAttribute="trailing" id="LKn-gA-oMx"/>
+                                                    <constraint firstItem="YIP-AV-dmf" firstAttribute="top" secondItem="CmS-Rr-TLO" secondAttribute="top" constant="55" id="gXI-SE-ue5"/>
+                                                    <constraint firstItem="5e8-jW-Rqg" firstAttribute="centerX" secondItem="CmS-Rr-TLO" secondAttribute="centerX" id="hWY-tl-0NP"/>
+                                                    <constraint firstItem="5e8-jW-Rqg" firstAttribute="top" secondItem="CmS-Rr-TLO" secondAttribute="top" constant="10" id="l6Q-a5-ywC"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Rho-e6-btR" secondAttribute="bottom" id="wQD-hX-4YK"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PETE, ПЭТ, ПЭТФ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zyf-MT-pKI">
+                                                <rect key="frame" x="160" y="85.333333333333329" width="205" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="caT-xF-wfa"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="CustomBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="zyf-MT-pKI" secondAttribute="trailing" constant="10" id="4xo-df-UCy"/>
+                                            <constraint firstAttribute="trailing" secondItem="D6d-aB-E1f" secondAttribute="trailing" constant="10" id="6xR-uW-m7j"/>
+                                            <constraint firstItem="D6d-aB-E1f" firstAttribute="leading" secondItem="CmS-Rr-TLO" secondAttribute="trailing" constant="5" id="A4m-w4-ru8"/>
+                                            <constraint firstItem="zyf-MT-pKI" firstAttribute="centerY" secondItem="P72-ni-51t" secondAttribute="centerY" id="Cv7-zS-y0Q"/>
+                                            <constraint firstItem="6l2-ej-wl7" firstAttribute="leading" secondItem="CmS-Rr-TLO" secondAttribute="trailing" constant="5" id="MCV-YY-Dbk"/>
+                                            <constraint firstItem="CmS-Rr-TLO" firstAttribute="leading" secondItem="P72-ni-51t" secondAttribute="leading" constant="5" id="UV5-TY-a58"/>
+                                            <constraint firstAttribute="bottom" secondItem="D6d-aB-E1f" secondAttribute="bottom" id="VLM-Cd-cSw"/>
+                                            <constraint firstAttribute="trailing" secondItem="6l2-ej-wl7" secondAttribute="trailing" constant="10" id="WER-7R-2He"/>
+                                            <constraint firstItem="CmS-Rr-TLO" firstAttribute="top" secondItem="P72-ni-51t" secondAttribute="top" id="YJB-zA-QMt"/>
+                                            <constraint firstItem="CmS-Rr-TLO" firstAttribute="width" secondItem="P72-ni-51t" secondAttribute="width" multiplier="0.4" id="ZAl-DJ-CBW"/>
+                                            <constraint firstAttribute="height" constant="190.33333333333334" id="cv4-Xo-Av2"/>
+                                            <constraint firstItem="6l2-ej-wl7" firstAttribute="top" secondItem="P72-ni-51t" secondAttribute="top" constant="15" id="sLD-Re-fpX"/>
+                                            <constraint firstItem="zyf-MT-pKI" firstAttribute="leading" secondItem="CmS-Rr-TLO" secondAttribute="trailing" constant="5" id="vQZ-1V-c8K"/>
+                                            <constraint firstAttribute="bottom" secondItem="CmS-Rr-TLO" secondAttribute="bottom" id="yUO-Ko-Bew"/>
+                                        </constraints>
+                                    </view>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Распространённая в России упаковка из пластика, популярная у заготовителей и переработчиков." translatesAutoresizingMaskIntoConstraints="NO" id="p1p-td-clx">
+                                        <rect key="frame" x="15" y="235.33333333333334" width="345" height="80.666666666666657"/>
+                                        <color key="backgroundColor" name="CustomBackgroundColor"/>
+                                        <color key="tintColor" name="CustomTabBarTintColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Y7m-1Y-G01"/>
+                                        </constraints>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="rect" keyPath="textContainerInset">
+                                                <rect key="value" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="textContainer.lineFragmentPadding">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oDk-IO-wuF">
+                                        <rect key="frame" x="15" y="341" width="345" height="73.666666666666686"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Например: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OlP-TY-ndn">
+                                                <rect key="frame" x="0.0" y="0.0" width="345" height="21.666666666666668"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                                <color key="textColor" name="CustomTabBarTintColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Бутылки для жидкостей, контейнеры для еды" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKP-ab-ugc">
+                                                <rect key="frame" x="0.0" y="31.666666666666686" width="345" height="42"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="OlP-TY-ndn" firstAttribute="leading" secondItem="oDk-IO-wuF" secondAttribute="leading" id="1KC-tv-8M4"/>
+                                            <constraint firstAttribute="trailing" secondItem="JKP-ab-ugc" secondAttribute="trailing" id="Jk9-KL-9bq"/>
+                                            <constraint firstAttribute="trailing" secondItem="OlP-TY-ndn" secondAttribute="trailing" id="MTV-YB-OYd"/>
+                                            <constraint firstItem="JKP-ab-ugc" firstAttribute="leading" secondItem="oDk-IO-wuF" secondAttribute="leading" id="WjY-nL-Ioo"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="95k-XB-bYm">
+                                        <rect key="frame" x="15" y="439.66666666666669" width="345" height="155.33333333333331"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Как подготовить:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uer-Iv-ofI">
+                                                <rect key="frame" x="0.0" y="0.0" width="345" height="21.666666666666668"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                                <color key="textColor" name="CustomTabBarTintColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="- Помой упаковку - Сожми упаковку - Сними этикетки (по желанию) - Сними крышечки и кольца (по желанию)" translatesAutoresizingMaskIntoConstraints="NO" id="G2p-47-t5A">
+                                                <rect key="frame" x="0.0" y="31.666666666666636" width="345" height="123.66666666666669"/>
+                                                <color key="backgroundColor" name="CustomBackgroundColor"/>
+                                                <color key="tintColor" name="CustomTabBarTintColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="8r0-8o-NtA"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="rect" keyPath="textContainerInset">
+                                                        <rect key="value" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="textContainer.lineFragmentPadding">
+                                                        <integer key="value" value="0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="uer-Iv-ofI" secondAttribute="trailing" id="57T-wc-nV9"/>
+                                            <constraint firstItem="uer-Iv-ofI" firstAttribute="leading" secondItem="95k-XB-bYm" secondAttribute="leading" id="Gxb-kz-Pz7"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EDb-Ve-iQw">
+                                        <rect key="frame" x="15" y="620" width="345" height="627.66666666666652"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="О материале:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Gd-EL-gXd">
+                                                <rect key="frame" x="0.0" y="0.0" width="345" height="21.666666666666668"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                                <color key="textColor" name="CustomTabBarTintColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fz-8j-e4J">
+                                                <rect key="frame" x="0.0" y="31.666666666666629" width="345" height="596"/>
+                                                <color key="backgroundColor" name="CustomBackgroundColor"/>
+                                                <color key="tintColor" name="CustomTabBarTintColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="9zh-qf-lfK"/>
+                                                </constraints>
+                                                <string key="text">PET-упаковка бывает трёх видов: - Выдувная(банки и бутылки с характерной точкой на дне) - PET-коррекс (листовой пластик, из которого выдавливают упаковку типа контейнеров) - Плёнка. Каждая из разновидностей имеет разную плотность, поэтому перерабатывается отдельно друг от друга.Листовой PET и плёнку принимают намного реже и на это нужно обращать внимание при выборе пункта приёма.  PET-бутылки от напитков собирают повсеместно — это наиболее популярный вид пластика у заготовителей «бытового» вторсырья, соперничать с которым могут разве что макулатура и металлы, поэтому PET-бутылки от напитков можно сдать во всех контейнерах и пунктах приёма, которые заявляют, что принимают пластик. Часто это вообще единственный вид пластика, который принимают.</string>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="rect" keyPath="textContainerInset">
+                                                        <rect key="value" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="textContainer.lineFragmentPadding">
+                                                        <integer key="value" value="0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="9fz-8j-e4J" secondAttribute="trailing" id="6mf-S1-AfT"/>
+                                            <constraint firstItem="9fz-8j-e4J" firstAttribute="leading" secondItem="EDb-Ve-iQw" secondAttribute="leading" id="XVa-to-2t3"/>
+                                            <constraint firstAttribute="trailing" secondItem="9Gd-EL-gXd" secondAttribute="trailing" id="iQ8-Oi-1Ar"/>
+                                            <constraint firstItem="9Gd-EL-gXd" firstAttribute="leading" secondItem="EDb-Ve-iQw" secondAttribute="leading" id="rZK-9M-fcG"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="p1p-td-clx" secondAttribute="trailing" constant="15" id="0DW-lO-HnR"/>
+                                    <constraint firstAttribute="trailing" secondItem="P72-ni-51t" secondAttribute="trailing" id="1GZ-LG-TJS"/>
+                                    <constraint firstItem="P72-ni-51t" firstAttribute="width" secondItem="dfq-JX-n02" secondAttribute="width" id="3Ld-4v-3XV"/>
+                                    <constraint firstItem="P72-ni-51t" firstAttribute="top" secondItem="dfq-JX-n02" secondAttribute="top" constant="20" id="6Gt-Tl-cel"/>
+                                    <constraint firstItem="oDk-IO-wuF" firstAttribute="top" secondItem="p1p-td-clx" secondAttribute="bottom" constant="25" id="Eiu-AO-SMS"/>
+                                    <constraint firstItem="p1p-td-clx" firstAttribute="leading" secondItem="dfq-JX-n02" secondAttribute="leading" constant="15" id="MnM-Vt-9QJ"/>
+                                    <constraint firstItem="EDb-Ve-iQw" firstAttribute="trailing" secondItem="95k-XB-bYm" secondAttribute="trailing" id="QeV-R1-jLo"/>
+                                    <constraint firstItem="oDk-IO-wuF" firstAttribute="leading" secondItem="p1p-td-clx" secondAttribute="leading" id="SMG-G7-8yn"/>
+                                    <constraint firstItem="p1p-td-clx" firstAttribute="top" secondItem="P72-ni-51t" secondAttribute="bottom" constant="25" id="T7N-2g-lGH"/>
+                                    <constraint firstItem="95k-XB-bYm" firstAttribute="leading" secondItem="JKP-ab-ugc" secondAttribute="leading" id="UWH-Nh-C2V"/>
+                                    <constraint firstItem="P72-ni-51t" firstAttribute="leading" secondItem="dfq-JX-n02" secondAttribute="leading" id="UqV-0R-u2q"/>
+                                    <constraint firstAttribute="bottom" secondItem="EDb-Ve-iQw" secondAttribute="bottom" constant="20" id="Z0m-Fi-pCn"/>
+                                    <constraint firstItem="95k-XB-bYm" firstAttribute="top" secondItem="JKP-ab-ugc" secondAttribute="bottom" constant="25" id="ayu-Yi-EbF"/>
+                                    <constraint firstItem="EDb-Ve-iQw" firstAttribute="top" secondItem="95k-XB-bYm" secondAttribute="bottom" constant="25" id="dhw-YD-TpO"/>
+                                    <constraint firstItem="EDb-Ve-iQw" firstAttribute="leading" secondItem="95k-XB-bYm" secondAttribute="leading" id="itL-Jb-b6G"/>
+                                    <constraint firstItem="95k-XB-bYm" firstAttribute="trailing" secondItem="JKP-ab-ugc" secondAttribute="trailing" id="mjq-uL-qLO"/>
+                                    <constraint firstItem="oDk-IO-wuF" firstAttribute="trailing" secondItem="p1p-td-clx" secondAttribute="trailing" id="xh4-Ks-Dqj"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" name="CustomBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dfq-JX-n02" firstAttribute="top" secondItem="unn-Ke-uOF" secondAttribute="top" id="Avo-uO-wWm"/>
+                            <constraint firstAttribute="bottom" secondItem="dfq-JX-n02" secondAttribute="bottom" id="LJf-Fx-0a5"/>
+                            <constraint firstItem="dfq-JX-n02" firstAttribute="width" secondItem="unn-Ke-uOF" secondAttribute="width" id="W2z-dl-FIJ"/>
+                            <constraint firstItem="dfq-JX-n02" firstAttribute="leading" secondItem="rrP-3d-jwJ" secondAttribute="leading" id="fvC-ld-hmT"/>
+                            <constraint firstItem="dfq-JX-n02" firstAttribute="trailing" secondItem="rrP-3d-jwJ" secondAttribute="trailing" id="lOy-bF-awt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rrP-3d-jwJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="AqF-9f-jgX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Vx-VI-hIg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2256.8000000000002" y="137.4384236453202"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrow.3.trianglepath" catalog="system" width="128" height="128"/>
@@ -186,6 +427,12 @@
         </namedColor>
         <namedColor name="CustomDarkBackgroundColor">
             <color red="0.94700002670288086" green="0.94300001859664917" blue="0.95200002193450928" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="CustomTabBarTintColor">
+            <color red="0.36500000953674316" green="0.57599997520446777" blue="0.31000000238418579" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="NormalRecycleStatusColor">
+            <color red="0.80500000715255737" green="0.69499999284744263" blue="0.2800000011920929" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>
