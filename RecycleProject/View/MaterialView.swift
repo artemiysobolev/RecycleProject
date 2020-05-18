@@ -46,7 +46,7 @@ class MaterialView: UIView {
         shortNameLabel.text = material.shortName
         fullNameLabel.text = material.fullName
         anotherNameLabel.text = material.anotherNames
-        recycleDifficultyLabel.text = String(material.numberOfRecyclePoints) // need to change!
+        //        recycleDifficultyLabel.text = String(material.numberOfRecyclePoints) 
         
         if let shortDescription = material.shortDesctiption {
             shortDescriptionTextView.text = shortDescription
@@ -69,7 +69,7 @@ class MaterialView: UIView {
         if let fullDescription = material.fullDescription, !(fullDescription.isEmptyOrWhitespace()) {
             fullDescriptionTextView.text = fullDescription
         } else {
-            fullDescriptionTextView.isHidden = true
+            fullDescriptionStackView.isHidden = true
         }
     }
 }

@@ -203,8 +203,8 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PET" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rho-e6-btR">
-                                                        <rect key="frame" x="0.0" y="155.33333333333334" width="150" height="35"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PET" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Rho-e6-btR">
+                                                        <rect key="frame" x="0.0" y="145" width="150" height="45.333333333333343"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -218,6 +218,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="YIP-AV-dmf" secondAttribute="trailing" id="LKn-gA-oMx"/>
                                                     <constraint firstItem="YIP-AV-dmf" firstAttribute="top" secondItem="CmS-Rr-TLO" secondAttribute="top" constant="55" id="gXI-SE-ue5"/>
                                                     <constraint firstItem="5e8-jW-Rqg" firstAttribute="centerX" secondItem="CmS-Rr-TLO" secondAttribute="centerX" id="hWY-tl-0NP"/>
+                                                    <constraint firstItem="Rho-e6-btR" firstAttribute="top" secondItem="5e8-jW-Rqg" secondAttribute="bottom" constant="15" id="k5I-xL-jK6"/>
                                                     <constraint firstItem="5e8-jW-Rqg" firstAttribute="top" secondItem="CmS-Rr-TLO" secondAttribute="top" constant="10" id="l6Q-a5-ywC"/>
                                                     <constraint firstAttribute="bottom" secondItem="Rho-e6-btR" secondAttribute="bottom" id="wQD-hX-4YK"/>
                                                 </constraints>
@@ -231,7 +232,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пункт приёма на переработку придётся поискать" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6d-aB-E1f">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Придётся поискать, куда это можно сдать в твоём регионе" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6d-aB-E1f">
                                                 <rect key="frame" x="160" y="129.33333333333334" width="205" height="61"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="61" id="S9V-Nc-RbP"/>
@@ -268,63 +269,15 @@
                                             <constraint firstAttribute="bottom" secondItem="CmS-Rr-TLO" secondAttribute="bottom" id="yUO-Ko-Bew"/>
                                         </constraints>
                                     </view>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Распространённая в России упаковка из пластика, популярная у заготовителей и переработчиков." translatesAutoresizingMaskIntoConstraints="NO" id="p1p-td-clx">
-                                        <rect key="frame" x="15" y="235.33333333333334" width="345" height="80.666666666666657"/>
-                                        <color key="backgroundColor" name="CustomBackgroundColor"/>
-                                        <color key="tintColor" name="CustomTabBarTintColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Y7m-1Y-G01"/>
-                                        </constraints>
-                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="rect" keyPath="textContainerInset">
-                                                <rect key="value" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="textContainer.lineFragmentPadding">
-                                                <integer key="value" value="0"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oDk-IO-wuF">
-                                        <rect key="frame" x="15" y="341" width="345" height="73.666666666666686"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="evK-sE-gye">
+                                        <rect key="frame" x="15" y="235.33333333333337" width="345" height="1042.333333333333"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Например: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OlP-TY-ndn">
-                                                <rect key="frame" x="0.0" y="0.0" width="345" height="21.666666666666668"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
-                                                <color key="textColor" name="CustomTabBarTintColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Бутылки для жидкостей, контейнеры для еды" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKP-ab-ugc">
-                                                <rect key="frame" x="0.0" y="31.666666666666686" width="345" height="42"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="OlP-TY-ndn" firstAttribute="leading" secondItem="oDk-IO-wuF" secondAttribute="leading" id="1KC-tv-8M4"/>
-                                            <constraint firstAttribute="trailing" secondItem="JKP-ab-ugc" secondAttribute="trailing" id="Jk9-KL-9bq"/>
-                                            <constraint firstAttribute="trailing" secondItem="OlP-TY-ndn" secondAttribute="trailing" id="MTV-YB-OYd"/>
-                                            <constraint firstItem="JKP-ab-ugc" firstAttribute="leading" secondItem="oDk-IO-wuF" secondAttribute="leading" id="WjY-nL-Ioo"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="95k-XB-bYm">
-                                        <rect key="frame" x="15" y="439.66666666666669" width="345" height="155.33333333333331"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Как подготовить:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uer-Iv-ofI">
-                                                <rect key="frame" x="0.0" y="0.0" width="345" height="21.666666666666668"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
-                                                <color key="textColor" name="CustomTabBarTintColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="- Помой упаковку - Сожми упаковку - Сними этикетки (по желанию) - Сними крышечки и кольца (по желанию)" translatesAutoresizingMaskIntoConstraints="NO" id="G2p-47-t5A">
-                                                <rect key="frame" x="0.0" y="31.666666666666636" width="345" height="123.66666666666669"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Распространённая в России упаковка из пластика, популярная у заготовителей и переработчиков." translatesAutoresizingMaskIntoConstraints="NO" id="p1p-td-clx">
+                                                <rect key="frame" x="0.0" y="0.0" width="345" height="80.666666666666671"/>
                                                 <color key="backgroundColor" name="CustomBackgroundColor"/>
                                                 <color key="tintColor" name="CustomTabBarTintColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="8r0-8o-NtA"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Y7m-1Y-G01"/>
                                                 </constraints>
                                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
@@ -338,68 +291,112 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="uer-Iv-ofI" secondAttribute="trailing" id="57T-wc-nV9"/>
-                                            <constraint firstItem="uer-Iv-ofI" firstAttribute="leading" secondItem="95k-XB-bYm" secondAttribute="leading" id="Gxb-kz-Pz7"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EDb-Ve-iQw">
-                                        <rect key="frame" x="15" y="620" width="345" height="627.66666666666652"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="О материале:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Gd-EL-gXd">
-                                                <rect key="frame" x="0.0" y="0.0" width="345" height="21.666666666666668"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
-                                                <color key="textColor" name="CustomTabBarTintColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fz-8j-e4J">
-                                                <rect key="frame" x="0.0" y="31.666666666666629" width="345" height="596"/>
-                                                <color key="backgroundColor" name="CustomBackgroundColor"/>
-                                                <color key="tintColor" name="CustomTabBarTintColor"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oDk-IO-wuF">
+                                                <rect key="frame" x="0.0" y="115.66666666666666" width="345" height="73.666666666666657"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Например" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OlP-TY-ndn">
+                                                        <rect key="frame" x="0.0" y="0.0" width="345" height="21.666666666666668"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                                        <color key="textColor" name="CustomTabBarTintColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Бутылки для жидкостей, контейнеры для еды" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKP-ab-ugc">
+                                                        <rect key="frame" x="0.0" y="31.666666666666686" width="345" height="42"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="9zh-qf-lfK"/>
+                                                    <constraint firstItem="OlP-TY-ndn" firstAttribute="leading" secondItem="oDk-IO-wuF" secondAttribute="leading" id="1KC-tv-8M4"/>
+                                                    <constraint firstAttribute="trailing" secondItem="JKP-ab-ugc" secondAttribute="trailing" id="Jk9-KL-9bq"/>
+                                                    <constraint firstAttribute="trailing" secondItem="OlP-TY-ndn" secondAttribute="trailing" id="MTV-YB-OYd"/>
+                                                    <constraint firstItem="JKP-ab-ugc" firstAttribute="leading" secondItem="oDk-IO-wuF" secondAttribute="leading" id="WjY-nL-Ioo"/>
                                                 </constraints>
-                                                <string key="text">PET-упаковка бывает трёх видов: - Выдувная(банки и бутылки с характерной точкой на дне) - PET-коррекс (листовой пластик, из которого выдавливают упаковку типа контейнеров) - Плёнка. Каждая из разновидностей имеет разную плотность, поэтому перерабатывается отдельно друг от друга.Листовой PET и плёнку принимают намного реже и на это нужно обращать внимание при выборе пункта приёма.  PET-бутылки от напитков собирают повсеместно — это наиболее популярный вид пластика у заготовителей «бытового» вторсырья, соперничать с которым могут разве что макулатура и металлы, поэтому PET-бутылки от напитков можно сдать во всех контейнерах и пунктах приёма, которые заявляют, что принимают пластик. Часто это вообще единственный вид пластика, который принимают.</string>
-                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="rect" keyPath="textContainerInset">
-                                                        <rect key="value" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="textContainer.lineFragmentPadding">
-                                                        <integer key="value" value="0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </textView>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="95k-XB-bYm">
+                                                <rect key="frame" x="0.0" y="224.33333333333331" width="345" height="155.33333333333331"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Как подготовить?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uer-Iv-ofI">
+                                                        <rect key="frame" x="0.0" y="0.0" width="345" height="21.666666666666668"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                                        <color key="textColor" name="CustomTabBarTintColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="- Помой упаковку - Сожми упаковку - Сними этикетки (по желанию) - Сними крышечки и кольца (по желанию)" translatesAutoresizingMaskIntoConstraints="NO" id="G2p-47-t5A">
+                                                        <rect key="frame" x="0.0" y="31.666666666666636" width="345" height="123.66666666666669"/>
+                                                        <color key="backgroundColor" name="CustomBackgroundColor"/>
+                                                        <color key="tintColor" name="CustomTabBarTintColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="8r0-8o-NtA"/>
+                                                        </constraints>
+                                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="rect" keyPath="textContainerInset">
+                                                                <rect key="value" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="textContainer.lineFragmentPadding">
+                                                                <integer key="value" value="0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="uer-Iv-ofI" secondAttribute="trailing" id="57T-wc-nV9"/>
+                                                    <constraint firstItem="uer-Iv-ofI" firstAttribute="leading" secondItem="95k-XB-bYm" secondAttribute="leading" id="Gxb-kz-Pz7"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EDb-Ve-iQw">
+                                                <rect key="frame" x="0.0" y="414.66666666666669" width="345" height="627.66666666666652"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="О материале" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Gd-EL-gXd">
+                                                        <rect key="frame" x="0.0" y="0.0" width="345" height="21.666666666666668"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                                        <color key="textColor" name="CustomTabBarTintColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fz-8j-e4J">
+                                                        <rect key="frame" x="0.0" y="31.666666666666629" width="345" height="596"/>
+                                                        <color key="backgroundColor" name="CustomBackgroundColor"/>
+                                                        <color key="tintColor" name="CustomTabBarTintColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="9zh-qf-lfK"/>
+                                                        </constraints>
+                                                        <string key="text">PET-упаковка бывает трёх видов: - Выдувная(банки и бутылки с характерной точкой на дне) - PET-коррекс (листовой пластик, из которого выдавливают упаковку типа контейнеров) - Плёнка. Каждая из разновидностей имеет разную плотность, поэтому перерабатывается отдельно друг от друга.Листовой PET и плёнку принимают намного реже и на это нужно обращать внимание при выборе пункта приёма.  PET-бутылки от напитков собирают повсеместно — это наиболее популярный вид пластика у заготовителей «бытового» вторсырья, соперничать с которым могут разве что макулатура и металлы, поэтому PET-бутылки от напитков можно сдать во всех контейнерах и пунктах приёма, которые заявляют, что принимают пластик. Часто это вообще единственный вид пластика, который принимают.</string>
+                                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="rect" keyPath="textContainerInset">
+                                                                <rect key="value" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="textContainer.lineFragmentPadding">
+                                                                <integer key="value" value="0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="9fz-8j-e4J" secondAttribute="trailing" id="6mf-S1-AfT"/>
+                                                    <constraint firstItem="9fz-8j-e4J" firstAttribute="leading" secondItem="EDb-Ve-iQw" secondAttribute="leading" id="XVa-to-2t3"/>
+                                                    <constraint firstAttribute="trailing" secondItem="9Gd-EL-gXd" secondAttribute="trailing" id="iQ8-Oi-1Ar"/>
+                                                    <constraint firstItem="9Gd-EL-gXd" firstAttribute="leading" secondItem="EDb-Ve-iQw" secondAttribute="leading" id="rZK-9M-fcG"/>
+                                                </constraints>
+                                            </stackView>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="9fz-8j-e4J" secondAttribute="trailing" id="6mf-S1-AfT"/>
-                                            <constraint firstItem="9fz-8j-e4J" firstAttribute="leading" secondItem="EDb-Ve-iQw" secondAttribute="leading" id="XVa-to-2t3"/>
-                                            <constraint firstAttribute="trailing" secondItem="9Gd-EL-gXd" secondAttribute="trailing" id="iQ8-Oi-1Ar"/>
-                                            <constraint firstItem="9Gd-EL-gXd" firstAttribute="leading" secondItem="EDb-Ve-iQw" secondAttribute="leading" id="rZK-9M-fcG"/>
-                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="p1p-td-clx" secondAttribute="trailing" constant="15" id="0DW-lO-HnR"/>
                                     <constraint firstAttribute="trailing" secondItem="P72-ni-51t" secondAttribute="trailing" id="1GZ-LG-TJS"/>
                                     <constraint firstItem="P72-ni-51t" firstAttribute="width" secondItem="dfq-JX-n02" secondAttribute="width" id="3Ld-4v-3XV"/>
                                     <constraint firstItem="P72-ni-51t" firstAttribute="top" secondItem="dfq-JX-n02" secondAttribute="top" constant="20" id="6Gt-Tl-cel"/>
-                                    <constraint firstItem="oDk-IO-wuF" firstAttribute="top" secondItem="p1p-td-clx" secondAttribute="bottom" constant="25" id="Eiu-AO-SMS"/>
-                                    <constraint firstItem="p1p-td-clx" firstAttribute="leading" secondItem="dfq-JX-n02" secondAttribute="leading" constant="15" id="MnM-Vt-9QJ"/>
-                                    <constraint firstItem="EDb-Ve-iQw" firstAttribute="trailing" secondItem="95k-XB-bYm" secondAttribute="trailing" id="QeV-R1-jLo"/>
-                                    <constraint firstItem="oDk-IO-wuF" firstAttribute="leading" secondItem="p1p-td-clx" secondAttribute="leading" id="SMG-G7-8yn"/>
-                                    <constraint firstItem="p1p-td-clx" firstAttribute="top" secondItem="P72-ni-51t" secondAttribute="bottom" constant="25" id="T7N-2g-lGH"/>
-                                    <constraint firstItem="95k-XB-bYm" firstAttribute="leading" secondItem="JKP-ab-ugc" secondAttribute="leading" id="UWH-Nh-C2V"/>
+                                    <constraint firstAttribute="trailing" secondItem="evK-sE-gye" secondAttribute="trailing" constant="15" id="8Qi-4B-jtF"/>
                                     <constraint firstItem="P72-ni-51t" firstAttribute="leading" secondItem="dfq-JX-n02" secondAttribute="leading" id="UqV-0R-u2q"/>
-                                    <constraint firstAttribute="bottom" secondItem="EDb-Ve-iQw" secondAttribute="bottom" constant="20" id="Z0m-Fi-pCn"/>
-                                    <constraint firstItem="95k-XB-bYm" firstAttribute="top" secondItem="JKP-ab-ugc" secondAttribute="bottom" constant="25" id="ayu-Yi-EbF"/>
-                                    <constraint firstItem="EDb-Ve-iQw" firstAttribute="top" secondItem="95k-XB-bYm" secondAttribute="bottom" constant="25" id="dhw-YD-TpO"/>
-                                    <constraint firstItem="EDb-Ve-iQw" firstAttribute="leading" secondItem="95k-XB-bYm" secondAttribute="leading" id="itL-Jb-b6G"/>
-                                    <constraint firstItem="95k-XB-bYm" firstAttribute="trailing" secondItem="JKP-ab-ugc" secondAttribute="trailing" id="mjq-uL-qLO"/>
-                                    <constraint firstItem="oDk-IO-wuF" firstAttribute="trailing" secondItem="p1p-td-clx" secondAttribute="trailing" id="xh4-Ks-Dqj"/>
+                                    <constraint firstAttribute="bottom" secondItem="evK-sE-gye" secondAttribute="bottom" constant="20" id="iQu-AK-tAE"/>
+                                    <constraint firstItem="evK-sE-gye" firstAttribute="top" secondItem="P72-ni-51t" secondAttribute="bottom" constant="24.999999999999972" id="sKC-cn-2Gr"/>
+                                    <constraint firstItem="evK-sE-gye" firstAttribute="leading" secondItem="dfq-JX-n02" secondAttribute="leading" constant="15" id="u1A-nI-x4E"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
