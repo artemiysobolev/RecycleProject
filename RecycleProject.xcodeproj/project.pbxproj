@@ -45,7 +45,7 @@
 		BAA305CF2469B7210042EE97 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA305CE2469B7210042EE97 /* FirebaseService.swift */; };
 		BAAE50A52468550000979F2D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAAE50A42468550000979F2D /* GoogleService-Info.plist */; };
 		BABFE9C1247AF26F00D0E0EA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABFE9C0247AF26F00D0E0EA /* MapViewController.swift */; };
-		BABFE9C3247AF2A200D0E0EA /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABFE9C2247AF2A200D0E0EA /* Point.swift */; };
+		BABFE9C3247AF2A200D0E0EA /* RecycleStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABFE9C2247AF2A200D0E0EA /* RecycleStation.swift */; };
 		BABFE9C5247AF2CE00D0E0EA /* MapViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABFE9C4247AF2CE00D0E0EA /* MapViewControllerExtension.swift */; };
 		BABFE9C7247B07B200D0E0EA /* CLLocationCoordinate2D+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABFE9C6247B07B200D0E0EA /* CLLocationCoordinate2D+Extension.swift */; };
 		BAC41B8524688BB700DAEAA4 /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC41B8424688BB700DAEAA4 /* NewsItem.swift */; };
@@ -98,7 +98,7 @@
 		BAA305CE2469B7210042EE97 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		BAAE50A42468550000979F2D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BABFE9C0247AF26F00D0E0EA /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		BABFE9C2247AF2A200D0E0EA /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		BABFE9C2247AF2A200D0E0EA /* RecycleStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycleStation.swift; sourceTree = "<group>"; };
 		BABFE9C4247AF2CE00D0E0EA /* MapViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerExtension.swift; sourceTree = "<group>"; };
 		BABFE9C6247B07B200D0E0EA /* CLLocationCoordinate2D+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Extension.swift"; sourceTree = "<group>"; };
 		BAC41B8424688BB700DAEAA4 /* NewsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = "<group>"; };
@@ -205,7 +205,7 @@
 				BA47BBBB246B041800218493 /* Region.swift */,
 				BA47BBBD246B332500218493 /* Publisher.swift */,
 				BA47BBC5246B545B00218493 /* Settings.swift */,
-				BABFE9C2247AF2A200D0E0EA /* Point.swift */,
+				BABFE9C2247AF2A200D0E0EA /* RecycleStation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -442,7 +442,7 @@
 				BA47BBBA246B038000218493 /* RegionViewController.swift in Sources */,
 				BA7788ED2467533600545B8D /* NewsTableViewCell.swift in Sources */,
 				BAEB5709246DF30700DB3E57 /* HandbookViewController.swift in Sources */,
-				BABFE9C3247AF2A200D0E0EA /* Point.swift in Sources */,
+				BABFE9C3247AF2A200D0E0EA /* RecycleStation.swift in Sources */,
 				BAE8CC2A2473218B00B36DB6 /* MaterialViewController.swift in Sources */,
 				BAA305CC2469782F0042EE97 /* NewsItemViewController.swift in Sources */,
 				BA95FDAE2465E10A001E112A /* SceneDelegate.swift in Sources */,

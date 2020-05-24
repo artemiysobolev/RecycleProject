@@ -20,7 +20,7 @@ class MapViewController: UIViewController, YMKUserLocationObjectListener, YMKMap
     var placemarkTapListener: YMKMapObjectTapListener {
         return self
     }
-    var points: [CLLocationCoordinate2D: Point] = [:]
+    var stations: [CLLocationCoordinate2D: RecycleStation] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,19 +41,19 @@ class MapViewController: UIViewController, YMKUserLocationObjectListener, YMKMap
     
     private func loadPointsFromServer() {
         guard let regionCode = UserDefaults.standard.getRegion()?.code else { return }
-        FirebaseService.getData(collectionPath: "Regions/\(regionCode)/Points") { (data: [Point]) in
-            for point in data {
-                self.points[point.location] = point
+        FirebaseService.getData(collectionPath: "Regions/\(regionCode)/Points") { (data: [RecycleStation]) in
+            for station in data {
+                self.stations[station.location] = station
             }
-            self.addPointsToMap()
+            self.addStationsOnMap()
         }
     }
     
-    private func addPointsToMap() {
+    private func addStationsOnMap() {
         mapObjects.clear()
-        for point in points {
-            let pointCoordinate = YMKPoint(latitude: point.value.location.latitude,
-                                           longitude: point.value.location.longitude)
+        for station in stations {
+            let pointCoordinate = YMKPoint(latitude: station.value.location.latitude,
+                                           longitude: station.value.location.longitude)
             mapObjects
                 .addPlacemark(with: pointCoordinate, image: UIImage(named: "userLocation")!)
                 .addTapListener(with: placemarkTapListener)
@@ -92,8 +92,8 @@ class MapViewController: UIViewController, YMKUserLocationObjectListener, YMKMap
         guard let placemark = mapObject as? YMKPlacemarkMapObject else { return false }
         let geometry = placemark.geometry
         let currentCoordinate = CLLocationCoordinate2D(latitude: geometry.latitude, longitude: geometry.longitude)
-        let currentPoint = points[currentCoordinate]
-        print(currentPoint?.name)
+        let currentStation = stations[currentCoordinate]
+        print(currentStation?.name)
         
         return true
     }
