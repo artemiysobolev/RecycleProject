@@ -9,5 +9,6 @@ target 'RecycleProject' do
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
   pod 'Firebase/Storage'
+  pod 'YandexMapKit', '~> 3.5.0'
 
 end

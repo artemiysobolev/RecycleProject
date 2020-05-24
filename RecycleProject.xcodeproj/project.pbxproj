@@ -286,6 +286,7 @@
 				BA95FDA52465E10A001E112A /* Frameworks */,
 				BA95FDA62465E10A001E112A /* Resources */,
 				C30ABCC4E9E9ED29472F80AA /* [CP] Embed Pods Frameworks */,
+				E7A9E814481AC57D2D2E92B7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -393,6 +394,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RecycleProject/Pods-RecycleProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7A9E814481AC57D2D2E92B7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RecycleProject/Pods-RecycleProject-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RecycleProject/Pods-RecycleProject-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RecycleProject/Pods-RecycleProject-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
