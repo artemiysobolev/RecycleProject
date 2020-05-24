@@ -16,16 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wuy-KW-yEc">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zqb-OP-NyK" customClass="YMKMapView">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </mapView>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" name="CustomBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="wuy-KW-yEc" firstAttribute="trailing" secondItem="6U7-qd-iq5" secondAttribute="trailing" id="7fW-eB-cim"/>
-                            <constraint firstAttribute="bottom" secondItem="wuy-KW-yEc" secondAttribute="bottom" id="pym-K0-csF"/>
-                            <constraint firstItem="wuy-KW-yEc" firstAttribute="top" secondItem="agh-wt-Lr3" secondAttribute="top" id="um9-n9-mGq"/>
-                            <constraint firstItem="wuy-KW-yEc" firstAttribute="leading" secondItem="6U7-qd-iq5" secondAttribute="leading" id="wBc-QR-lXW"/>
+                            <constraint firstAttribute="bottom" secondItem="zqb-OP-NyK" secondAttribute="bottom" id="6Vx-yB-Q7D"/>
+                            <constraint firstItem="zqb-OP-NyK" firstAttribute="trailing" secondItem="6U7-qd-iq5" secondAttribute="trailing" id="D8y-TD-w22"/>
+                            <constraint firstItem="zqb-OP-NyK" firstAttribute="leading" secondItem="6U7-qd-iq5" secondAttribute="leading" id="gqf-pV-UO8"/>
+                            <constraint firstItem="zqb-OP-NyK" firstAttribute="top" secondItem="agh-wt-Lr3" secondAttribute="top" id="yy5-kG-646"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6U7-qd-iq5"/>
                     </view>
@@ -34,7 +35,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TNH-Ta-1PX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3143" y="906"/>
+            <point key="canvasLocation" x="-3143.4782608695655" y="905.35714285714278"/>
         </scene>
     </scenes>
     <resources>
