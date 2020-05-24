@@ -7,7 +7,7 @@ import UIKit
 import YandexMapKit
 import CoreLocation
 
-class MapViewController: UIViewController, YMKUserLocationObjectListener {
+class MapViewController: UIViewController, YMKUserLocationObjectListener, YMKMapObjectTapListener {
     
     @IBOutlet weak var mapView: YMKMapView!
     let mapkit = YMKMapKit.sharedInstance()
@@ -17,12 +17,15 @@ class MapViewController: UIViewController, YMKUserLocationObjectListener {
     var mapObjects: YMKMapObjectCollection {
         return mapView.mapWindow.map.mapObjects
     }
-    var points: [Point] = []
+    var placemarkTapListener: YMKMapObjectTapListener {
+        return self
+    }
+    var points: [CLLocationCoordinate2D: Point] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.mapWindow.map.isRotateGesturesEnabled = false
-
+        
         loadPointsFromServer()
         
         locationManager.delegate = self
@@ -39,7 +42,9 @@ class MapViewController: UIViewController, YMKUserLocationObjectListener {
     private func loadPointsFromServer() {
         guard let regionCode = UserDefaults.standard.getRegion()?.code else { return }
         FirebaseService.getData(collectionPath: "Regions/\(regionCode)/Points") { (data: [Point]) in
-            self.points = data
+            for point in data {
+                self.points[point.location] = point
+            }
             self.addPointsToMap()
         }
     }
@@ -47,9 +52,11 @@ class MapViewController: UIViewController, YMKUserLocationObjectListener {
     private func addPointsToMap() {
         mapObjects.clear()
         for point in points {
-            let pointCoordinate = YMKPoint(latitude: point.location.latitude, longitude: point.location.longitude)
-            let placemark = mapObjects.addPlacemark(with: pointCoordinate)
-            placemark.setIconWith(UIImage(named: "userLocation")!)
+            let pointCoordinate = YMKPoint(latitude: point.value.location.latitude,
+                                           longitude: point.value.location.longitude)
+            mapObjects
+                .addPlacemark(with: pointCoordinate, image: UIImage(named: "userLocation")!)
+                .addTapListener(with: placemarkTapListener)
         }
     }
     
@@ -69,6 +76,8 @@ class MapViewController: UIViewController, YMKUserLocationObjectListener {
         mapView.mapWindow.map.move(with: YMKCameraPosition(target: focusPoint, zoom: 12, azimuth: 0, tilt: 0))
     }
     
+    //MARK: - YMKMapKit listeners methods
+    
     func onObjectAdded(with view: YMKUserLocationView) {
         view.arrow.setIconWith(UIImage(named: "userLocation")!)
         let pinPlacemark = view.pin
@@ -78,4 +87,14 @@ class MapViewController: UIViewController, YMKUserLocationObjectListener {
     
     func onObjectRemoved(with view: YMKUserLocationView) {}
     func onObjectUpdated(with view: YMKUserLocationView, event: YMKObjectEvent) {}
+    
+    func onMapObjectTap(with mapObject: YMKMapObject, point: YMKPoint) -> Bool {
+        guard let placemark = mapObject as? YMKPlacemarkMapObject else { return false }
+        let geometry = placemark.geometry
+        let currentCoordinate = CLLocationCoordinate2D(latitude: geometry.latitude, longitude: geometry.longitude)
+        let currentPoint = points[currentCoordinate]
+        print(currentPoint?.name)
+        
+        return true
+    }
 }

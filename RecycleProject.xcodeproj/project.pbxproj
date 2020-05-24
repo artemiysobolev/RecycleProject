@@ -47,6 +47,7 @@
 		BABFE9C1247AF26F00D0E0EA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABFE9C0247AF26F00D0E0EA /* MapViewController.swift */; };
 		BABFE9C3247AF2A200D0E0EA /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABFE9C2247AF2A200D0E0EA /* Point.swift */; };
 		BABFE9C5247AF2CE00D0E0EA /* MapViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABFE9C4247AF2CE00D0E0EA /* MapViewControllerExtension.swift */; };
+		BABFE9C7247B07B200D0E0EA /* CLLocationCoordinate2D+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABFE9C6247B07B200D0E0EA /* CLLocationCoordinate2D+Extension.swift */; };
 		BAC41B8524688BB700DAEAA4 /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC41B8424688BB700DAEAA4 /* NewsItem.swift */; };
 		BAE8CC2A2473218B00B36DB6 /* MaterialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE8CC292473218B00B36DB6 /* MaterialViewController.swift */; };
 		BAE8CC2E247323D300B36DB6 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE8CC2D247323D300B36DB6 /* MaterialView.swift */; };
@@ -99,6 +100,7 @@
 		BABFE9C0247AF26F00D0E0EA /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BABFE9C2247AF2A200D0E0EA /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		BABFE9C4247AF2CE00D0E0EA /* MapViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerExtension.swift; sourceTree = "<group>"; };
+		BABFE9C6247B07B200D0E0EA /* CLLocationCoordinate2D+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Extension.swift"; sourceTree = "<group>"; };
 		BAC41B8424688BB700DAEAA4 /* NewsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = "<group>"; };
 		BAE8CC292473218B00B36DB6 /* MaterialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialViewController.swift; sourceTree = "<group>"; };
 		BAE8CC2D247323D300B36DB6 /* MaterialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			children = (
 				BA7788E12467497500545B8D /* UserDefaults+Extension.swift */,
 				BAEB5702246DBFF600DB3E57 /* String+Extension.swift */,
+				BABFE9C6247B07B200D0E0EA /* CLLocationCoordinate2D+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				BABFE9C5247AF2CE00D0E0EA /* MapViewControllerExtension.swift in Sources */,
 				BAA2FD73246F107A00153D7B /* CoreDataModel.xcdatamodeld in Sources */,
 				BAEB5705246DF2B600DB3E57 /* HandbookTableViewCell.swift in Sources */,
+				BABFE9C7247B07B200D0E0EA /* CLLocationCoordinate2D+Extension.swift in Sources */,
 				BAC41B8524688BB700DAEAA4 /* NewsItem.swift in Sources */,
 				BA7788E924674DC400545B8D /* FirstUsernameViewController.swift in Sources */,
 				BA7788EB24674DD500545B8D /* FirstRegionViewController.swift in Sources */,
