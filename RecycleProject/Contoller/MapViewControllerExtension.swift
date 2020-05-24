@@ -19,16 +19,11 @@ extension MapViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.first else {
+        guard locations.first != nil else {
             return
         }
-        
-        let coordinate = location.coordinate
-        
-        mapView.mapWindow.map.move(with:
-            YMKCameraPosition(target: YMKPoint(latitude: coordinate.latitude, longitude: coordinate.longitude),
-                              zoom: 15, azimuth: 0, tilt: 0))
-        
+                
+        setupMapFocus()
         locationManager.stopUpdatingLocation()
     }
 }

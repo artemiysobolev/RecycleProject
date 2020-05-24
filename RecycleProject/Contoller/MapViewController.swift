@@ -27,13 +27,15 @@ class MapViewController: UIViewController, YMKUserLocationObjectListener {
         }
         
         mapView.mapWindow.map.isRotateGesturesEnabled = false
-        mapView.mapWindow.map.move(with:
-            YMKCameraPosition(target: YMKPoint(latitude: 59.950749, longitude: 30.316751), zoom: 12, azimuth: 0, tilt: 0)) // city here
+//        mapView.mapWindow.map.move(
+//            with: YMKCameraPosition(target: YMKPoint(latitude: 59.950749, longitude: 30.316751), zoom: 12, azimuth: 0, tilt: 0))
         
-        userLocation = mapkit.createUserLocationLayer(with: mapView.mapWindow)
+        
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
+        
         configureUserLocation()
+        setupMapFocus()
     }
     
     func addPointsToMap() {
@@ -46,10 +48,24 @@ class MapViewController: UIViewController, YMKUserLocationObjectListener {
     }
     
     func configureUserLocation() {
+        userLocation = mapkit.createUserLocationLayer(with: mapView.mapWindow)
         userLocation.setVisibleWithOn(true)
         userLocation.setObjectListenerWith(self)
-        guard let userPosition = userLocation.cameraPosition() else { return }
-        mapView.mapWindow.map.move(with: userPosition)
+//        let userCoordinate = (locationManager.location?.coordinate)!
+//        let userPoint = YMKPoint(latitude: userCoordinate.latitude, longitude: userCoordinate.longitude)
+//        mapView.mapWindow.map.move(with: YMKCameraPosition(target: userPoint, zoom: 12, azimuth: 0, tilt: 0))
+////        guard let userPosition = userLocation.cameraPosition() else { return }
+////        mapView.mapWindow.map.move(with: userPosition)
+    }
+    
+    func setupMapFocus() {
+        var focusPoint = YMKPoint()
+        if let userCoordinate = locationManager.location?.coordinate {
+            focusPoint = YMKPoint(latitude: userCoordinate.latitude, longitude: userCoordinate.longitude)
+        } else {
+            focusPoint = YMKPoint(latitude: 59.950749, longitude: 30.316751) // city coordinates
+        }
+        mapView.mapWindow.map.move(with: YMKCameraPosition(target: focusPoint, zoom: 12, azimuth: 0, tilt: 0))
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
