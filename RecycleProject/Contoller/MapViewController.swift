@@ -14,22 +14,16 @@ class MapViewController: UIViewController, YMKUserLocationObjectListener {
     let scale = UIScreen.main.scale
     let locationManager = CLLocationManager()
     var userLocation: YMKUserLocationLayer!
-    var mapObjects: YMKMapObjectCollection!
+    var mapObjects: YMKMapObjectCollection {
+        return mapView.mapWindow.map.mapObjects
+    }
     var points: [Point] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapObjects = mapView.mapWindow.map.mapObjects
-        guard let regionCode = UserDefaults.standard.getRegion()?.code else { return }
-        FirebaseService.getData(collectionPath: "Regions/\(regionCode)/Points") { (data: [Point]) in
-            self.points = data
-            self.addPointsToMap()
-        }
-        
         mapView.mapWindow.map.isRotateGesturesEnabled = false
-//        mapView.mapWindow.map.move(
-//            with: YMKCameraPosition(target: YMKPoint(latitude: 59.950749, longitude: 30.316751), zoom: 12, azimuth: 0, tilt: 0))
-        
+
+        loadPointsFromServer()
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -38,7 +32,19 @@ class MapViewController: UIViewController, YMKUserLocationObjectListener {
         setupMapFocus()
     }
     
-    func addPointsToMap() {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .darkContent
+    }
+    
+    private func loadPointsFromServer() {
+        guard let regionCode = UserDefaults.standard.getRegion()?.code else { return }
+        FirebaseService.getData(collectionPath: "Regions/\(regionCode)/Points") { (data: [Point]) in
+            self.points = data
+            self.addPointsToMap()
+        }
+    }
+    
+    private func addPointsToMap() {
         mapObjects.clear()
         for point in points {
             let pointCoordinate = YMKPoint(latitude: point.location.latitude, longitude: point.location.longitude)
@@ -47,15 +53,10 @@ class MapViewController: UIViewController, YMKUserLocationObjectListener {
         }
     }
     
-    func configureUserLocation() {
+    private func configureUserLocation() {
         userLocation = mapkit.createUserLocationLayer(with: mapView.mapWindow)
         userLocation.setVisibleWithOn(true)
         userLocation.setObjectListenerWith(self)
-//        let userCoordinate = (locationManager.location?.coordinate)!
-//        let userPoint = YMKPoint(latitude: userCoordinate.latitude, longitude: userCoordinate.longitude)
-//        mapView.mapWindow.map.move(with: YMKCameraPosition(target: userPoint, zoom: 12, azimuth: 0, tilt: 0))
-////        guard let userPosition = userLocation.cameraPosition() else { return }
-////        mapView.mapWindow.map.move(with: userPosition)
     }
     
     func setupMapFocus() {
@@ -66,10 +67,6 @@ class MapViewController: UIViewController, YMKUserLocationObjectListener {
             focusPoint = YMKPoint(latitude: 59.950749, longitude: 30.316751) // city coordinates
         }
         mapView.mapWindow.map.move(with: YMKCameraPosition(target: focusPoint, zoom: 12, azimuth: 0, tilt: 0))
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .darkContent
     }
     
     func onObjectAdded(with view: YMKUserLocationView) {
