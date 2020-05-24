@@ -16,21 +16,18 @@ extension MapViewController: CLLocationManagerDelegate {
             return
         }
         locationManager.startUpdatingLocation()
-        
-        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard locations.first != nil else {
             return
         }
-                
         setupMapFocus()
         locationManager.stopUpdatingLocation()
     }
 }
 
-//MARK: - Work with YMKMapKit
+//MARK: - Work with Yandex MapKit
 
 extension MapViewController: YMKUserLocationObjectListener, YMKMapObjectTapListener {
     internal func addStationsOnMap() {
@@ -59,9 +56,7 @@ extension MapViewController: YMKUserLocationObjectListener, YMKMapObjectTapListe
         }
         mapView.mapWindow.map.move(with: YMKCameraPosition(target: focusPoint, zoom: 12, azimuth: 0, tilt: 0))
     }
-    
-    //MARK: - YMKMapKit listeners methods
-    
+        
     func onObjectAdded(with view: YMKUserLocationView) {
         view.arrow.setIconWith(UIImage(named: "userLocation")!)
         let pinPlacemark = view.pin
