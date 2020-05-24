@@ -7,7 +7,7 @@ import UIKit
 import YandexMapKit
 import CoreLocation
 
-class MapViewController: UIViewController, YMKUserLocationObjectListener, YMKMapObjectTapListener {
+class MapViewController: UIViewController {
     
     @IBOutlet weak var mapView: YMKMapView!
     let mapkit = YMKMapKit.sharedInstance()
@@ -47,54 +47,5 @@ class MapViewController: UIViewController, YMKUserLocationObjectListener, YMKMap
             }
             self.addStationsOnMap()
         }
-    }
-    
-    private func addStationsOnMap() {
-        mapObjects.clear()
-        for station in stations {
-            let pointCoordinate = YMKPoint(latitude: station.value.location.latitude,
-                                           longitude: station.value.location.longitude)
-            mapObjects
-                .addPlacemark(with: pointCoordinate, image: UIImage(named: "userLocation")!)
-                .addTapListener(with: placemarkTapListener)
-        }
-    }
-    
-    private func configureUserLocation() {
-        userLocation = mapkit.createUserLocationLayer(with: mapView.mapWindow)
-        userLocation.setVisibleWithOn(true)
-        userLocation.setObjectListenerWith(self)
-    }
-    
-    func setupMapFocus() {
-        var focusPoint = YMKPoint()
-        if let userCoordinate = locationManager.location?.coordinate {
-            focusPoint = YMKPoint(latitude: userCoordinate.latitude, longitude: userCoordinate.longitude)
-        } else {
-            focusPoint = YMKPoint(latitude: 59.950749, longitude: 30.316751) // city coordinates
-        }
-        mapView.mapWindow.map.move(with: YMKCameraPosition(target: focusPoint, zoom: 12, azimuth: 0, tilt: 0))
-    }
-    
-    //MARK: - YMKMapKit listeners methods
-    
-    func onObjectAdded(with view: YMKUserLocationView) {
-        view.arrow.setIconWith(UIImage(named: "userLocation")!)
-        let pinPlacemark = view.pin
-        pinPlacemark.setIconWith(UIImage(named: "userLocation")!)
-        view.accuracyCircle.fillColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1)
-    }
-    
-    func onObjectRemoved(with view: YMKUserLocationView) {}
-    func onObjectUpdated(with view: YMKUserLocationView, event: YMKObjectEvent) {}
-    
-    func onMapObjectTap(with mapObject: YMKMapObject, point: YMKPoint) -> Bool {
-        guard let placemark = mapObject as? YMKPlacemarkMapObject else { return false }
-        let geometry = placemark.geometry
-        let currentCoordinate = CLLocationCoordinate2D(latitude: geometry.latitude, longitude: geometry.longitude)
-        let currentStation = stations[currentCoordinate]
-        print(currentStation?.name)
-        
-        return true
     }
 }
