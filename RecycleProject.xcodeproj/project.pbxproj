@@ -155,16 +155,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		BA7788E524674D7E00545B8D /* FirstLaunch */ = {
-			isa = PBXGroup;
-			children = (
-				BA7788E624674DB400545B8D /* FirstPresentViewController.swift */,
-				BA7788E824674DC400545B8D /* FirstUsernameViewController.swift */,
-				BA7788EA24674DD500545B8D /* FirstRegionViewController.swift */,
-			);
-			path = FirstLaunch;
-			sourceTree = "<group>";
-		};
 		BA95FD9F2465E10A001E112A = {
 			isa = PBXGroup;
 			children = (
@@ -186,57 +176,14 @@
 		BA95FDAA2465E10A001E112A /* RecycleProject */ = {
 			isa = PBXGroup;
 			children = (
+				BABFE9C8247B138300D0E0EA /* Flow */,
 				BA22AA6F24729586009BBC5E /* Storyboards */,
-				BAA2FD74246F172B00153D7B /* Database */,
-				BAA305CD2469B6F30042EE97 /* Service */,
 				BA7788E02467496100545B8D /* Extensions */,
-				BA95FDBF24661950001E112A /* Model */,
-				BA95FDC024661957001E112A /* View */,
-				BA95FDC12466195C001E112A /* Contoller */,
+				BAA305CD2469B6F30042EE97 /* Service */,
+				BAA2FD74246F172B00153D7B /* Database */,
 				BA95FDC224661965001E112A /* Supporting files */,
 			);
 			path = RecycleProject;
-			sourceTree = "<group>";
-		};
-		BA95FDBF24661950001E112A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				BAC41B8424688BB700DAEAA4 /* NewsItem.swift */,
-				BA47BBBB246B041800218493 /* Region.swift */,
-				BA47BBBD246B332500218493 /* Publisher.swift */,
-				BA47BBC5246B545B00218493 /* Settings.swift */,
-				BABFE9C2247AF2A200D0E0EA /* RecycleStation.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		BA95FDC024661957001E112A /* View */ = {
-			isa = PBXGroup;
-			children = (
-				BA7788EC2467533600545B8D /* NewsTableViewCell.swift */,
-				BAEB5704246DF2B600DB3E57 /* HandbookTableViewCell.swift */,
-				BAEB5706246DF2E500DB3E57 /* HandbookCollectionViewCell.swift */,
-				BAE8CC2D247323D300B36DB6 /* MaterialView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		BA95FDC12466195C001E112A /* Contoller */ = {
-			isa = PBXGroup;
-			children = (
-				BA7788E524674D7E00545B8D /* FirstLaunch */,
-				BA7788DC2467485600545B8D /* NewsViewController.swift */,
-				BA7788EE2467542900545B8D /* NewsViewControllerExtension.swift */,
-				BAA305CB2469782F0042EE97 /* NewsItemViewController.swift */,
-				BA47BBB3246ABD4B00218493 /* SettingsTableViewController.swift */,
-				BA47BBB9246B038000218493 /* RegionViewController.swift */,
-				BA47BBC7246B5CB400218493 /* PublisherViewController.swift */,
-				BAEB5708246DF30700DB3E57 /* HandbookViewController.swift */,
-				BAE8CC292473218B00B36DB6 /* MaterialViewController.swift */,
-				BABFE9C0247AF26F00D0E0EA /* MapViewController.swift */,
-				BABFE9C4247AF2CE00D0E0EA /* MapViewControllerExtension.swift */,
-			);
-			path = Contoller;
 			sourceTree = "<group>";
 		};
 		BA95FDC224661965001E112A /* Supporting files */ = {
@@ -275,6 +222,155 @@
 				BAA2FD85247050B200153D7B /* CoreDataService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		BABFE9C8247B138300D0E0EA /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				BABFE9CD247B13B800D0E0EA /* Settings */,
+				BABFE9CC247B13B400D0E0EA /* Map */,
+				BABFE9CB247B13AE00D0E0EA /* Handbook */,
+				BABFE9CA247B13A700D0E0EA /* News */,
+				BABFE9C9247B139E00D0E0EA /* FirstLaunch */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		BABFE9C9247B139E00D0E0EA /* FirstLaunch */ = {
+			isa = PBXGroup;
+			children = (
+				BABFE9DA247B15D400D0E0EA /* Controller */,
+			);
+			path = FirstLaunch;
+			sourceTree = "<group>";
+		};
+		BABFE9CA247B13A700D0E0EA /* News */ = {
+			isa = PBXGroup;
+			children = (
+				BABFE9CE247B13F700D0E0EA /* Model */,
+				BABFE9CF247B13FC00D0E0EA /* View */,
+				BABFE9D0247B140100D0E0EA /* Controller */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		BABFE9CB247B13AE00D0E0EA /* Handbook */ = {
+			isa = PBXGroup;
+			children = (
+				BABFE9D2247B147A00D0E0EA /* View */,
+				BABFE9D3247B147E00D0E0EA /* Controller */,
+			);
+			path = Handbook;
+			sourceTree = "<group>";
+		};
+		BABFE9CC247B13B400D0E0EA /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				BABFE9D6247B14E600D0E0EA /* Model */,
+				BABFE9D4247B14DD00D0E0EA /* Controller */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		BABFE9CD247B13B800D0E0EA /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				BABFE9D9247B158400D0E0EA /* Model */,
+				BABFE9D7247B157A00D0E0EA /* Controller */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		BABFE9CE247B13F700D0E0EA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BAC41B8424688BB700DAEAA4 /* NewsItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BABFE9CF247B13FC00D0E0EA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA7788EC2467533600545B8D /* NewsTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BABFE9D0247B140100D0E0EA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA7788DC2467485600545B8D /* NewsViewController.swift */,
+				BA7788EE2467542900545B8D /* NewsViewControllerExtension.swift */,
+				BAA305CB2469782F0042EE97 /* NewsItemViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BABFE9D2247B147A00D0E0EA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BAE8CC2D247323D300B36DB6 /* MaterialView.swift */,
+				BAEB5704246DF2B600DB3E57 /* HandbookTableViewCell.swift */,
+				BAEB5706246DF2E500DB3E57 /* HandbookCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BABFE9D3247B147E00D0E0EA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BAE8CC292473218B00B36DB6 /* MaterialViewController.swift */,
+				BAEB5708246DF30700DB3E57 /* HandbookViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BABFE9D4247B14DD00D0E0EA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BABFE9C0247AF26F00D0E0EA /* MapViewController.swift */,
+				BABFE9C4247AF2CE00D0E0EA /* MapViewControllerExtension.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BABFE9D6247B14E600D0E0EA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BABFE9C2247AF2A200D0E0EA /* RecycleStation.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BABFE9D7247B157A00D0E0EA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA47BBB3246ABD4B00218493 /* SettingsTableViewController.swift */,
+				BA47BBB9246B038000218493 /* RegionViewController.swift */,
+				BA47BBC7246B5CB400218493 /* PublisherViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BABFE9D9247B158400D0E0EA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA47BBBD246B332500218493 /* Publisher.swift */,
+				BA47BBBB246B041800218493 /* Region.swift */,
+				BA47BBC5246B545B00218493 /* Settings.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BABFE9DA247B15D400D0E0EA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA7788E624674DB400545B8D /* FirstPresentViewController.swift */,
+				BA7788E824674DC400545B8D /* FirstUsernameViewController.swift */,
+				BA7788EA24674DD500545B8D /* FirstRegionViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		D9CF15E8D19AF70AF4EF7F7E /* Pods */ = {
