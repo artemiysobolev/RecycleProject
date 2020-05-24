@@ -11,7 +11,7 @@
         <!--Куда сдавать-->
         <scene sceneID="Qej-Gf-Fly">
             <objects>
-                <viewController id="Dcg-Cf-gCF" sceneMemberID="viewController">
+                <viewController id="Dcg-Cf-gCF" customClass="MapViewController" customModule="Ресайкл" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="agh-wt-Lr3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,6 +32,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Куда сдавать" image="map" catalog="system" id="zpm-lf-kce"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="mapView" destination="zqb-OP-NyK" id="16s-CY-mAN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TNH-Ta-1PX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

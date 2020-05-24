@@ -56,5 +56,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Мы будем отображать твою локацию на карте, чтобы было удобнее искать пункты рядом с домом</string>
 </dict>
 </plist>

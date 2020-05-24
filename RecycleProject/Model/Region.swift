@@ -1,21 +1,21 @@
 //
-//	Region.swift
-// 	RecycleProject
+//    Region.swift
+//     RecycleProject
 //
 
 import Foundation
 import Firebase
 
 struct Region: Codable, genericFirebaseDataProtocol {
-    let code: Int
+    let code: String
     let name: String
     
     init?(documentSnapshot: QueryDocumentSnapshot) {
-        guard let code = documentSnapshot["code"] as? Int,
-            let name = documentSnapshot["name"] as? String else {
+        guard let name = documentSnapshot["name"] as? String else {
                 return nil
         }
-        self.code = code
+        
+        self.code = documentSnapshot.documentID
         self.name = name
     }
 
