@@ -6,6 +6,7 @@
 import Foundation
 import YandexMapKit
 import CoreLocation
+import FloatingPanel
 
 //MARK: - Location manager delegate
 
@@ -71,9 +72,22 @@ extension MapViewController: YMKUserLocationObjectListener, YMKMapObjectTapListe
         guard let placemark = mapObject as? YMKPlacemarkMapObject else { return false }
         let geometry = placemark.geometry
         let currentCoordinate = CLLocationCoordinate2D(latitude: geometry.latitude, longitude: geometry.longitude)
-        let currentStation = stations[currentCoordinate]
-        print(currentStation?.name)
-        
+        guard let currentStation = stations[currentCoordinate] else { return false }
+        configureFloatingPanel(with: currentStation)
         return true
+    }
+}
+
+extension MapViewController: FloatingPanelControllerDelegate {
+    func configureFloatingPanel(with recycleStation: RecycleStation) {
+        recycleStationVC = FloatingPanelController()
+        recycleStationVC.surfaceView.cornerRadius = 20
+        recycleStationVC.surfaceView.grabberHandle.isHidden = true
+        guard let contentVC = UIStoryboard(name: "Map", bundle: nil).instantiateViewController(withIdentifier: "RecycleStationVC") as? RecycleStationViewController else { return }
+        contentVC.recycleStation = recycleStation
+        recycleStationVC.set(contentViewController: contentVC)
+        recycleStationVC.isRemovalInteractionEnabled = true
+
+        self.present(recycleStationVC, animated: true, completion: nil)
     }
 }

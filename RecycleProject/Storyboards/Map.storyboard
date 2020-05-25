@@ -18,7 +18,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zqb-OP-NyK" customClass="YMKMapView">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.87654644691780825" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" name="CustomBackgroundColor"/>
@@ -39,6 +39,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TNH-Ta-1PX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3143.4782608695655" y="905.35714285714278"/>
+        </scene>
+        <!--Recycle Station View Controller-->
+        <scene sceneID="RJg-T5-xE2">
+            <objects>
+                <viewController storyboardIdentifier="RecycleStationVC" id="19n-dc-hUl" customClass="RecycleStationViewController" customModule="Ресайкл" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kPT-1y-doC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="baI-v9-ar5" customClass="UIImageViewFromFirebase" customModule="Ресайкл" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="210"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" name="CustomBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="baI-v9-ar5" firstAttribute="top" secondItem="kPT-1y-doC" secondAttribute="top" id="5Nx-vJ-nR0"/>
+                            <constraint firstItem="baI-v9-ar5" firstAttribute="leading" secondItem="9eo-Rv-bNn" secondAttribute="leading" id="AnZ-mu-8cc"/>
+                            <constraint firstItem="baI-v9-ar5" firstAttribute="trailing" secondItem="9eo-Rv-bNn" secondAttribute="trailing" id="DcJ-DY-54M"/>
+                            <constraint firstItem="baI-v9-ar5" firstAttribute="height" secondItem="kPT-1y-doC" secondAttribute="height" multiplier="0.234375" id="Wqe-af-GdK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9eo-Rv-bNn"/>
+                    </view>
+                    <connections>
+                        <outlet property="stationImage" destination="baI-v9-ar5" id="4XM-Pb-ImC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hhu-Rj-vrO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2104.3478260869565" y="893.97321428571422"/>
         </scene>
     </scenes>
     <resources>

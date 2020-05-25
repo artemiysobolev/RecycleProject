@@ -8,5 +8,6 @@ target 'RecycleProject' do
   # Pods for RecycleProject
   pod 'Firebase/Firestore'
   pod 'YandexMapKit', '~> 3.5.0'
+  pod 'FloatingPanel'
 
 end

@@ -249,6 +249,7 @@ PODS:
     - "gRPC-C++ (~> 1.28.0)"
     - leveldb-library (~> 1.22)
     - nanopb (~> 1.30905.0)
+  - FloatingPanel (1.7.4)
   - GoogleDataTransport (6.1.0)
   - GoogleDataTransportCCTSupport (3.1.0):
     - GoogleDataTransport (~> 6.1)
@@ -294,6 +295,7 @@ PODS:
 
 DEPENDENCIES:
   - Firebase/Firestore
+  - FloatingPanel
   - YandexMapKit (~> 3.5.0)
 
 SPEC REPOS:
@@ -306,6 +308,7 @@ SPEC REPOS:
     - FirebaseCoreDiagnostics
     - FirebaseCoreDiagnosticsInterop
     - FirebaseFirestore
+    - FloatingPanel
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
     - GoogleUtilities
@@ -326,6 +329,7 @@ SPEC CHECKSUMS:
   FirebaseCoreDiagnostics: 4a773a47bd83bbd5a9b1ccf1ce7caa8b2d535e67
   FirebaseCoreDiagnosticsInterop: 296e2c5f5314500a850ad0b83e9e7c10b011a850
   FirebaseFirestore: 35f8f67d7b25e4743c62ea6e46c38cafa8dc32b5
+  FloatingPanel: 3c9d0e30fe350e1613157557769d2ec97f76b96b
   GoogleDataTransport: f6f8eba931df03ebd2232ff4645aa85f8f47b5ab
   GoogleDataTransportCCTSupport: d70a561f7d236af529fee598835caad5e25f6d3d
   GoogleUtilities: 39530bc0ad980530298e9c4af8549e991fd033b1
@@ -337,6 +341,6 @@ SPEC CHECKSUMS:
   YandexMapKit: ecd4b78de34a35df63d066ac299e6fd0fe46d1ba
   YandexRuntime: 2d55244d06267106cf9b00c25a1e63f72a73b6fd
 
-PODFILE CHECKSUM: d241ce439aa559ee772a64b46cf9dbdb252c181d
+PODFILE CHECKSUM: 6ba83415f62df1ecba96895afd0a65516a8ea3de
 
 COCOAPODS: 1.9.1
