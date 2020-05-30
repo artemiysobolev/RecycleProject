@@ -36,8 +36,13 @@ extension MapViewController: YMKUserLocationObjectListener, YMKMapObjectTapListe
         for station in stations {
             let pointCoordinate = YMKPoint(latitude: station.value.location.latitude,
                                            longitude: station.value.location.longitude)
+            
+            let viewRect = CGRect(x: station.value.location.latitude, y: station.value.location.longitude, width: 30, height: 30)
+            let view = PlacemarkView(frame: viewRect)
+            view.setSegmentedCircle(colors: station.value.colors)
+            guard let placemarkImage = view.convertToImage() else { return }
             mapObjects
-                .addPlacemark(with: pointCoordinate, image: UIImage(named: "userLocation")!)
+                .addPlacemark(with: pointCoordinate, image: placemarkImage)
                 .addTapListener(with: placemarkTapListener)
         }
     }
@@ -81,6 +86,7 @@ extension MapViewController: YMKUserLocationObjectListener, YMKMapObjectTapListe
 extension MapViewController: FloatingPanelControllerDelegate {
     func configureFloatingPanel(with recycleStation: RecycleStation) {
         recycleStationVC = FloatingPanelController()
+        guard let recycleStationVC = recycleStationVC else { return }
         recycleStationVC.surfaceView.cornerRadius = 20
         recycleStationVC.surfaceView.grabberHandle.isHidden = true
         guard let contentVC = UIStoryboard(name: "Map", bundle: nil).instantiateViewController(withIdentifier: "RecycleStationVC") as? RecycleStationViewController else { return }

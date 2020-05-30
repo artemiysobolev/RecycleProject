@@ -50,6 +50,9 @@
 		BABFE9C5247AF2CE00D0E0EA /* MapViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABFE9C4247AF2CE00D0E0EA /* MapViewControllerExtension.swift */; };
 		BABFE9C7247B07B200D0E0EA /* CLLocationCoordinate2D+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABFE9C6247B07B200D0E0EA /* CLLocationCoordinate2D+Extension.swift */; };
 		BAC41B8524688BB700DAEAA4 /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC41B8424688BB700DAEAA4 /* NewsItem.swift */; };
+		BAC5CD132482597D00C9EB54 /* PlacemarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC5CD122482597D00C9EB54 /* PlacemarkView.swift */; };
+		BAC5CD172482600100C9EB54 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC5CD162482600100C9EB54 /* UIView+Extension.swift */; };
+		BAC5CD1B24829BE100C9EB54 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC5CD1A24829BE100C9EB54 /* UIColor+Extension.swift */; };
 		BAE8CC2A2473218B00B36DB6 /* MaterialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE8CC292473218B00B36DB6 /* MaterialViewController.swift */; };
 		BAE8CC2E247323D300B36DB6 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE8CC2D247323D300B36DB6 /* MaterialView.swift */; };
 		BAEB5703246DBFF600DB3E57 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEB5702246DBFF600DB3E57 /* String+Extension.swift */; };
@@ -104,6 +107,9 @@
 		BABFE9C4247AF2CE00D0E0EA /* MapViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerExtension.swift; sourceTree = "<group>"; };
 		BABFE9C6247B07B200D0E0EA /* CLLocationCoordinate2D+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Extension.swift"; sourceTree = "<group>"; };
 		BAC41B8424688BB700DAEAA4 /* NewsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = "<group>"; };
+		BAC5CD122482597D00C9EB54 /* PlacemarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkView.swift; sourceTree = "<group>"; };
+		BAC5CD162482600100C9EB54 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		BAC5CD1A24829BE100C9EB54 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		BAE8CC292473218B00B36DB6 /* MaterialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialViewController.swift; sourceTree = "<group>"; };
 		BAE8CC2D247323D300B36DB6 /* MaterialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
 		BAEB5702246DBFF600DB3E57 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -153,6 +159,8 @@
 				BA7788E12467497500545B8D /* UserDefaults+Extension.swift */,
 				BAEB5702246DBFF600DB3E57 /* String+Extension.swift */,
 				BABFE9C6247B07B200D0E0EA /* CLLocationCoordinate2D+Extension.swift */,
+				BAC5CD162482600100C9EB54 /* UIView+Extension.swift */,
+				BAC5CD1A24829BE100C9EB54 /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -270,6 +278,7 @@
 			children = (
 				BABFE9D6247B14E600D0E0EA /* Model */,
 				BABFE9D4247B14DD00D0E0EA /* Controller */,
+				BAC5CD112482596700C9EB54 /* View */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -374,6 +383,14 @@
 				BA7788EA24674DD500545B8D /* FirstRegionViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		BAC5CD112482596700C9EB54 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BAC5CD122482597D00C9EB54 /* PlacemarkView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D9CF15E8D19AF70AF4EF7F7E /* Pods */ = {
@@ -533,6 +550,7 @@
 			files = (
 				BA95FDAC2465E10A001E112A /* AppDelegate.swift in Sources */,
 				BAEB5703246DBFF600DB3E57 /* String+Extension.swift in Sources */,
+				BAC5CD132482597D00C9EB54 /* PlacemarkView.swift in Sources */,
 				BA47BBB4246ABD4B00218493 /* SettingsTableViewController.swift in Sources */,
 				BA7788EF2467542900545B8D /* NewsViewControllerExtension.swift in Sources */,
 				BA47BBC6246B545B00218493 /* Settings.swift in Sources */,
@@ -544,6 +562,7 @@
 				BABFE9C3247AF2A200D0E0EA /* RecycleStation.swift in Sources */,
 				BAE8CC2A2473218B00B36DB6 /* MaterialViewController.swift in Sources */,
 				BAA305CC2469782F0042EE97 /* NewsItemViewController.swift in Sources */,
+				BAC5CD1B24829BE100C9EB54 /* UIColor+Extension.swift in Sources */,
 				BA95FDAE2465E10A001E112A /* SceneDelegate.swift in Sources */,
 				BA47BBBE246B332500218493 /* Publisher.swift in Sources */,
 				BAA305CF2469B7210042EE97 /* FirebaseService.swift in Sources */,
@@ -554,6 +573,7 @@
 				BA47BBBC246B041800218493 /* Region.swift in Sources */,
 				BAA2FD86247050B200153D7B /* CoreDataService.swift in Sources */,
 				BA7788DD2467485600545B8D /* NewsViewController.swift in Sources */,
+				BAC5CD172482600100C9EB54 /* UIView+Extension.swift in Sources */,
 				BABFE9C5247AF2CE00D0E0EA /* MapViewControllerExtension.swift in Sources */,
 				BAA2FD73246F107A00153D7B /* CoreDataModel.xcdatamodeld in Sources */,
 				BAEB5705246DF2B600DB3E57 /* HandbookTableViewCell.swift in Sources */,

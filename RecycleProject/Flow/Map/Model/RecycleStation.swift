@@ -22,6 +22,7 @@ struct RecycleStation: genericFirebaseDataProtocol {
     let lastUpdate: Date
     let recycleCodes: [Int]
     let rating: Rating
+    let colors: [UIColor]
     
     init?(documentSnapshot: QueryDocumentSnapshot) {
         guard let name = documentSnapshot["name"] as? String,
@@ -53,5 +54,26 @@ struct RecycleStation: genericFirebaseDataProtocol {
         default:
             self.rating = .undefined
         }
+        
+        
+        var tempColors: [UIColor] = []
+        _ = recycleCodes.map { code -> () in
+            switch code {
+            case 0..<10:
+                if !tempColors.contains(UIColor.plasticColor) { tempColors.append(UIColor.plasticColor) }
+            case 20..<30:
+                if !tempColors.contains(UIColor.wastepaperColor) { tempColors.append(UIColor.wastepaperColor) }
+            case 40..<50:
+                if !tempColors.contains(UIColor.metalColor) { tempColors.append(UIColor.metalColor) }
+            case 70..<80:
+                if !tempColors.contains(UIColor.glassColor) { tempColors.append(UIColor.glassColor) }
+            case 80..<90:
+                if !tempColors.contains(UIColor.compositeColor) { tempColors.append(UIColor.compositeColor) }
+            case 100...200:
+                if !tempColors.contains(UIColor.otherColor) { tempColors.append(UIColor.otherColor) }
+            default: break
+            }
+        }
+        self.colors = tempColors
     }
 }

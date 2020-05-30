@@ -14,7 +14,7 @@ class MapViewController: UIViewController {
     let mapkit = YMKMapKit.sharedInstance()
     let scale = UIScreen.main.scale
     let locationManager = CLLocationManager()
-    var recycleStationVC: FloatingPanelController!
+    var recycleStationVC: FloatingPanelController?
     var userLocation: YMKUserLocationLayer!
     var mapObjects: YMKMapObjectCollection {
         return mapView.mapWindow.map.mapObjects
@@ -41,8 +41,7 @@ class MapViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
-        // Remove the views managed by the `FloatingPanelController` object from self.view.
-        recycleStationVC.removePanelFromParent(animated: true)
+        recycleStationVC?.removePanelFromParent(animated: true)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
