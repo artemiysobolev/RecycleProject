@@ -14,7 +14,8 @@ class MapViewController: UIViewController {
     let mapkit = YMKMapKit.sharedInstance()
     let scale = UIScreen.main.scale
     let locationManager = CLLocationManager()
-    var recycleStationVC: FloatingPanelController?
+    var recycleStationVC: FloatingPanelController!
+    var contentVC: RecycleStationViewController!
     var userLocation: YMKUserLocationLayer!
     var mapObjects: YMKMapObjectCollection {
         return mapView.mapWindow.map.mapObjects
@@ -26,9 +27,9 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         mapView.mapWindow.map.isRotateGesturesEnabled = false
         
+        configureFloatingPanel()
         loadPointsFromServer()
         
         locationManager.delegate = self
@@ -36,6 +37,8 @@ class MapViewController: UIViewController {
         
         configureUserLocation()
         setupMapFocus()
+        
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {

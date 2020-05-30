@@ -78,22 +78,29 @@ extension MapViewController: YMKUserLocationObjectListener, YMKMapObjectTapListe
         let geometry = placemark.geometry
         let currentCoordinate = CLLocationCoordinate2D(latitude: geometry.latitude, longitude: geometry.longitude)
         guard let currentStation = stations[currentCoordinate] else { return false }
-        configureFloatingPanel(with: currentStation)
+        fillFloatingPanel(with: currentStation)
         return true
     }
 }
 
+//MARK: - Work with Floating Panel
+
 extension MapViewController: FloatingPanelControllerDelegate {
-    func configureFloatingPanel(with recycleStation: RecycleStation) {
+    func fillFloatingPanel(with recycleStation: RecycleStation) {
+        contentVC.configureView(with: recycleStation)
+        if self.presentedViewController == nil {
+            self.present(recycleStationVC, animated: true, completion: nil)
+        }
+    }
+    
+    func configureFloatingPanel() {
         recycleStationVC = FloatingPanelController()
-        guard let recycleStationVC = recycleStationVC else { return }
+        contentVC = UIStoryboard(name: "Map", bundle: nil).instantiateViewController(withIdentifier: "RecycleStationVC") as? RecycleStationViewController
+        
         recycleStationVC.surfaceView.cornerRadius = 20
         recycleStationVC.surfaceView.grabberHandle.isHidden = true
-        guard let contentVC = UIStoryboard(name: "Map", bundle: nil).instantiateViewController(withIdentifier: "RecycleStationVC") as? RecycleStationViewController else { return }
-        contentVC.recycleStation = recycleStation
+        
         recycleStationVC.set(contentViewController: contentVC)
         recycleStationVC.isRemovalInteractionEnabled = true
-
-        self.present(recycleStationVC, animated: true, completion: nil)
     }
 }
