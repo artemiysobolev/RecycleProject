@@ -86,10 +86,14 @@ extension MapViewController: YMKUserLocationObjectListener, YMKMapObjectTapListe
 //MARK: - Work with Floating Panel
 
 extension MapViewController: FloatingPanelControllerDelegate {
+    
     func fillFloatingPanel(with recycleStation: RecycleStation) {
         contentVC.configureView(with: recycleStation)
         if self.presentedViewController == nil {
-            self.present(recycleStationVC, animated: true, completion: nil)
+            // Present over tab bar
+//             self.present(recycleStationVC, animated: true, completion: nil)
+            // Present behind tab bar
+            recycleStationVC.addPanel(toParent: self, animated: true)
         }
     }
     
@@ -97,6 +101,7 @@ extension MapViewController: FloatingPanelControllerDelegate {
         recycleStationVC = FloatingPanelController()
         contentVC = UIStoryboard(name: "Map", bundle: nil).instantiateViewController(withIdentifier: "RecycleStationVC") as? RecycleStationViewController
         
+        recycleStationVC.track(scrollView: contentVC.contentScrollView)
         recycleStationVC.surfaceView.cornerRadius = 20
         recycleStationVC.surfaceView.grabberHandle.isHidden = true
         
