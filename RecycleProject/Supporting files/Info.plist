@@ -58,5 +58,12 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Мы будем отображать твою локацию на карте, чтобы было удобнее искать пункты рядом с домом</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>googlegmail</string>
+        <string>ms-outlook</string>
+        <string>readdle-spark</string>
+        <string>ymail</string>
+    </array>
 </dict>
 </plist>

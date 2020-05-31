@@ -15,6 +15,24 @@ let maxSize: Int64 = 5 * 1024 * 1024 // 5 MB
 
 class FirebaseService {
     
+    static func getSupportingEmail(completionHandler: @escaping(_ email: String?)->()) {
+        Firestore.firestore().collection("Support").getDocuments { (snapshot, error) in
+            DispatchQueue.main.async {
+                guard let snapshot = snapshot, error == nil else {
+                    completionHandler(nil)
+                    return
+                }
+                
+                guard let data = snapshot.documents.first,
+                    let email = data["email"] as? String else {
+                        completionHandler(nil)
+                        return
+                }
+                completionHandler(email)
+            }
+        }
+    }
+    
     static func getData<T: genericFirebaseDataProtocol>(collectionPath: String, filterBy: String? = nil, filterArray: [String]? = nil, completionHandler: @escaping(_ data: [T])->()) {
         
         var query: Query
