@@ -30,9 +30,10 @@ extension MapViewController: CLLocationManagerDelegate {
 
 //MARK: - Work with Yandex MapKit
 
-extension MapViewController: YMKUserLocationObjectListener, YMKMapObjectTapListener {
+extension MapViewController: YMKUserLocationObjectListener, YMKMapObjectTapListener, YMKClusterListener, YMKClusterTapListener {
+    
     internal func addStationsOnMap() {
-        mapObjects.clear()
+        collection.clear()
         for station in stations {
             let pointCoordinate = YMKPoint(latitude: station.value.location.latitude,
                                            longitude: station.value.location.longitude)
@@ -41,10 +42,11 @@ extension MapViewController: YMKUserLocationObjectListener, YMKMapObjectTapListe
             let view = PlacemarkView(frame: viewRect)
             view.setSegmentedCircle(colors: station.value.colors)
             guard let placemarkImage = view.convertToImage() else { return }
-            mapObjects
-                .addPlacemark(with: pointCoordinate, image: placemarkImage)
-                .addTapListener(with: placemarkTapListener)
+            collection
+            .addPlacemark(with: pointCoordinate, image: placemarkImage)
+            .addTapListener(with: placemarkTapListener)
         }
+        collection.clusterPlacemarks(withClusterRadius: 60, minZoom: 15)
     }
     
     internal func configureUserLocation() {
@@ -60,7 +62,7 @@ extension MapViewController: YMKUserLocationObjectListener, YMKMapObjectTapListe
         } else {
             focusPoint = YMKPoint(latitude: 59.950749, longitude: 30.316751) // city coordinates
         }
-        mapView.mapWindow.map.move(with: YMKCameraPosition(target: focusPoint, zoom: 12, azimuth: 0, tilt: 0))
+        mapView.mapWindow.map.move(with: YMKCameraPosition(target: focusPoint, zoom: 15, azimuth: 0, tilt: 0))
     }
         
     func onObjectAdded(with view: YMKUserLocationView) {
@@ -80,6 +82,52 @@ extension MapViewController: YMKUserLocationObjectListener, YMKMapObjectTapListe
         guard let currentStation = stations[currentCoordinate] else { return false }
         fillFloatingPanel(with: currentStation)
         return true
+    }
+    
+    func onClusterAdded(with cluster: YMKCluster) {
+        cluster.appearance.setIconWith(clusterImage(cluster.size))
+        cluster.addClusterTapListener(with: self)
+    }
+    
+    func onClusterTap(with cluster: YMKCluster) -> Bool {
+        return true
+    }
+    
+    func clusterImage(_ clusterSize: UInt) -> UIImage {
+        let fontSize: CGFloat = 15
+        let marginSize: CGFloat = 3
+        let strokeSize: CGFloat = 3
+        let scale = UIScreen.main.scale
+        let text = (clusterSize as NSNumber).stringValue
+        let font = UIFont.systemFont(ofSize: fontSize * scale)
+        let size = text.size(withAttributes: [NSAttributedString.Key.font: font])
+        let textRadius = sqrt(size.height * size.height + size.width * size.width) / 2
+        let internalRadius = textRadius + marginSize * scale
+        let externalRadius = internalRadius + strokeSize * scale
+        let iconSize = CGSize(width: externalRadius * 2, height: externalRadius * 2)
+
+        UIGraphicsBeginImageContext(iconSize)
+        let ctx = UIGraphicsGetCurrentContext()!
+
+        ctx.setFillColor(UIColor.goodRecycleStatusColor.cgColor)
+        ctx.fillEllipse(in: CGRect(
+            origin: .zero,
+            size: CGSize(width: 2 * externalRadius, height: 2 * externalRadius)));
+
+        ctx.setFillColor(UIColor.white.cgColor)
+        ctx.fillEllipse(in: CGRect(
+            origin: CGPoint(x: externalRadius - internalRadius, y: externalRadius - internalRadius),
+            size: CGSize(width: 2 * internalRadius, height: 2 * internalRadius)));
+
+        (text as NSString).draw(
+            in: CGRect(
+                origin: CGPoint(x: externalRadius - size.width / 2, y: externalRadius - size.height / 2),
+                size: size),
+            withAttributes: [
+                NSAttributedString.Key.font: font,
+                NSAttributedString.Key.foregroundColor: UIColor.black])
+        let image = UIGraphicsGetImageFromCurrentImageContext()!
+        return image
     }
 }
 

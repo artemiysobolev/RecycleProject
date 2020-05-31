@@ -17,9 +17,7 @@ class MapViewController: UIViewController {
     var recycleStationVC: FloatingPanelController!
     var contentVC: RecycleStationViewController!
     var userLocation: YMKUserLocationLayer!
-    var mapObjects: YMKMapObjectCollection {
-        return mapView.mapWindow.map.mapObjects
-    }
+    var collection: YMKClusterizedPlacemarkCollection!
     var placemarkTapListener: YMKMapObjectTapListener {
         return self
     }
@@ -30,15 +28,14 @@ class MapViewController: UIViewController {
         mapView.mapWindow.map.isRotateGesturesEnabled = false
         
         configureFloatingPanel()
-        loadPointsFromServer()
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         
         configureUserLocation()
+        collection = mapView.mapWindow.map.mapObjects.addClusterizedPlacemarkCollection(with: self)
+        loadPointsFromServer()
         setupMapFocus()
-        
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
