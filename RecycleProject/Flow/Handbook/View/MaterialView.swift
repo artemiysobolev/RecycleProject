@@ -34,6 +34,12 @@ class MaterialView: UIView {
     
     func setupViews(with material: Material) {
         
+        FirebaseService.getRecyclePointsCount(whichAccept: material.code) { [weak self] result in
+            guard let self = self,
+                let count = result else { return }
+            self.recycleDifficultyLabel.text = String(count)
+        }
+        
         switch material.code {
         case 0:
             codeLabel.text = nil

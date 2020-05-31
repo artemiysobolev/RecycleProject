@@ -15,6 +15,25 @@ let maxSize: Int64 = 5 * 1024 * 1024 // 5 MB
 
 class FirebaseService {
     
+    static func getRecyclePointsCount(whichAccept recycleCode: Int16, completionHandler: @escaping(_ count: Int?)->()) {
+        guard let region = UserDefaults.standard.getRegion()?.code else {
+            completionHandler(nil)
+            return
+        }
+        let code = Int(recycleCode)
+        Firestore.firestore().collection("Regions/\(region)/Points").whereField("materials", arrayContains: code).getDocuments { (snapshot, error) in
+            DispatchQueue.main.async {
+                guard let snapshot = snapshot, error == nil else {
+                    completionHandler(nil)
+                    return
+                }
+                
+                let count = snapshot.documents.count
+                completionHandler(count)
+            }
+        }
+    }
+    
     static func getSupportingEmail(completionHandler: @escaping(_ email: String?)->()) {
         Firestore.firestore().collection("Support").getDocuments { (snapshot, error) in
             DispatchQueue.main.async {
