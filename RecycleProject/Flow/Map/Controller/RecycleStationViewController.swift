@@ -5,7 +5,6 @@
 
 import UIKit
 import CoreLocation
-import MessageUI
 
 class RecycleStationViewController: UIViewController {
     @IBOutlet weak var stationImage: UIImageViewFromFirebase!
@@ -19,6 +18,7 @@ class RecycleStationViewController: UIViewController {
     
     private let geocoder = CLGeocoder()
     private let dateFormatter = DateFormatter()
+    var currentRecycleStation: RecycleStation?
     var currentStationAddress = ""
     
     
@@ -29,6 +29,7 @@ class RecycleStationViewController: UIViewController {
     }
     
     func configureView(with recycleStation: RecycleStation) {
+        currentRecycleStation = recycleStation
         stationImage.loadImageUsingUrlString(urlString: recycleStation.imageUrlString)
         nameLabel.text = recycleStation.name
         scheduleLabel.text = recycleStation.schedule
@@ -49,6 +50,8 @@ class RecycleStationViewController: UIViewController {
 
     }
     @IBAction func createRouteButtonTapped(_ sender: UIButton) {
+        guard let location = currentRecycleStation?.location else { return }
+        createRoute(to: location, named: currentStationAddress)
     }
     
     @IBAction func problemReportLabelButtonTapped(_ sender: Any) {
