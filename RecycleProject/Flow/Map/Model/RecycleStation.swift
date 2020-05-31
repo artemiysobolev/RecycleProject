@@ -16,7 +16,7 @@ enum Rating: String{
 struct RecycleStation: genericFirebaseDataProtocol {
     let location: CLLocationCoordinate2D
     let name: String
-    let comment: String
+    let comment: String?
     let imageUrlString: String
     let schedule: String
     let lastUpdate: Date
@@ -26,7 +26,6 @@ struct RecycleStation: genericFirebaseDataProtocol {
     
     init?(documentSnapshot: QueryDocumentSnapshot) {
         guard let name = documentSnapshot["name"] as? String,
-            let comment = documentSnapshot["comment"] as? String,
             let imageUrlString = documentSnapshot["imageUrl"] as? String,
             let schedule = documentSnapshot["schedule"] as? String,
             let lastUpdate = (documentSnapshot["lastUpdate"] as? Timestamp)?.dateValue(),
@@ -36,8 +35,9 @@ struct RecycleStation: genericFirebaseDataProtocol {
                 return nil
         }
         
+        self.comment = documentSnapshot["comment"] as? String
+        
         self.name = name
-        self.comment = comment
         self.imageUrlString = imageUrlString
         self.schedule = schedule
         self.lastUpdate = lastUpdate

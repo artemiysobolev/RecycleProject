@@ -12,4 +12,8 @@ extension UIColor {
     static var metalColor: UIColor { return UIColor(named: "metalColor")!}
     static var compositeColor: UIColor { return UIColor(named: "compositeColor")!}
     static var otherColor: UIColor { return UIColor(named: "otherColor")!}
+    static var goodRecycleStatusColor: UIColor { return UIColor(named: "GoodRecycleStatusColor")!}
+    static var normalRecycleStatusColor: UIColor { return UIColor(named: "NormalRecycleStatusColor")!}
+    static var badRecycleStatusColor: UIColor { return UIColor(named: "BadRecycleStatusColor")!}
+    static var worstRecycleStatusColor: UIColor { return UIColor(named: "WorstRecycleStatusColor")!}
 }

@@ -101,7 +101,7 @@ extension MapViewController: FloatingPanelControllerDelegate {
         recycleStationVC = FloatingPanelController()
         contentVC = UIStoryboard(name: "Map", bundle: nil).instantiateViewController(withIdentifier: "RecycleStationVC") as? RecycleStationViewController
         
-        recycleStationVC.surfaceView.cornerRadius = 20
+        recycleStationVC.surfaceView.cornerRadius = 15
         recycleStationVC.surfaceView.grabberHandle.isHidden = true
         
         recycleStationVC.set(contentViewController: contentVC)
