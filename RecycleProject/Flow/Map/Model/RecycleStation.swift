@@ -10,7 +10,7 @@ import Firebase
 enum Rating: String{
     case untrusted = "Низкий уровень доверия"
     case undefined = "Нет точной информации"
-    case trusted = "Проверенный подрядчик"
+    case trusted = "Проверенная организация"
 }
 
 struct RecycleStation: genericFirebaseDataProtocol {

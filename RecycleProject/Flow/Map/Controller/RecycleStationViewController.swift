@@ -12,6 +12,7 @@ class RecycleStationViewController: UIViewController {
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var recycleCodesCollectionView: UICollectionView!
     @IBOutlet weak var commentLabel: UILabel!
+    @IBOutlet weak var commentStackView: UIStackView!
     @IBOutlet weak var scheduleLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var lastUpdateLabel: UILabel!
@@ -23,7 +24,6 @@ class RecycleStationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupImageView()
         dateFormatter.dateFormat = "dd.MM.yyyy"
     }
     
@@ -34,7 +34,11 @@ class RecycleStationViewController: UIViewController {
         scheduleLabel.text = recycleStation.schedule
         setupRatingColor(with: recycleStation.rating)
         ratingLabel.text = recycleStation.rating.rawValue
-        commentLabel.text = recycleStation.comment
+        if recycleStation.comment == nil {
+            commentStackView.isHidden = true
+        } else {
+            commentLabel.text = recycleStation.comment
+        }
         lastUpdateLabel.text = dateFormatter.string(from: recycleStation.lastUpdate)
         getAddress(from: recycleStation.location) { [weak self] result in
             guard let self = self else { return }
