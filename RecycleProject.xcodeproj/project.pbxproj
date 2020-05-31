@@ -60,6 +60,7 @@
 		BAEB5707246DF2E500DB3E57 /* HandbookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEB5706246DF2E500DB3E57 /* HandbookCollectionViewCell.swift */; };
 		BAEB5709246DF30700DB3E57 /* HandbookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEB5708246DF30700DB3E57 /* HandbookViewController.swift */; };
 		BAFA1E472483C95600FE9645 /* RecycleStationViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFA1E462483C95600FE9645 /* RecycleStationViewControllerExtension.swift */; };
+		BAFA1E492484069800FE9645 /* MaterialCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFA1E482484069800FE9645 /* MaterialCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,6 +119,7 @@
 		BAEB5706246DF2E500DB3E57 /* HandbookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookCollectionViewCell.swift; sourceTree = "<group>"; };
 		BAEB5708246DF30700DB3E57 /* HandbookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookViewController.swift; sourceTree = "<group>"; };
 		BAFA1E462483C95600FE9645 /* RecycleStationViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycleStationViewControllerExtension.swift; sourceTree = "<group>"; };
+		BAFA1E482484069800FE9645 /* MaterialCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialCollectionViewCell.swift; sourceTree = "<group>"; };
 		C9C22BC092EBB98058483472 /* Pods_RecycleProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecycleProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF6580FD979C52371D7A7A34 /* Pods-RecycleProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecycleProject.release.xcconfig"; path = "Target Support Files/Pods-RecycleProject/Pods-RecycleProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -392,6 +394,7 @@
 			isa = PBXGroup;
 			children = (
 				BAC5CD122482597D00C9EB54 /* PlacemarkView.swift */,
+				BAFA1E482484069800FE9645 /* MaterialCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 				BA47BBBC246B041800218493 /* Region.swift in Sources */,
 				BAA2FD86247050B200153D7B /* CoreDataService.swift in Sources */,
 				BA7788DD2467485600545B8D /* NewsViewController.swift in Sources */,
+				BAFA1E492484069800FE9645 /* MaterialCollectionViewCell.swift in Sources */,
 				BAC5CD172482600100C9EB54 /* UIView+Extension.swift in Sources */,
 				BABFE9C5247AF2CE00D0E0EA /* MapViewControllerExtension.swift in Sources */,
 				BAA2FD73246F107A00153D7B /* CoreDataModel.xcdatamodeld in Sources */,

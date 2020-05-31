@@ -6,6 +6,45 @@
 import UIKit
 import MessageUI
 import MapKit
+import CoreData
+
+//MARK: - Work with Collection View
+extension RecycleStationViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        let count = currentRecycleStation.recycleCodes.count
+        return count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MaterialCell", for: indexPath) as? MaterialCollectionViewCell else { return UICollectionViewCell() }
+        cell.recycleImageView.image = #imageLiteral(resourceName: "recycleSymbol")
+        cell.materialNameLabel.text = getMateialTypeName(with: currentRecycleStation.recycleCodes[indexPath.row])
+        
+        let recycleCode = currentRecycleStation.recycleCodes[indexPath.row]
+        switch recycleCode {
+        case 0:
+            cell.recycleCodeLabel.text = nil
+        case ..<10:
+            cell.recycleCodeLabel.text = "0\(recycleCode)"
+        default:
+            cell.recycleCodeLabel.text = String(recycleCode)
+        }
+        
+        return cell
+    }
+    
+    private func getMateialTypeName(with code: Int) -> String? {
+        let fetchRequest: NSFetchRequest<Material> = Material.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "code == %@", NSNumber(value: code))
+        do {
+            let result = try CoreDataService.shared.context.fetch(fetchRequest)
+            return result.first?.shortName
+        } catch {
+            return nil
+        }
+    }
+}
 
 //MARK: - Work with MapKit
 extension RecycleStationViewController {

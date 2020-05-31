@@ -18,9 +18,8 @@ class RecycleStationViewController: UIViewController {
     
     private let geocoder = CLGeocoder()
     private let dateFormatter = DateFormatter()
-    var currentRecycleStation: RecycleStation?
+    var currentRecycleStation: RecycleStation!
     var currentStationAddress = ""
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +46,7 @@ class RecycleStationViewController: UIViewController {
                 self.addressLabel.text = "Адрес не определен"
             }
         }
+        recycleCodesCollectionView.reloadData()
 
     }
     @IBAction func createRouteButtonTapped(_ sender: UIButton) {
