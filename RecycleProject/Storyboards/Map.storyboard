@@ -12,7 +12,7 @@
         <!--Куда сдавать-->
         <scene sceneID="Qej-Gf-Fly">
             <objects>
-                <viewController id="Dcg-Cf-gCF" customClass="MapViewController" customModule="Ресайкл" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" id="Dcg-Cf-gCF" customClass="MapViewController" customModule="Ресайкл" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="agh-wt-Lr3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,12 +21,26 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.87654644691780825" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pxx-y4-jHz">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="eaq-8i-1Ts">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="pnN-Mm-9fQ"/>
+                                </constraints>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" name="CustomBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="zqb-OP-NyK" secondAttribute="bottom" id="6Vx-yB-Q7D"/>
+                            <constraint firstItem="Pxx-y4-jHz" firstAttribute="top" secondItem="agh-wt-Lr3" secondAttribute="top" id="8Ze-rA-s3D"/>
                             <constraint firstItem="zqb-OP-NyK" firstAttribute="trailing" secondItem="6U7-qd-iq5" secondAttribute="trailing" id="D8y-TD-w22"/>
+                            <constraint firstItem="Pxx-y4-jHz" firstAttribute="trailing" secondItem="6U7-qd-iq5" secondAttribute="trailing" id="U68-Bn-Sls"/>
                             <constraint firstItem="zqb-OP-NyK" firstAttribute="leading" secondItem="6U7-qd-iq5" secondAttribute="leading" id="gqf-pV-UO8"/>
+                            <constraint firstItem="Pxx-y4-jHz" firstAttribute="leading" secondItem="6U7-qd-iq5" secondAttribute="leading" id="yMy-za-Mb0"/>
                             <constraint firstItem="zqb-OP-NyK" firstAttribute="top" secondItem="agh-wt-Lr3" secondAttribute="top" id="yy5-kG-646"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6U7-qd-iq5"/>
@@ -39,7 +53,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TNH-Ta-1PX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3143.4782608695655" y="905.35714285714278"/>
+            <point key="canvasLocation" x="-3144.8000000000002" y="905.17241379310349"/>
         </scene>
         <!--Recycle Station View Controller-->
         <scene sceneID="RJg-T5-xE2">
@@ -258,7 +272,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6eR-QJ-c5h">
-                                                <rect key="frame" x="308.66666666666669" y="0.0" width="36.333333333333314" height="24.333333333333332"/>
+                                                <rect key="frame" x="308.66666666666674" y="0.0" width="36.333333333333314" height="24.333333333333332"/>
                                                 <state key="normal" image="exclamationmark.octagon.fill" catalog="system">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="22" scale="default"/>
                                                 </state>

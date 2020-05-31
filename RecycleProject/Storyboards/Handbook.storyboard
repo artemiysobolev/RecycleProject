@@ -15,13 +15,15 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fQx-Td-gGr" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Как делить" image="arrow.3.trianglepath" catalog="system" id="Ef9-j6-L2F"/>
                     <toolbarItems/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="miU-2m-gbe">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" name="CustomTabBarTintColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qg9-Z5-aVo">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="b8m-QI-0Bn" kind="relationship" relationship="rootViewController" id="yUB-OM-O1s"/>
                     </connections>
@@ -39,7 +41,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" allowsSelection="NO" rowHeight="168" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="sYA-6x-hRk">
-                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <color key="backgroundColor" name="CustomDarkBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HandbookTableCell" rowHeight="168" id="OEU-YN-pYV" customClass="HandbookTableViewCell" customModule="Ресайкл" customModuleProvider="target">
@@ -156,9 +158,9 @@
                         <color key="backgroundColor" name="CustomDarkBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="sYA-6x-hRk" firstAttribute="leading" secondItem="uGg-fk-4da" secondAttribute="leading" id="9Gh-QZ-t21"/>
-                            <constraint firstItem="sYA-6x-hRk" firstAttribute="top" secondItem="uGg-fk-4da" secondAttribute="top" id="glI-Sh-hQu"/>
+                            <constraint firstItem="sYA-6x-hRk" firstAttribute="top" secondItem="0pY-nb-8eU" secondAttribute="top" id="glI-Sh-hQu"/>
                             <constraint firstItem="sYA-6x-hRk" firstAttribute="trailing" secondItem="uGg-fk-4da" secondAttribute="trailing" id="vbx-aB-5cJ"/>
-                            <constraint firstItem="sYA-6x-hRk" firstAttribute="bottom" secondItem="uGg-fk-4da" secondAttribute="bottom" id="wqQ-i1-sgo"/>
+                            <constraint firstItem="sYA-6x-hRk" firstAttribute="bottom" secondItem="0pY-nb-8eU" secondAttribute="bottom" id="wqQ-i1-sgo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uGg-fk-4da"/>
                     </view>
