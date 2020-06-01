@@ -53,6 +53,7 @@
 		BAC5CD132482597D00C9EB54 /* PlacemarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC5CD122482597D00C9EB54 /* PlacemarkView.swift */; };
 		BAC5CD172482600100C9EB54 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC5CD162482600100C9EB54 /* UIView+Extension.swift */; };
 		BAC5CD1B24829BE100C9EB54 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC5CD1A24829BE100C9EB54 /* UIColor+Extension.swift */; };
+		BADC57EA2485947600E74BC9 /* RecycleStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADC57E92485947600E74BC9 /* RecycleStatus.swift */; };
 		BAE8CC2A2473218B00B36DB6 /* MaterialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE8CC292473218B00B36DB6 /* MaterialViewController.swift */; };
 		BAE8CC2E247323D300B36DB6 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE8CC2D247323D300B36DB6 /* MaterialView.swift */; };
 		BAEB5703246DBFF600DB3E57 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEB5702246DBFF600DB3E57 /* String+Extension.swift */; };
@@ -112,6 +113,7 @@
 		BAC5CD122482597D00C9EB54 /* PlacemarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkView.swift; sourceTree = "<group>"; };
 		BAC5CD162482600100C9EB54 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		BAC5CD1A24829BE100C9EB54 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		BADC57E92485947600E74BC9 /* RecycleStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycleStatus.swift; sourceTree = "<group>"; };
 		BAE8CC292473218B00B36DB6 /* MaterialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialViewController.swift; sourceTree = "<group>"; };
 		BAE8CC2D247323D300B36DB6 /* MaterialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
 		BAEB5702246DBFF600DB3E57 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 		BABFE9CB247B13AE00D0E0EA /* Handbook */ = {
 			isa = PBXGroup;
 			children = (
+				BADC57E82485945E00E74BC9 /* Model */,
 				BABFE9D2247B147A00D0E0EA /* View */,
 				BABFE9D3247B147E00D0E0EA /* Controller */,
 			);
@@ -397,6 +400,14 @@
 				BAFA1E482484069800FE9645 /* MaterialCollectionViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		BADC57E82485945E00E74BC9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BADC57E92485947600E74BC9 /* RecycleStatus.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		D9CF15E8D19AF70AF4EF7F7E /* Pods */ = {
@@ -591,6 +602,7 @@
 				BA7788EB24674DD500545B8D /* FirstRegionViewController.swift in Sources */,
 				BA47BBC8246B5CB400218493 /* PublisherViewController.swift in Sources */,
 				BABFE9C1247AF26F00D0E0EA /* MapViewController.swift in Sources */,
+				BADC57EA2485947600E74BC9 /* RecycleStatus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

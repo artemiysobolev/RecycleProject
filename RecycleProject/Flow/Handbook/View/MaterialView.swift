@@ -37,7 +37,22 @@ class MaterialView: UIView {
         FirebaseService.getRecyclePointsCount(whichAccept: material.code) { [weak self] result in
             guard let self = self,
                 let count = result else { return }
-            self.recycleDifficultyLabel.text = String(count)
+            guard let recycleStatus = RecycleStatus(numberOfRecyclePoints: count) else {
+                self.recycleDifficultyLabel.isHidden = true
+                return
+            }
+            self.recycleDifficultyLabel.text = recycleStatus.rawValue
+            switch recycleStatus {
+                
+            case .Worst:
+                self.recycleDifficultyLabel.textColor = UIColor.worstRecycleStatusColor
+            case .Bad:
+                self.recycleDifficultyLabel.textColor = UIColor.badRecycleStatusColor
+            case .Normal:
+                self.recycleDifficultyLabel.textColor = UIColor.normalRecycleStatusColor
+            case .Good:
+                self.recycleDifficultyLabel.textColor = UIColor.goodRecycleStatusColor
+            }
         }
         
         switch material.code {
