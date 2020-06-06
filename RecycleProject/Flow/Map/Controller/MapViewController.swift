@@ -144,7 +144,6 @@ class MapViewController: UIViewController {
         for station in filteredStationsArray {
             filteredStations[station.location] = station
         }
-        print(filteredStationsArray.map { $0.name } )
         addStationsOnMap(filteredStations)
     }
     
