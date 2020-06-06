@@ -19,14 +19,23 @@ extension RecycleStationViewController: UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MaterialCell", for: indexPath) as? MaterialCollectionViewCell else { return UICollectionViewCell() }
         cell.recycleImageView.image = #imageLiteral(resourceName: "recycleSymbol")
-        cell.materialNameLabel.text = getMateialTypeName(with: currentRecycleStation.recycleCodes[indexPath.row])
         
         let recycleCode = currentRecycleStation.recycleCodes[indexPath.row]
+        if recycleCode > 100 {
+            FirebaseService.getSpecialMaterialName(code: recycleCode) { name in
+                cell.materialNameLabel.text = name
+            }
+        } else {
+            cell.materialNameLabel.text = getMateialTypeName(with: recycleCode)
+        }
+        
         switch recycleCode {
         case 0:
             cell.recycleCodeLabel.text = nil
         case ..<10:
             cell.recycleCodeLabel.text = "0\(recycleCode)"
+        case 100...:
+            cell.recycleCodeLabel.text = nil
         default:
             cell.recycleCodeLabel.text = String(recycleCode)
         }

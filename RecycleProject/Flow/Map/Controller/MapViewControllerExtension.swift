@@ -32,7 +32,7 @@ extension MapViewController: CLLocationManagerDelegate {
 
 extension MapViewController: YMKUserLocationObjectListener, YMKMapObjectTapListener, YMKClusterListener, YMKClusterTapListener {
     
-    internal func addStationsOnMap() {
+    internal func addStationsOnMap(_ stations: [CLLocationCoordinate2D : RecycleStation]) {
         collection.clear()
         for station in stations {
             let pointCoordinate = YMKPoint(latitude: station.value.location.latitude,
@@ -43,8 +43,8 @@ extension MapViewController: YMKUserLocationObjectListener, YMKMapObjectTapListe
             view.setSegmentedCircle(colors: station.value.colors)
             guard let placemarkImage = view.convertToImage() else { return }
             collection
-            .addPlacemark(with: pointCoordinate, image: placemarkImage)
-            .addTapListener(with: placemarkTapListener)
+                .addPlacemark(with: pointCoordinate, image: placemarkImage)
+                .addTapListener(with: placemarkTapListener)
         }
         collection.clusterPlacemarks(withClusterRadius: 60, minZoom: 15)
     }
@@ -64,7 +64,7 @@ extension MapViewController: YMKUserLocationObjectListener, YMKMapObjectTapListe
         }
         mapView.mapWindow.map.move(with: YMKCameraPosition(target: focusPoint, zoom: 15, azimuth: 0, tilt: 0))
     }
-        
+    
     func onObjectAdded(with view: YMKUserLocationView) {
         view.arrow.setIconWith(UIImage(named: "userLocation")!)
         let pinPlacemark = view.pin
@@ -105,20 +105,20 @@ extension MapViewController: YMKUserLocationObjectListener, YMKMapObjectTapListe
         let internalRadius = textRadius + marginSize * scale
         let externalRadius = internalRadius + strokeSize * scale
         let iconSize = CGSize(width: externalRadius * 2, height: externalRadius * 2)
-
+        
         UIGraphicsBeginImageContext(iconSize)
         let ctx = UIGraphicsGetCurrentContext()!
-
+        
         ctx.setFillColor(UIColor.goodRecycleStatusColor.cgColor)
         ctx.fillEllipse(in: CGRect(
             origin: .zero,
             size: CGSize(width: 2 * externalRadius, height: 2 * externalRadius)));
-
+        
         ctx.setFillColor(UIColor.white.cgColor)
         ctx.fillEllipse(in: CGRect(
             origin: CGPoint(x: externalRadius - internalRadius, y: externalRadius - internalRadius),
             size: CGSize(width: 2 * internalRadius, height: 2 * internalRadius)));
-
+        
         (text as NSString).draw(
             in: CGRect(
                 origin: CGPoint(x: externalRadius - size.width / 2, y: externalRadius - size.height / 2),
@@ -139,7 +139,7 @@ extension MapViewController: FloatingPanelControllerDelegate {
         contentVC.configureView(with: recycleStation)
         if self.presentedViewController == nil {
             // Present over tab bar
-//             self.present(recycleStationVC, animated: true, completion: nil)
+            //             self.present(recycleStationVC, animated: true, completion: nil)
             // Present behind tab bar
             recycleStationVC.addPanel(toParent: self, animated: true)
         }
@@ -155,4 +155,40 @@ extension MapViewController: FloatingPanelControllerDelegate {
         recycleStationVC.set(contentViewController: contentVC)
         recycleStationVC.isRemovalInteractionEnabled = true
     }
+}
+
+//MARK: - Work with Collection View
+
+extension MapViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        materialTypesArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MaterialTypeCell", for: indexPath) as! MaterialTypeCollectionViewCell
+        cell.materialType = materialTypesArray[indexPath.row]
+//        if cell.isSelected { print("selected index: \(indexPath.row)")}
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! MaterialTypeCollectionViewCell
+        guard let name = cell.materialType.name, let type = MaterialTypeEnumeration(rawValue: name) else { return }
+        addTypeFilter(type)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! MaterialTypeCollectionViewCell
+        guard let name = cell.materialType.name, let type = MaterialTypeEnumeration(rawValue: name) else { return }
+        removeTypeFilter(type)
+    }
+//    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+//        if let selectedItems = collectionView.indexPathsForSelectedItems {
+//            if selectedItems.contains(indexPath) {
+//                collectionView.deselectItem(at: indexPath, animated: true)
+//                return false
+//            }
+//        }
+//        return true
+//    }
 }

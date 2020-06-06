@@ -37,11 +37,13 @@ class CoreDataService {
             
             guard let materialTypeName = materialTypeDict["name"] as? String,
                 let imageName = materialTypeDict["imageName"] as? String,
+                let colorName = materialTypeDict["colorName"] as? String,
                 let image = UIImage(named: imageName),
                 let imageData = image.pngData() else { return }
             
             materialType.name = materialTypeName
             materialType.imageData = imageData
+            materialType.colorName = colorName
             
             do {
                 try context.save()

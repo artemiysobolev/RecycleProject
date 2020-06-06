@@ -52,6 +52,25 @@ class FirebaseService {
         }
     }
     
+    static func getSpecialMaterialName(code: Int, completionHandler: @escaping(_ email: String?)->()) {
+        
+        Firestore.firestore().collection("SpecialRecycleCodes").whereField("code", isEqualTo: code).getDocuments { (snapshot, error) in
+            DispatchQueue.main.async {
+                guard let snapshot = snapshot, error == nil else {
+                    completionHandler(nil)
+                    return
+                }
+                
+                guard let data = snapshot.documents.first,
+                    let name = data["name"] as? String else {
+                        completionHandler(nil)
+                        return
+                }
+                completionHandler(name)
+            }
+        }
+    }
+    
     static func getData<T: genericFirebaseDataProtocol>(collectionPath: String, filterBy: String? = nil, filterArray: [String]? = nil, completionHandler: @escaping(_ data: [T])->()) {
         
         var query: Query

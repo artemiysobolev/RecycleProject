@@ -14,12 +14,13 @@
         <relationship name="materialType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MaterialType" inverseName="materials" inverseEntity="MaterialType"/>
     </entity>
     <entity name="MaterialType" representedClassName="MaterialType" syncable="YES" codeGenerationType="class">
+        <attribute name="colorName" optional="YES" attributeType="String"/>
         <attribute name="imageData" optional="YES" attributeType="Binary"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="materials" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Material" inverseName="materialType" inverseEntity="Material"/>
     </entity>
     <elements>
         <element name="Material" positionX="3187.421875" positionY="4739.97265625" width="128" height="208"/>
-        <element name="MaterialType" positionX="3436.8125" positionY="4783.0625" width="128" height="88"/>
+        <element name="MaterialType" positionX="3436.8125" positionY="4783.0625" width="128" height="103"/>
     </elements>
 </model>

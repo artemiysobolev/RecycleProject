@@ -4,13 +4,11 @@
 //
 
 import UIKit
-import Firebase
 
 class NewsViewController: UIViewController {
     
     @IBOutlet weak var emptyFeedLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    private let db = Firestore.firestore()
     var news: [NewsItem] = []
     var currentNewsItem: NewsItem?
     var refreshControl: UIRefreshControl = {
