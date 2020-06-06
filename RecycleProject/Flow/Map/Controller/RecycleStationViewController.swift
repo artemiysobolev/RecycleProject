@@ -65,7 +65,7 @@ class RecycleStationViewController: UIViewController {
         sendEmail()
     }
     
-    func setupImageView() {
+    private func setupImageView() {
         stationImage.layer.masksToBounds = false
         stationImage.layer.shadowColor = UIColor.black.cgColor
         stationImage.layer.shadowOpacity = 1
@@ -73,7 +73,7 @@ class RecycleStationViewController: UIViewController {
         stationImage.layer.shadowRadius = 1
     }
     
-    func setupRatingColor(with rating: Rating) {
+    private func setupRatingColor(with rating: Rating) {
         switch rating {
         case .trusted:
             ratingLabel.textColor = UIColor.goodRecycleStatusColor
@@ -84,7 +84,7 @@ class RecycleStationViewController: UIViewController {
         }
     }
     
-    func getAddress(from coordinate: CLLocationCoordinate2D, completion: @escaping(_ address: String?)->()) {
+    private func getAddress(from coordinate: CLLocationCoordinate2D, completion: @escaping(_ address: String?)->()) {
         let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
         geocoder.reverseGeocodeLocation(location) { placemarks, error in
             DispatchQueue.main.async {

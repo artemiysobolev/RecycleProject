@@ -19,6 +19,7 @@
 		BA47BBC6246B545B00218493 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47BBC5246B545B00218493 /* Settings.swift */; };
 		BA47BBC8246B5CB400218493 /* PublisherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47BBC7246B5CB400218493 /* PublisherViewController.swift */; };
 		BA614265248BE3B50095C6F2 /* MaterialTypeEnumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA614264248BE3B50095C6F2 /* MaterialTypeEnumeration.swift */; };
+		BA614267248C2E860095C6F2 /* InternetConnectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA614266248C2E860095C6F2 /* InternetConnectionService.swift */; };
 		BA7788DD2467485600545B8D /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7788DC2467485600545B8D /* NewsViewController.swift */; };
 		BA7788E22467497500545B8D /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7788E12467497500545B8D /* UserDefaults+Extension.swift */; };
 		BA7788E424674C4200545B8D /* FirstLaunch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA7788E324674C4200545B8D /* FirstLaunch.storyboard */; };
@@ -79,6 +80,7 @@
 		BA47BBC5246B545B00218493 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		BA47BBC7246B5CB400218493 /* PublisherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublisherViewController.swift; sourceTree = "<group>"; };
 		BA614264248BE3B50095C6F2 /* MaterialTypeEnumeration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialTypeEnumeration.swift; sourceTree = "<group>"; };
+		BA614266248C2E860095C6F2 /* InternetConnectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetConnectionService.swift; sourceTree = "<group>"; };
 		BA7788DC2467485600545B8D /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		BA7788E12467497500545B8D /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		BA7788E324674C4200545B8D /* FirstLaunch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstLaunch.storyboard; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 			children = (
 				BAA305CE2469B7210042EE97 /* FirebaseService.swift */,
 				BAA2FD85247050B200153D7B /* CoreDataService.swift */,
+				BA614266248C2E860095C6F2 /* InternetConnectionService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -602,6 +605,7 @@
 				BAFA1E492484069800FE9645 /* MaterialCollectionViewCell.swift in Sources */,
 				BAC5CD172482600100C9EB54 /* UIView+Extension.swift in Sources */,
 				BABFE9C5247AF2CE00D0E0EA /* MapViewControllerExtension.swift in Sources */,
+				BA614267248C2E860095C6F2 /* InternetConnectionService.swift in Sources */,
 				BAA2FD73246F107A00153D7B /* CoreDataModel.xcdatamodeld in Sources */,
 				BAEB5705246DF2B600DB3E57 /* HandbookTableViewCell.swift in Sources */,
 				BABFE9C7247B07B200D0E0EA /* CLLocationCoordinate2D+Extension.swift in Sources */,

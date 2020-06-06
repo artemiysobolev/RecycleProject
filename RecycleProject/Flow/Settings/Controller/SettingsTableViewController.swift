@@ -137,9 +137,13 @@ extension SettingsTableViewController {
         case .usernameCell:
             showNameChangeAlertController()
         case .regionCell:
-            performSegue(withIdentifier: "regionSegue", sender: self)
+            if InternetConnectionService.isConnectedToNetwork() {
+                performSegue(withIdentifier: "regionSegue", sender: self)
+            }
         case .publishersCell:
-            performSegue(withIdentifier: "publishersSegue", sender: self)
+            if InternetConnectionService.isConnectedToNetwork() {
+                performSegue(withIdentifier: "publishersSegue", sender: self)
+            }
         default:
             break
         }

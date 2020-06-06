@@ -55,7 +55,7 @@ extension RecycleStationViewController: UICollectionViewDelegate, UICollectionVi
     }
 }
 
-//MARK: - Work with MapKit
+//MARK: - Work with MapKit and Yandex Maps
 extension RecycleStationViewController {
     func createRoute(to coordinate: CLLocationCoordinate2D, named name: String) {
         

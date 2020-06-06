@@ -33,6 +33,7 @@ extension MapViewController: CLLocationManagerDelegate {
 extension MapViewController: YMKUserLocationObjectListener, YMKMapObjectTapListener, YMKClusterListener, YMKClusterTapListener {
     
     internal func addStationsOnMap(_ stations: [CLLocationCoordinate2D : RecycleStation]) {
+        guard collection != nil else { return }
         collection.clear()
         for station in stations {
             let pointCoordinate = YMKPoint(latitude: station.value.location.latitude,
@@ -167,7 +168,6 @@ extension MapViewController: UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MaterialTypeCell", for: indexPath) as! MaterialTypeCollectionViewCell
         cell.materialType = materialTypesArray[indexPath.row]
-//        if cell.isSelected { print("selected index: \(indexPath.row)")}
         return cell
     }
     
@@ -182,13 +182,4 @@ extension MapViewController: UICollectionViewDelegate, UICollectionViewDataSourc
         guard let name = cell.materialType.name, let type = MaterialTypeEnumeration(rawValue: name) else { return }
         removeTypeFilter(type)
     }
-//    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-//        if let selectedItems = collectionView.indexPathsForSelectedItems {
-//            if selectedItems.contains(indexPath) {
-//                collectionView.deselectItem(at: indexPath, animated: true)
-//                return false
-//            }
-//        }
-//        return true
-//    }
 }

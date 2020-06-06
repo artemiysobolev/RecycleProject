@@ -57,6 +57,7 @@ class HandbookViewController: UIViewController, showMaterialDelegate {
     }
 }
 
+//MARK: - Work with TableView
 extension HandbookViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

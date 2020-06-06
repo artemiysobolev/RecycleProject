@@ -38,6 +38,11 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchMaterialTypes()
+
+        guard InternetConnectionService.isConnectedToNetwork() else {
+            showAlert()
+            return
+        }
         mapView.mapWindow.map.isRotateGesturesEnabled = false
         
         configureFloatingPanel()
@@ -151,5 +156,13 @@ class MapViewController: UIViewController {
         return !(array.filter {
             interval.contains($0)
             }).isEmpty
+    }
+    
+    private func showAlert() {
+        let alert = UIAlertController(title: "Нет соединения с интернетом", message: "Карта не будет загружена без подключения к сети", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "ОК", style: .default, handler: nil)
+        okAction.setValue(UIColor(named: "CustomTabBarTintColor"), forKey: "titleTextColor")
+        alert.addAction(okAction)
+        present(alert, animated: true)
     }
 }

@@ -20,6 +20,7 @@ class HandbookTableViewCell: UITableViewCell {
     
 }
 
+//MARK: - Work with CollectionView
 extension HandbookTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let count = materialType.materials?.count else { return 0 }
