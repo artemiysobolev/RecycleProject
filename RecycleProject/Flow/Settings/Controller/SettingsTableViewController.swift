@@ -8,7 +8,7 @@ import UIKit
 
 //MARK: - Delegate for refresh UserDefaults
 protocol SettingsTableViewControllerDelegate {
-    func changeRegion(newRegion: Region)
+    func changeRegion(newRegion: Region?)
     func changeFavoritePublishers(newPublishers: [Publisher])
 }
 
@@ -45,7 +45,8 @@ class SettingsTableViewController: UITableViewController, SettingsTableViewContr
         notificationsSwitch.setOn(UserDefaults.standard.isNotificationsEnabled(), animated: false)
     }
     
-    func changeRegion(newRegion: Region) {
+    func changeRegion(newRegion: Region?) {
+        guard let newRegion = newRegion else { return }
         UserDefaults.standard.setRegion(value: newRegion)
         regionPlaceholderLabel.text = newRegion.name
     }

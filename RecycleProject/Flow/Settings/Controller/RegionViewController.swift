@@ -9,7 +9,7 @@ class RegionViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var tableView: UITableView!
     var regions: [Region] = []
-    var choosenRegion: Region!
+    var choosenRegion = UserDefaults.standard.getRegion()
     weak var delegate: SettingsTableViewController!
     
     override func viewDidLoad() {
