@@ -21,7 +21,7 @@ extension RecycleStationViewController: UICollectionViewDelegate, UICollectionVi
         cell.recycleImageView.image = #imageLiteral(resourceName: "recycleSymbol")
         
         let recycleCode = currentRecycleStation.recycleCodes[indexPath.row]
-        if recycleCode > 100 {
+        if recycleCode >= 100 {
             FirebaseService.getSpecialMaterialName(code: recycleCode) { name in
                 cell.materialNameLabel.text = name
             }
