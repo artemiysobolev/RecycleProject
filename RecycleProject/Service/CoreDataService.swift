@@ -21,7 +21,7 @@ class CoreDataService {
         getMaterial(fileName: "Glass", typeName: "Стекло")
         getMaterial(fileName: "Metal", typeName: "Металл")
         getMaterial(fileName: "Composite", typeName: "Смешанные материалы")
-        getMaterial(fileName: "Other", typeName: "Другие")
+//        getMaterial(fileName: "Other", typeName: "Другие")
     }
     
     

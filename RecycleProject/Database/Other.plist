@@ -4,23 +4,75 @@
 <array>
 	<dict>
 		<key>imageName</key>
-		<string>coffeeCup.png</string>
+		<string>coffeecups.png</string>
 		<key>code</key>
 		<integer>0</integer>
 		<key>numberOfRecyclePoints</key>
 		<integer>0</integer>
 		<key>shortName</key>
-		<string>Кофейные стаканчики</string>
+		<string>«Бумажные» стаканчики</string>
 		<key>shortDescription</key>
-		<string>Они не перерабатываются</string>
+		<string>Несмотря на безобидное название, «бумажные» стаканчики не являются чисто бумажными. Сама по себе целлюлоза будет пропускать жидкость</string>
 		<key>fullName</key>
 		<string></string>
 		<key>fullDescription</key>
-		<string>СОВСЕМ НЕ ПЕРЕРАБАТЫВАЮТСЯ</string>
+		<string>Cтаканчик нельзя положить в макулатуру, потому что они все имеют разный состав.
+Следовательно, они по-разному перерабатываются, их нужно собирать раздельно. Из-за того, что их сложно отличить друг от друга, требуется отдельная система сбора и ручная досортировка, которая затрудняется загрязненностью (остатки жидкости). Таким образом, сбор такого вторсырья становится нерентабельным для заготовителя и/или переработчика. Поэтому их никто не принимает.</string>
 		<key>anotherNames</key>
 		<string></string>
 		<key>examples</key>
+		<string>Одноразовые стаканчики для кофе, лимонадов</string>
+		<key>howToPrepare</key>
 		<string></string>
+	</dict>
+	<dict>
+		<key>imageName</key>
+		<string>banana.png</string>
+		<key>code</key>
+		<integer>0</integer>
+		<key>numberOfRecyclePoints</key>
+		<integer>0</integer>
+		<key>shortName</key>
+		<string>Пищевые отходы</string>
+		<key>shortDescription</key>
+		<string>По разным оценкам, от 30 до 80 процентов содержимого нашего мусорного ведра приходится на пищевые отходы.Почему так важно разобраться именно с органикой? Дело в том, что именно органика «виновна» в том, что жить рядом с полигоном бытовых отходов становится неприятно и вредно.</string>
+		<key>fullName</key>
+		<string></string>
+		<key>fullDescription</key>
+		<string>На свалке с нашими пищевыми отходами происходит не то же самое, что в компостной куче на даче. На полигоне органика не становится компостом потому, что там нет кислорода и образуется анаэробные процесс, в результате чего выделяются оксиды серы, сероводород и меркаптаны, ответственные за отвратительные «свалочные» запахи, а также большое количество метана. Метан легко воспламеняется, за ним загораются и полимеры, добавляя к тошнотворному газовому «коктейлю» еще и токсичные продукты горения.</string>
+		<key>anotherNames</key>
+		<string>Органические отходы, компост</string>
+		<key>examples</key>
+		<string>Одноразовые стаканчики для кофе, лимонадов</string>
+		<key>howToPrepare</key>
+		<string>Городских пунктов, которые принимали бы пищевые отходы, на данный момент не существует. Однако заняться переработкой органики можно самостоятельно: 
+-	При помощи измельчителя пищевых отходов
+-	Компостирование 
+-	Закапывание
+-	Уличный компостер</string>
+	</dict>
+	<dict>
+		<key>imageName</key>
+		<string>battery.png</string>
+		<key>code</key>
+		<integer>0</integer>
+		<key>numberOfRecyclePoints</key>
+		<integer>0</integer>
+		<key>shortName</key>
+		<string>Батарейки</string>
+		<key>shortDescription</key>
+		<string>Для питания мелкой бытовой техники и гаджетов в качестве сменных источников электричества чаще всего используются батарейки</string>
+		<key>fullName</key>
+		<string></string>
+		<key>fullDescription</key>
+		<string>В переработку принимают:
+-	«Пальчиковые» батарейки
+-	батарейки-«таблетки»
+-	аккумуляторы от телефонов, ноутбуков, фотоаппаратов и  т.п. — не во всех пунктах приёма, это лучше уточнять отдельно</string>
+		<key>anotherNames</key>
+		<string></string>
+		<key>examples</key>
+		<string>Одноразовые батарейки, многоразовые аккумуляторы, аккумуляторы от техники</string>
 		<key>howToPrepare</key>
 		<string></string>
 	</dict>

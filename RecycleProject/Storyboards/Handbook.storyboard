@@ -117,11 +117,6 @@
                                                                 </constraints>
                                                             </collectionViewCellContentView>
                                                             <color key="backgroundColor" name="CustomBackgroundColor"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                    <integer key="value" value="15"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
                                                             <connections>
                                                                 <outlet property="codeLabel" destination="v5d-Gl-Sqh" id="SYh-ml-1Qa"/>
                                                                 <outlet property="imageView" destination="mdx-bu-xkh" id="dui-Vx-Gg8"/>

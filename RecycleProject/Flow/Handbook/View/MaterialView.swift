@@ -34,24 +34,26 @@ class MaterialView: UIView {
     
     func setupViews(with material: Material) {
         
-        FirebaseService.getRecyclePointsCount(whichAccept: material.code) { [weak self] result in
-            guard let self = self,
-                let count = result else { return }
-            guard let recycleStatus = RecycleStatus(numberOfRecyclePoints: count) else {
-                self.recycleDifficultyLabel.isHidden = true
-                return
-            }
-            self.recycleDifficultyLabel.text = recycleStatus.rawValue
-            switch recycleStatus {
-                
-            case .Worst:
-                self.recycleDifficultyLabel.textColor = UIColor.worstRecycleStatusColor
-            case .Bad:
-                self.recycleDifficultyLabel.textColor = UIColor.badRecycleStatusColor
-            case .Normal:
-                self.recycleDifficultyLabel.textColor = UIColor.normalRecycleStatusColor
-            case .Good:
-                self.recycleDifficultyLabel.textColor = UIColor.goodRecycleStatusColor
+        if material.code != 0 {
+            FirebaseService.getRecyclePointsCount(whichAccept: material.code) { [weak self] result in
+                guard let self = self,
+                    let count = result else { return }
+                guard let recycleStatus = RecycleStatus(numberOfRecyclePoints: count) else {
+                    self.recycleDifficultyLabel.isHidden = true
+                    return
+                }
+                self.recycleDifficultyLabel.text = recycleStatus.rawValue
+                switch recycleStatus {
+                    
+                case .Worst:
+                    self.recycleDifficultyLabel.textColor = UIColor.worstRecycleStatusColor
+                case .Bad:
+                    self.recycleDifficultyLabel.textColor = UIColor.badRecycleStatusColor
+                case .Normal:
+                    self.recycleDifficultyLabel.textColor = UIColor.normalRecycleStatusColor
+                case .Good:
+                    self.recycleDifficultyLabel.textColor = UIColor.goodRecycleStatusColor
+                }
             }
         }
         
@@ -67,10 +69,11 @@ class MaterialView: UIView {
         if let imageData = material.imageData,
             let image = UIImage(data: imageData) {
             recycleSymbolImage.image = image
+            recycleSymbolImage.layer.cornerRadius = 15
+            recycleSymbolImage.contentMode = .scaleAspectFill
         }
         
         shortNameLabel.text = material.shortName
-        //        recycleDifficultyLabel.text = String(material.numberOfRecyclePoints)
         
         if let fullName = material.fullName, !(fullName.isEmptyOrWhitespace()) {
             fullNameLabel.text = fullName

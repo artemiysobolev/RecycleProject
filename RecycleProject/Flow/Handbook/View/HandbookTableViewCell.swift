@@ -48,6 +48,7 @@ extension HandbookTableViewCell: UICollectionViewDataSource, UICollectionViewDel
         if let imageData = material.imageData {
             cell.imageView.contentMode = .scaleAspectFill
             cell.imageView.image = UIImage(data: imageData)
+            cell.imageView.layer.cornerRadius = 10
         }
         else {
             cell.imageView.contentMode = .scaleAspectFit
