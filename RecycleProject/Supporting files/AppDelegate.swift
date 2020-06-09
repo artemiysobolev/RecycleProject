@@ -5,15 +5,18 @@
 
 import UIKit
 import Firebase
+import YandexMapKit
 
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var coreDataStack = CoreDataStack()
+    let apiKey = "c38ecc24-7fc8-43e7-be62-5bc86f51b360"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+        YMKMapKit.setApiKey(apiKey)
         return true
     }
 

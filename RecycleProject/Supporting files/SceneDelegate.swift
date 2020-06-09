@@ -29,6 +29,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window?.rootViewController = vc
             window?.makeKeyAndVisible()
         }
+        
+        let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.persistentContainer.viewContext
+        CoreDataService.shared.context = context
+
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

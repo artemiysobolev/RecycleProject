@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>colorName</key>
+		<string>plasticColor</string>
+		<key>name</key>
+		<string>Пластик</string>
+		<key>imageName</key>
+		<string>plastic.png</string>
+	</dict>
+	<dict>
+		<key>colorName</key>
+		<string>wastepaperColor</string>
+		<key>name</key>
+		<string>Макулатура</string>
+		<key>imageName</key>
+		<string>wastepaper.png</string>
+	</dict>
+	<dict>
+		<key>colorName</key>
+		<string>glassColor</string>
+		<key>name</key>
+		<string>Стекло</string>
+		<key>imageName</key>
+		<string>glass.png</string>
+	</dict>
+	<dict>
+		<key>colorName</key>
+		<string>metalColor</string>
+		<key>name</key>
+		<string>Металл</string>
+		<key>imageName</key>
+		<string>metal.png</string>
+	</dict>
+	<dict>
+		<key>colorName</key>
+		<string>compositeColor</string>
+		<key>name</key>
+		<string>Смешанные материалы</string>
+		<key>imageName</key>
+		<string>composite.png</string>
+	</dict>
+	<dict>
+		<key>colorName</key>
+		<string>otherColor</string>
+		<key>name</key>
+		<string>Другие</string>
+		<key>imageName</key>
+		<string>other.png</string>
+	</dict>
+</array>
+</plist>

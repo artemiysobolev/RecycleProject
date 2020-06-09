@@ -8,12 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		5029F145AF08780B5160089D /* Pods_RecycleProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C22BC092EBB98058483472 /* Pods_RecycleProject.framework */; };
+		BA22AA71247295AB009BBC5E /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA22AA70247295AB009BBC5E /* Settings.storyboard */; };
+		BA22AA74247295C2009BBC5E /* Newsfeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA22AA73247295C2009BBC5E /* Newsfeed.storyboard */; };
+		BA22AA76247295CE009BBC5E /* Handbook.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA22AA75247295CE009BBC5E /* Handbook.storyboard */; };
+		BA22AA78247295E2009BBC5E /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA22AA77247295E2009BBC5E /* Map.storyboard */; };
 		BA47BBB4246ABD4B00218493 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47BBB3246ABD4B00218493 /* SettingsTableViewController.swift */; };
 		BA47BBBA246B038000218493 /* RegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47BBB9246B038000218493 /* RegionViewController.swift */; };
 		BA47BBBC246B041800218493 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47BBBB246B041800218493 /* Region.swift */; };
 		BA47BBBE246B332500218493 /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47BBBD246B332500218493 /* Publisher.swift */; };
 		BA47BBC6246B545B00218493 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47BBC5246B545B00218493 /* Settings.swift */; };
 		BA47BBC8246B5CB400218493 /* PublisherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47BBC7246B5CB400218493 /* PublisherViewController.swift */; };
+		BA614265248BE3B50095C6F2 /* MaterialTypeEnumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA614264248BE3B50095C6F2 /* MaterialTypeEnumeration.swift */; };
+		BA614267248C2E860095C6F2 /* InternetConnectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA614266248C2E860095C6F2 /* InternetConnectionService.swift */; };
 		BA7788DD2467485600545B8D /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7788DC2467485600545B8D /* NewsViewController.swift */; };
 		BA7788E22467497500545B8D /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7788E12467497500545B8D /* UserDefaults+Extension.swift */; };
 		BA7788E424674C4200545B8D /* FirstLaunch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA7788E324674C4200545B8D /* FirstLaunch.storyboard */; };
@@ -22,25 +28,59 @@
 		BA7788EB24674DD500545B8D /* FirstRegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7788EA24674DD500545B8D /* FirstRegionViewController.swift */; };
 		BA7788ED2467533600545B8D /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7788EC2467533600545B8D /* NewsTableViewCell.swift */; };
 		BA7788EF2467542900545B8D /* NewsViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7788EE2467542900545B8D /* NewsViewControllerExtension.swift */; };
+		BA8FC123247BC56600A4DD45 /* RecycleStationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8FC122247BC56600A4DD45 /* RecycleStationViewController.swift */; };
 		BA95FDAC2465E10A001E112A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA95FDAB2465E10A001E112A /* AppDelegate.swift */; };
 		BA95FDAE2465E10A001E112A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA95FDAD2465E10A001E112A /* SceneDelegate.swift */; };
 		BA95FDB32465E10A001E112A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA95FDB12465E10A001E112A /* Main.storyboard */; };
 		BA95FDB52465E10E001E112A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA95FDB42465E10E001E112A /* Assets.xcassets */; };
 		BA95FDB82465E10E001E112A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA95FDB62465E10E001E112A /* LaunchScreen.storyboard */; };
+		BAA2FD73246F107A00153D7B /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BAA2FD71246F107900153D7B /* CoreDataModel.xcdatamodeld */; };
+		BAA2FD76246F174700153D7B /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA2FD75246F174700153D7B /* CoreDataStack.swift */; };
+		BAA2FD78246FCF7200153D7B /* Plastic.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAA2FD77246FCF7200153D7B /* Plastic.plist */; };
+		BAA2FD7C2470270A00153D7B /* Metal.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAA2FD792470270900153D7B /* Metal.plist */; };
+		BAA2FD7D2470270A00153D7B /* Wastepaper.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAA2FD7A2470270900153D7B /* Wastepaper.plist */; };
+		BAA2FD7E2470270A00153D7B /* Glass.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAA2FD7B2470270A00153D7B /* Glass.plist */; };
+		BAA2FD82247028BA00153D7B /* MaterialTypes.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAA2FD7F247028BA00153D7B /* MaterialTypes.plist */; };
+		BAA2FD83247028BA00153D7B /* Composite.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAA2FD80247028BA00153D7B /* Composite.plist */; };
+		BAA2FD84247028BA00153D7B /* Other.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAA2FD81247028BA00153D7B /* Other.plist */; };
+		BAA2FD86247050B200153D7B /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA2FD85247050B200153D7B /* CoreDataService.swift */; };
 		BAA305CC2469782F0042EE97 /* NewsItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA305CB2469782F0042EE97 /* NewsItemViewController.swift */; };
 		BAA305CF2469B7210042EE97 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA305CE2469B7210042EE97 /* FirebaseService.swift */; };
 		BAAE50A52468550000979F2D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAAE50A42468550000979F2D /* GoogleService-Info.plist */; };
+		BABC5F8D24898799006C7B83 /* MaterialTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABC5F8C24898799006C7B83 /* MaterialTypeCollectionViewCell.swift */; };
+		BABFE9C1247AF26F00D0E0EA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABFE9C0247AF26F00D0E0EA /* MapViewController.swift */; };
+		BABFE9C3247AF2A200D0E0EA /* RecycleStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABFE9C2247AF2A200D0E0EA /* RecycleStation.swift */; };
+		BABFE9C5247AF2CE00D0E0EA /* MapViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABFE9C4247AF2CE00D0E0EA /* MapViewControllerExtension.swift */; };
+		BABFE9C7247B07B200D0E0EA /* CLLocationCoordinate2D+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABFE9C6247B07B200D0E0EA /* CLLocationCoordinate2D+Extension.swift */; };
 		BAC41B8524688BB700DAEAA4 /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC41B8424688BB700DAEAA4 /* NewsItem.swift */; };
+		BAC5CD132482597D00C9EB54 /* PlacemarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC5CD122482597D00C9EB54 /* PlacemarkView.swift */; };
+		BAC5CD172482600100C9EB54 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC5CD162482600100C9EB54 /* UIView+Extension.swift */; };
+		BAC5CD1B24829BE100C9EB54 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC5CD1A24829BE100C9EB54 /* UIColor+Extension.swift */; };
+		BADC57EA2485947600E74BC9 /* RecycleStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADC57E92485947600E74BC9 /* RecycleStatus.swift */; };
+		BAE8CC2A2473218B00B36DB6 /* MaterialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE8CC292473218B00B36DB6 /* MaterialViewController.swift */; };
+		BAE8CC2E247323D300B36DB6 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE8CC2D247323D300B36DB6 /* MaterialView.swift */; };
+		BAEB5703246DBFF600DB3E57 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEB5702246DBFF600DB3E57 /* String+Extension.swift */; };
+		BAEB5705246DF2B600DB3E57 /* HandbookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEB5704246DF2B600DB3E57 /* HandbookTableViewCell.swift */; };
+		BAEB5707246DF2E500DB3E57 /* HandbookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEB5706246DF2E500DB3E57 /* HandbookCollectionViewCell.swift */; };
+		BAEB5709246DF30700DB3E57 /* HandbookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEB5708246DF30700DB3E57 /* HandbookViewController.swift */; };
+		BAFA1E472483C95600FE9645 /* RecycleStationViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFA1E462483C95600FE9645 /* RecycleStationViewControllerExtension.swift */; };
+		BAFA1E492484069800FE9645 /* MaterialCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFA1E482484069800FE9645 /* MaterialCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9D5908EE33800C9506C4A98C /* Pods-RecycleProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecycleProject.debug.xcconfig"; path = "Target Support Files/Pods-RecycleProject/Pods-RecycleProject.debug.xcconfig"; sourceTree = "<group>"; };
+		BA22AA70247295AB009BBC5E /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		BA22AA73247295C2009BBC5E /* Newsfeed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Newsfeed.storyboard; sourceTree = "<group>"; };
+		BA22AA75247295CE009BBC5E /* Handbook.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Handbook.storyboard; sourceTree = "<group>"; };
+		BA22AA77247295E2009BBC5E /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		BA47BBB3246ABD4B00218493 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		BA47BBB9246B038000218493 /* RegionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionViewController.swift; sourceTree = "<group>"; };
 		BA47BBBB246B041800218493 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		BA47BBBD246B332500218493 /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
 		BA47BBC5246B545B00218493 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		BA47BBC7246B5CB400218493 /* PublisherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublisherViewController.swift; sourceTree = "<group>"; };
+		BA614264248BE3B50095C6F2 /* MaterialTypeEnumeration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialTypeEnumeration.swift; sourceTree = "<group>"; };
+		BA614266248C2E860095C6F2 /* InternetConnectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetConnectionService.swift; sourceTree = "<group>"; };
 		BA7788DC2467485600545B8D /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		BA7788E12467497500545B8D /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		BA7788E324674C4200545B8D /* FirstLaunch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstLaunch.storyboard; sourceTree = "<group>"; };
@@ -49,6 +89,7 @@
 		BA7788EA24674DD500545B8D /* FirstRegionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRegionViewController.swift; sourceTree = "<group>"; };
 		BA7788EC2467533600545B8D /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		BA7788EE2467542900545B8D /* NewsViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewControllerExtension.swift; sourceTree = "<group>"; };
+		BA8FC122247BC56600A4DD45 /* RecycleStationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycleStationViewController.swift; sourceTree = "<group>"; };
 		BA95FDA82465E10A001E112A /* Ресайкл.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ресайкл.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA95FDAB2465E10A001E112A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA95FDAD2465E10A001E112A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,10 +97,37 @@
 		BA95FDB42465E10E001E112A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA95FDB72465E10E001E112A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA95FDB92465E10E001E112A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAA2FD72246F107A00153D7B /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		BAA2FD75246F174700153D7B /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		BAA2FD77246FCF7200153D7B /* Plastic.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Plastic.plist; sourceTree = "<group>"; };
+		BAA2FD792470270900153D7B /* Metal.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Metal.plist; sourceTree = "<group>"; };
+		BAA2FD7A2470270900153D7B /* Wastepaper.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Wastepaper.plist; sourceTree = "<group>"; };
+		BAA2FD7B2470270A00153D7B /* Glass.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Glass.plist; sourceTree = "<group>"; };
+		BAA2FD7F247028BA00153D7B /* MaterialTypes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MaterialTypes.plist; sourceTree = "<group>"; };
+		BAA2FD80247028BA00153D7B /* Composite.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Composite.plist; sourceTree = "<group>"; };
+		BAA2FD81247028BA00153D7B /* Other.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Other.plist; sourceTree = "<group>"; };
+		BAA2FD85247050B200153D7B /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		BAA305CB2469782F0042EE97 /* NewsItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItemViewController.swift; sourceTree = "<group>"; };
 		BAA305CE2469B7210042EE97 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		BAAE50A42468550000979F2D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BABC5F8C24898799006C7B83 /* MaterialTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialTypeCollectionViewCell.swift; sourceTree = "<group>"; };
+		BABFE9C0247AF26F00D0E0EA /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		BABFE9C2247AF2A200D0E0EA /* RecycleStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycleStation.swift; sourceTree = "<group>"; };
+		BABFE9C4247AF2CE00D0E0EA /* MapViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerExtension.swift; sourceTree = "<group>"; };
+		BABFE9C6247B07B200D0E0EA /* CLLocationCoordinate2D+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Extension.swift"; sourceTree = "<group>"; };
 		BAC41B8424688BB700DAEAA4 /* NewsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = "<group>"; };
+		BAC5CD122482597D00C9EB54 /* PlacemarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkView.swift; sourceTree = "<group>"; };
+		BAC5CD162482600100C9EB54 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		BAC5CD1A24829BE100C9EB54 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		BADC57E92485947600E74BC9 /* RecycleStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycleStatus.swift; sourceTree = "<group>"; };
+		BAE8CC292473218B00B36DB6 /* MaterialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialViewController.swift; sourceTree = "<group>"; };
+		BAE8CC2D247323D300B36DB6 /* MaterialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
+		BAEB5702246DBFF600DB3E57 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		BAEB5704246DF2B600DB3E57 /* HandbookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookTableViewCell.swift; sourceTree = "<group>"; };
+		BAEB5706246DF2E500DB3E57 /* HandbookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookCollectionViewCell.swift; sourceTree = "<group>"; };
+		BAEB5708246DF30700DB3E57 /* HandbookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookViewController.swift; sourceTree = "<group>"; };
+		BAFA1E462483C95600FE9645 /* RecycleStationViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycleStationViewControllerExtension.swift; sourceTree = "<group>"; };
+		BAFA1E482484069800FE9645 /* MaterialCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialCollectionViewCell.swift; sourceTree = "<group>"; };
 		C9C22BC092EBB98058483472 /* Pods_RecycleProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecycleProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF6580FD979C52371D7A7A34 /* Pods-RecycleProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecycleProject.release.xcconfig"; path = "Target Support Files/Pods-RecycleProject/Pods-RecycleProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,22 +152,29 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BA22AA6F24729586009BBC5E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				BA95FDB12465E10A001E112A /* Main.storyboard */,
+				BA7788E324674C4200545B8D /* FirstLaunch.storyboard */,
+				BA22AA70247295AB009BBC5E /* Settings.storyboard */,
+				BA22AA73247295C2009BBC5E /* Newsfeed.storyboard */,
+				BA22AA75247295CE009BBC5E /* Handbook.storyboard */,
+				BA22AA77247295E2009BBC5E /* Map.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		BA7788E02467496100545B8D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				BA7788E12467497500545B8D /* UserDefaults+Extension.swift */,
+				BAEB5702246DBFF600DB3E57 /* String+Extension.swift */,
+				BABFE9C6247B07B200D0E0EA /* CLLocationCoordinate2D+Extension.swift */,
+				BAC5CD162482600100C9EB54 /* UIView+Extension.swift */,
+				BAC5CD1A24829BE100C9EB54 /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		BA7788E524674D7E00545B8D /* FirstLaunch */ = {
-			isa = PBXGroup;
-			children = (
-				BA7788E624674DB400545B8D /* FirstPresentViewController.swift */,
-				BA7788E824674DC400545B8D /* FirstUsernameViewController.swift */,
-				BA7788EA24674DD500545B8D /* FirstRegionViewController.swift */,
-			);
-			path = FirstLaunch;
 			sourceTree = "<group>";
 		};
 		BA95FD9F2465E10A001E112A = {
@@ -123,49 +198,14 @@
 		BA95FDAA2465E10A001E112A /* RecycleProject */ = {
 			isa = PBXGroup;
 			children = (
-				BAA305CD2469B6F30042EE97 /* Service */,
+				BABFE9C8247B138300D0E0EA /* Flow */,
+				BA22AA6F24729586009BBC5E /* Storyboards */,
 				BA7788E02467496100545B8D /* Extensions */,
-				BA95FDBF24661950001E112A /* Model */,
-				BA95FDC024661957001E112A /* View */,
-				BA95FDC12466195C001E112A /* Contoller */,
+				BAA305CD2469B6F30042EE97 /* Service */,
+				BAA2FD74246F172B00153D7B /* Database */,
 				BA95FDC224661965001E112A /* Supporting files */,
 			);
 			path = RecycleProject;
-			sourceTree = "<group>";
-		};
-		BA95FDBF24661950001E112A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				BAC41B8424688BB700DAEAA4 /* NewsItem.swift */,
-				BA47BBBB246B041800218493 /* Region.swift */,
-				BA47BBBD246B332500218493 /* Publisher.swift */,
-				BA47BBC5246B545B00218493 /* Settings.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		BA95FDC024661957001E112A /* View */ = {
-			isa = PBXGroup;
-			children = (
-				BA95FDB12465E10A001E112A /* Main.storyboard */,
-				BA7788E324674C4200545B8D /* FirstLaunch.storyboard */,
-				BA7788EC2467533600545B8D /* NewsTableViewCell.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		BA95FDC12466195C001E112A /* Contoller */ = {
-			isa = PBXGroup;
-			children = (
-				BA7788E524674D7E00545B8D /* FirstLaunch */,
-				BA7788DC2467485600545B8D /* NewsViewController.swift */,
-				BA7788EE2467542900545B8D /* NewsViewControllerExtension.swift */,
-				BAA305CB2469782F0042EE97 /* NewsItemViewController.swift */,
-				BA47BBB3246ABD4B00218493 /* SettingsTableViewController.swift */,
-				BA47BBB9246B038000218493 /* RegionViewController.swift */,
-				BA47BBC7246B5CB400218493 /* PublisherViewController.swift */,
-			);
-			path = Contoller;
 			sourceTree = "<group>";
 		};
 		BA95FDC224661965001E112A /* Supporting files */ = {
@@ -181,12 +221,202 @@
 			path = "Supporting files";
 			sourceTree = "<group>";
 		};
+		BAA2FD74246F172B00153D7B /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				BAA2FD80247028BA00153D7B /* Composite.plist */,
+				BAA2FD7F247028BA00153D7B /* MaterialTypes.plist */,
+				BAA2FD81247028BA00153D7B /* Other.plist */,
+				BAA2FD7B2470270A00153D7B /* Glass.plist */,
+				BAA2FD792470270900153D7B /* Metal.plist */,
+				BAA2FD7A2470270900153D7B /* Wastepaper.plist */,
+				BAA2FD77246FCF7200153D7B /* Plastic.plist */,
+				BAA2FD71246F107900153D7B /* CoreDataModel.xcdatamodeld */,
+				BAA2FD75246F174700153D7B /* CoreDataStack.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		BAA305CD2469B6F30042EE97 /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				BAA305CE2469B7210042EE97 /* FirebaseService.swift */,
+				BAA2FD85247050B200153D7B /* CoreDataService.swift */,
+				BA614266248C2E860095C6F2 /* InternetConnectionService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		BABFE9C8247B138300D0E0EA /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				BABFE9CD247B13B800D0E0EA /* Settings */,
+				BABFE9CC247B13B400D0E0EA /* Map */,
+				BABFE9CB247B13AE00D0E0EA /* Handbook */,
+				BABFE9CA247B13A700D0E0EA /* News */,
+				BABFE9C9247B139E00D0E0EA /* FirstLaunch */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		BABFE9C9247B139E00D0E0EA /* FirstLaunch */ = {
+			isa = PBXGroup;
+			children = (
+				BABFE9DA247B15D400D0E0EA /* Controller */,
+			);
+			path = FirstLaunch;
+			sourceTree = "<group>";
+		};
+		BABFE9CA247B13A700D0E0EA /* News */ = {
+			isa = PBXGroup;
+			children = (
+				BABFE9CE247B13F700D0E0EA /* Model */,
+				BABFE9CF247B13FC00D0E0EA /* View */,
+				BABFE9D0247B140100D0E0EA /* Controller */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		BABFE9CB247B13AE00D0E0EA /* Handbook */ = {
+			isa = PBXGroup;
+			children = (
+				BADC57E82485945E00E74BC9 /* Model */,
+				BABFE9D2247B147A00D0E0EA /* View */,
+				BABFE9D3247B147E00D0E0EA /* Controller */,
+			);
+			path = Handbook;
+			sourceTree = "<group>";
+		};
+		BABFE9CC247B13B400D0E0EA /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				BABFE9D6247B14E600D0E0EA /* Model */,
+				BABFE9D4247B14DD00D0E0EA /* Controller */,
+				BAC5CD112482596700C9EB54 /* View */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		BABFE9CD247B13B800D0E0EA /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				BABFE9D9247B158400D0E0EA /* Model */,
+				BABFE9D7247B157A00D0E0EA /* Controller */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		BABFE9CE247B13F700D0E0EA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BAC41B8424688BB700DAEAA4 /* NewsItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BABFE9CF247B13FC00D0E0EA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA7788EC2467533600545B8D /* NewsTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BABFE9D0247B140100D0E0EA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA7788DC2467485600545B8D /* NewsViewController.swift */,
+				BA7788EE2467542900545B8D /* NewsViewControllerExtension.swift */,
+				BAA305CB2469782F0042EE97 /* NewsItemViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BABFE9D2247B147A00D0E0EA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BAE8CC2D247323D300B36DB6 /* MaterialView.swift */,
+				BAEB5704246DF2B600DB3E57 /* HandbookTableViewCell.swift */,
+				BAEB5706246DF2E500DB3E57 /* HandbookCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BABFE9D3247B147E00D0E0EA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BAE8CC292473218B00B36DB6 /* MaterialViewController.swift */,
+				BAEB5708246DF30700DB3E57 /* HandbookViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BABFE9D4247B14DD00D0E0EA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BABFE9C0247AF26F00D0E0EA /* MapViewController.swift */,
+				BABFE9C4247AF2CE00D0E0EA /* MapViewControllerExtension.swift */,
+				BA8FC122247BC56600A4DD45 /* RecycleStationViewController.swift */,
+				BAFA1E462483C95600FE9645 /* RecycleStationViewControllerExtension.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BABFE9D6247B14E600D0E0EA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BABFE9C2247AF2A200D0E0EA /* RecycleStation.swift */,
+				BA614264248BE3B50095C6F2 /* MaterialTypeEnumeration.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BABFE9D7247B157A00D0E0EA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA47BBB3246ABD4B00218493 /* SettingsTableViewController.swift */,
+				BA47BBB9246B038000218493 /* RegionViewController.swift */,
+				BA47BBC7246B5CB400218493 /* PublisherViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BABFE9D9247B158400D0E0EA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA47BBBD246B332500218493 /* Publisher.swift */,
+				BA47BBBB246B041800218493 /* Region.swift */,
+				BA47BBC5246B545B00218493 /* Settings.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BABFE9DA247B15D400D0E0EA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA7788E624674DB400545B8D /* FirstPresentViewController.swift */,
+				BA7788E824674DC400545B8D /* FirstUsernameViewController.swift */,
+				BA7788EA24674DD500545B8D /* FirstRegionViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BAC5CD112482596700C9EB54 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BAC5CD122482597D00C9EB54 /* PlacemarkView.swift */,
+				BAFA1E482484069800FE9645 /* MaterialCollectionViewCell.swift */,
+				BABC5F8C24898799006C7B83 /* MaterialTypeCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BADC57E82485945E00E74BC9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BADC57E92485947600E74BC9 /* RecycleStatus.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		D9CF15E8D19AF70AF4EF7F7E /* Pods */ = {
@@ -210,6 +440,7 @@
 				BA95FDA52465E10A001E112A /* Frameworks */,
 				BA95FDA62465E10A001E112A /* Resources */,
 				C30ABCC4E9E9ED29472F80AA /* [CP] Embed Pods Frameworks */,
+				E7A9E814481AC57D2D2E92B7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -258,10 +489,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAA2FD78246FCF7200153D7B /* Plastic.plist in Resources */,
 				BA95FDB82465E10E001E112A /* LaunchScreen.storyboard in Resources */,
+				BAA2FD7E2470270A00153D7B /* Glass.plist in Resources */,
+				BA22AA78247295E2009BBC5E /* Map.storyboard in Resources */,
+				BA22AA76247295CE009BBC5E /* Handbook.storyboard in Resources */,
+				BAA2FD84247028BA00153D7B /* Other.plist in Resources */,
 				BA7788E424674C4200545B8D /* FirstLaunch.storyboard in Resources */,
 				BAAE50A52468550000979F2D /* GoogleService-Info.plist in Resources */,
+				BAA2FD7C2470270A00153D7B /* Metal.plist in Resources */,
+				BAA2FD83247028BA00153D7B /* Composite.plist in Resources */,
 				BA95FDB52465E10E001E112A /* Assets.xcassets in Resources */,
+				BA22AA74247295C2009BBC5E /* Newsfeed.storyboard in Resources */,
+				BAA2FD82247028BA00153D7B /* MaterialTypes.plist in Resources */,
+				BAA2FD7D2470270A00153D7B /* Wastepaper.plist in Resources */,
+				BA22AA71247295AB009BBC5E /* Settings.storyboard in Resources */,
 				BA95FDB32465E10A001E112A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,6 +550,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RecycleProject/Pods-RecycleProject-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E7A9E814481AC57D2D2E92B7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RecycleProject/Pods-RecycleProject-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RecycleProject/Pods-RecycleProject-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RecycleProject/Pods-RecycleProject-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -315,24 +574,47 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA614265248BE3B50095C6F2 /* MaterialTypeEnumeration.swift in Sources */,
+				BABC5F8D24898799006C7B83 /* MaterialTypeCollectionViewCell.swift in Sources */,
 				BA95FDAC2465E10A001E112A /* AppDelegate.swift in Sources */,
+				BAEB5703246DBFF600DB3E57 /* String+Extension.swift in Sources */,
+				BAC5CD132482597D00C9EB54 /* PlacemarkView.swift in Sources */,
 				BA47BBB4246ABD4B00218493 /* SettingsTableViewController.swift in Sources */,
 				BA7788EF2467542900545B8D /* NewsViewControllerExtension.swift in Sources */,
 				BA47BBC6246B545B00218493 /* Settings.swift in Sources */,
+				BAE8CC2E247323D300B36DB6 /* MaterialView.swift in Sources */,
+				BAFA1E472483C95600FE9645 /* RecycleStationViewControllerExtension.swift in Sources */,
 				BA7788E724674DB400545B8D /* FirstPresentViewController.swift in Sources */,
 				BA47BBBA246B038000218493 /* RegionViewController.swift in Sources */,
 				BA7788ED2467533600545B8D /* NewsTableViewCell.swift in Sources */,
+				BAEB5709246DF30700DB3E57 /* HandbookViewController.swift in Sources */,
+				BABFE9C3247AF2A200D0E0EA /* RecycleStation.swift in Sources */,
+				BAE8CC2A2473218B00B36DB6 /* MaterialViewController.swift in Sources */,
 				BAA305CC2469782F0042EE97 /* NewsItemViewController.swift in Sources */,
+				BAC5CD1B24829BE100C9EB54 /* UIColor+Extension.swift in Sources */,
 				BA95FDAE2465E10A001E112A /* SceneDelegate.swift in Sources */,
 				BA47BBBE246B332500218493 /* Publisher.swift in Sources */,
 				BAA305CF2469B7210042EE97 /* FirebaseService.swift in Sources */,
 				BA7788E22467497500545B8D /* UserDefaults+Extension.swift in Sources */,
+				BAEB5707246DF2E500DB3E57 /* HandbookCollectionViewCell.swift in Sources */,
+				BA8FC123247BC56600A4DD45 /* RecycleStationViewController.swift in Sources */,
+				BAA2FD76246F174700153D7B /* CoreDataStack.swift in Sources */,
 				BA47BBBC246B041800218493 /* Region.swift in Sources */,
+				BAA2FD86247050B200153D7B /* CoreDataService.swift in Sources */,
 				BA7788DD2467485600545B8D /* NewsViewController.swift in Sources */,
+				BAFA1E492484069800FE9645 /* MaterialCollectionViewCell.swift in Sources */,
+				BAC5CD172482600100C9EB54 /* UIView+Extension.swift in Sources */,
+				BABFE9C5247AF2CE00D0E0EA /* MapViewControllerExtension.swift in Sources */,
+				BA614267248C2E860095C6F2 /* InternetConnectionService.swift in Sources */,
+				BAA2FD73246F107A00153D7B /* CoreDataModel.xcdatamodeld in Sources */,
+				BAEB5705246DF2B600DB3E57 /* HandbookTableViewCell.swift in Sources */,
+				BABFE9C7247B07B200D0E0EA /* CLLocationCoordinate2D+Extension.swift in Sources */,
 				BAC41B8524688BB700DAEAA4 /* NewsItem.swift in Sources */,
 				BA7788E924674DC400545B8D /* FirstUsernameViewController.swift in Sources */,
 				BA7788EB24674DD500545B8D /* FirstRegionViewController.swift in Sources */,
 				BA47BBC8246B5CB400218493 /* PublisherViewController.swift in Sources */,
+				BABFE9C1247AF26F00D0E0EA /* MapViewController.swift in Sources */,
+				BADC57EA2485947600E74BC9 /* RecycleStatus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,6 +814,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BAA2FD71246F107900153D7B /* CoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BAA2FD72246F107A00153D7B /* CoreDataModel.xcdatamodel */,
+			);
+			currentVersion = BAA2FD72246F107A00153D7B /* CoreDataModel.xcdatamodel */;
+			path = CoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BA95FDA02465E10A001E112A /* Project object */;
 }
