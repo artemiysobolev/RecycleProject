@@ -129,23 +129,6 @@ class MapViewController: UIViewController {
             return true
         })
         
-//        filteredStationsArray.append(contentsOf: stationsArray.filter {
-//            if filterSet.contains(.plastic) {
-//                guard isContains(array: $0.recycleCodes, in: (1..<10)) else { return false }
-//            } else if filterSet.contains(.wastepaper) {
-//                guard isContains(array: $0.recycleCodes, in: (20..<30)) else { return false }
-//            } else if filterSet.contains(.metal) {
-//                guard isContains(array: $0.recycleCodes, in: (40..<50)) else { return false }
-//            } else if filterSet.contains(.glass) {
-//                guard isContains(array: $0.recycleCodes, in: (70..<80)) else { return false }
-//            } else if filterSet.contains(.composite) {
-//                guard isContains(array: $0.recycleCodes, in: (80..<90)) else { return false }
-//            } else if filterSet.contains(.other) {
-//                guard isContains(array: $0.recycleCodes, in: (100..<200)) else { return false }
-//            }
-//            return true
-//        })
-        
         for station in filteredStationsArray {
             filteredStations[station.location] = station
         }
