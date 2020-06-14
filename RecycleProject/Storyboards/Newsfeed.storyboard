@@ -266,7 +266,7 @@
         <scene sceneID="Vyl-iJ-8re">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="OUM-XB-vHC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Лента" image="square" catalog="system" id="lu5-2D-BTX"/>
+                    <tabBarItem key="tabBarItem" title="Лента" image="equal.square" catalog="system" id="lu5-2D-BTX"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zfR-ps-95o">
@@ -285,7 +285,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="square" catalog="system" width="128" height="114"/>
+        <image name="equal.square" catalog="system" width="128" height="114"/>
         <namedColor name="CustomBackgroundColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

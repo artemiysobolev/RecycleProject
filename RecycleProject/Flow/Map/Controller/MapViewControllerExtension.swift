@@ -32,10 +32,11 @@ extension MapViewController: CLLocationManagerDelegate {
 
 extension MapViewController: YMKUserLocationObjectListener, YMKMapObjectTapListener, YMKClusterListener, YMKClusterTapListener {
     
-    internal func addStationsOnMap(_ stations: [CLLocationCoordinate2D : RecycleStation]) {
+    internal func addStationsOnMap() {
         guard collection != nil else { return }
+        let currentStations = filteredStations.isEmpty ? stations : filteredStations
         collection.clear()
-        for station in stations {
+        for station in currentStations {
             let pointCoordinate = YMKPoint(latitude: station.value.location.latitude,
                                            longitude: station.value.location.longitude)
             

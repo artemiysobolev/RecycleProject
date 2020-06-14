@@ -13,23 +13,18 @@ enum RecycleStatus: String {
     
     init?(numberOfRecyclePoints: Int) {
         guard let area = UserDefaults.standard.getRegion()?.area else { return nil }
-        let coefficient: Double = Double(numberOfRecyclePoints / area)
+        //        let coefficient: Double = Double(numberOfRecyclePoints) / area
+        let coefficient: Double = Double(numberOfRecyclePoints) / 10 // for testing period
         switch coefficient {
-        case 1...:
-            print("Good")
-            self = .Good
-        case 0.3 ..< 1:
-            print("Normal")
-            self = .Normal
-        case 0 ..< 0.3:
-            print("Bad")
-            self = .Bad
-            fallthrough
         case 0:
-            print("Worst")
             self = .Worst
+        case 0 ..< 0.3:
+            self = .Bad
+        case 0.3 ..< 1:
+            self = .Normal
+        case 1...:
+            self = .Good
         default:
-            print("Worst")
             self = .Worst
         }
     }

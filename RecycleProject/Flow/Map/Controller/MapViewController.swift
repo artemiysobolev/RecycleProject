@@ -28,9 +28,23 @@ class MapViewController: UIViewController {
     var placemarkTapListener: YMKMapObjectTapListener {
         return self
     }
-    var stationsArray: [RecycleStation] = []
+    var stationsArray: [RecycleStation] = [] {
+        didSet {
+            stations.removeAll()
+            for station in stationsArray {
+                self.stations[station.location] = station
+            }
+        }
+    }
     var stations: [CLLocationCoordinate2D: RecycleStation] = [:]
-    var filteredStationsArray: [RecycleStation] = []
+    var filteredStationsArray: [RecycleStation] = [] {
+        didSet {
+            filteredStations.removeAll()
+            for station in filteredStationsArray {
+                filteredStations[station.location] = station
+            }
+        }
+    }
     var filteredStations: [CLLocationCoordinate2D: RecycleStation] = [:]
     var materialTypesArray: [MaterialType] = []
     var filterSet = Set<MaterialTypeEnumeration>()
@@ -39,10 +53,6 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         fetchMaterialTypes()
 
-        guard InternetConnectionService.isConnectedToNetwork() else {
-            showAlert()
-            return
-        }
         mapView.mapWindow.map.isRotateGesturesEnabled = false
         
         configureFloatingPanel()
@@ -52,8 +62,18 @@ class MapViewController: UIViewController {
         
         configureUserLocation()
         collection = mapView.mapWindow.map.mapObjects.addClusterizedPlacemarkCollection(with: self)
-        loadPointsFromServer()
         setupMapFocus()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        guard InternetConnectionService.isConnectedToNetwork() else {
+            showAlert()
+            return
+        }
+        
+        loadPointsFromServer()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -71,10 +91,7 @@ class MapViewController: UIViewController {
         FirebaseService.getData(collectionPath: "Regions/\(regionCode)/Points") { [weak self] (data: [RecycleStation]) in
             guard let self = self else { return }
             self.stationsArray = data
-            for station in data {
-                self.stations[station.location] = station
-            }
-            self.addStationsOnMap(self.stations)
+            self.addStationsOnMap()
         }
     }
     
@@ -101,14 +118,12 @@ class MapViewController: UIViewController {
     }
     
     private func refreshMap() {
+        filteredStationsArray.removeAll()
         guard !filterSet.isEmpty else {
-            addStationsOnMap(stations)
+            addStationsOnMap()
             return
         }
-        
-        filteredStationsArray.removeAll()
-        filteredStations.removeAll()
-        
+                
         filteredStationsArray.append(contentsOf: stationsArray.filter {
         for type in filterSet {
             switch type {
@@ -129,10 +144,7 @@ class MapViewController: UIViewController {
             return true
         })
         
-        for station in filteredStationsArray {
-            filteredStations[station.location] = station
-        }
-        addStationsOnMap(filteredStations)
+        addStationsOnMap()
     }
     
     private func isContains(array: [Int], in interval: Range<Int>) -> Bool {
