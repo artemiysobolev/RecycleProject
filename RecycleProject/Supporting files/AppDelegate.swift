@@ -9,7 +9,7 @@ import YandexMapKit
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+    class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var coreDataStack = CoreDataStack()
     let apiKey = "c38ecc24-7fc8-43e7-be62-5bc86f51b360"

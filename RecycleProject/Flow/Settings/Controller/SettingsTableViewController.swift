@@ -20,21 +20,9 @@ class SettingsTableViewController: UITableViewController, SettingsTableViewContr
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var usernamePlaceholderLabel: UILabel!
     @IBOutlet weak var regionPlaceholderLabel: UILabel!
-    @IBOutlet weak var notificationsSwitch: UISwitch!
-    private let colorThemeSection = 3
     private var initialColorThemeIndexPath: IndexPath {
-        return IndexPath(row: UserDefaults.standard.overridedUserInterfaceStyle.rawValue, section: colorThemeSection)
-    }
-    
-    @IBAction func notificationsSwitchValueChanged(_ sender: UISwitch) {
-        
-        if notificationsSwitch.isOn {
-            UserDefaults.standard.setNotificationsEnabled(value: true)
-            print("Notifications enabled")
-        } else {
-            UserDefaults.standard.setNotificationsEnabled(value: false)
-            print("Notifications disabled")
-        }
+        return IndexPath(row: UserDefaults.standard.overridedUserInterfaceStyle.rawValue,
+                         section: TableViewSections.colorThemeSection.rawValue)
     }
     
     override func viewDidLoad() {
@@ -42,7 +30,6 @@ class SettingsTableViewController: UITableViewController, SettingsTableViewContr
         usernameLabel.text = UserDefaults.standard.getUsername()
         usernamePlaceholderLabel.text = UserDefaults.standard.getUsername()
         regionPlaceholderLabel.text = UserDefaults.standard.getRegion()?.name
-        notificationsSwitch.setOn(UserDefaults.standard.isNotificationsEnabled(), animated: false)
     }
     
     func changeRegion(newRegion: Region?) {
@@ -83,9 +70,10 @@ extension SettingsTableViewController: UITextFieldDelegate {
 extension SettingsTableViewController {
     
     private func removeCheckmarks(except exceptedRow: Int) {
-        for i in 0..<tableView.numberOfRows(inSection: colorThemeSection) {
+        let section = TableViewSections.colorThemeSection.rawValue
+        for i in 0..<tableView.numberOfRows(inSection: section) {
             if i != exceptedRow {
-                tableView.cellForRow(at: IndexPath(row: i, section: colorThemeSection))?.accessoryType = .none
+                tableView.cellForRow(at: IndexPath(row: i, section: section))?.accessoryType = .none
             }
         }
     }

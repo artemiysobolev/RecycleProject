@@ -7,7 +7,6 @@ import Foundation
 
 enum TableViewSections: Int {
     case usernameSection
-    case notificationSection
     case profileSection
     case colorThemeSection
 }

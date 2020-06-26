@@ -74,15 +74,5 @@ extension UserDefaults {
     func getUsername() -> String? {
         return string(forKey: UserDefaultsKeys.username.rawValue)
     }
-    
-    //MARK: - Notifications
-    
-    func setNotificationsEnabled(value: Bool) {
-        set(value, forKey: UserDefaultsKeys.isNotificationsEnabled.rawValue)
-    }
-    
-    func isNotificationsEnabled() -> Bool {
-        return bool(forKey: UserDefaultsKeys.isNotificationsEnabled.rawValue)
-    }
 }
 
