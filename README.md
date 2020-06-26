@@ -5,11 +5,12 @@ iOS-application for green lifestyle, and for helping with waste sorting in parti
 
 ### Technology stack
 Language - Swift 5. IDE - Xcode 11.5.  
-Minimum supported iOS version: 13.4.  
+Minimum supported iOS version - 13.4.  
 Cloud storage (backend) - [Firebase](https://firebase.google.com). Cloud Firestore for main database, Storage for images.  
 Local storage - Core Data for handbook, UserDefaults for user's settings.  
 Map framework - [Yandex MapKit SDK 3.5](https://tech.yandex.ru/maps/mapkit/).  
-Another frameworks: [Floating panel](https://github.com/SCENEE/FloatingPanel)
+Another frameworks - [Floating panel](https://github.com/SCENEE/FloatingPanel).  
+Has been tested - on device (iPhone X) and simulators (iPhone SE,iPhone 11 Pro Max, iPad 12.9, iPad 9.7)
 
 ### Project structure
 **Applcation architecture** - Model-View-Contoller (MVC).  
