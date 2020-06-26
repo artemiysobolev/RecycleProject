@@ -1,7 +1,7 @@
 # RecycleProject
 
 ### General
-iOS-application for green lifestyle, and for helping with waste sorting in particular. Allows the user to read newsfeed with eco-friendly articles, browse handbook about waste sorting,search for recycling points on the map and set some user's settings.
+iOS-application for green lifestyle, and for helping with waste sorting in particular. Allows the user to read newsfeed with eco-friendly articles, browse handbook about waste sorting, search for recycling points on the map and set some user's settings.
 
 ### Technology stack
 Language - Swift 5. IDE - Xcode 11.5.  
