@@ -32,9 +32,9 @@ extension MapViewController: CLLocationManagerDelegate {
 
 extension MapViewController: YMKUserLocationObjectListener, YMKMapObjectTapListener, YMKClusterListener, YMKClusterTapListener {
     
-    internal func addStationsOnMap() {
+    func addStationsOnMap() {
         guard collection != nil else { return }
-        let currentStations = filteredStations.isEmpty ? stations : filteredStations
+        let currentStations = filterSet.isEmpty ? stations : filteredStations
         collection.clear()
         for station in currentStations {
             let pointCoordinate = YMKPoint(latitude: station.value.location.latitude,
@@ -51,7 +51,7 @@ extension MapViewController: YMKUserLocationObjectListener, YMKMapObjectTapListe
         collection.clusterPlacemarks(withClusterRadius: 60, minZoom: 15)
     }
     
-    internal func configureUserLocation() {
+    func configureUserLocation() {
         userLocation = mapkit.createUserLocationLayer(with: mapView.mapWindow)
         userLocation.setVisibleWithOn(true)
         userLocation.setObjectListenerWith(self)

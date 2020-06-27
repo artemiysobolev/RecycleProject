@@ -107,12 +107,12 @@ class MapViewController: UIViewController {
         filterCollectionView.reloadData()
     }
     
-    internal func addTypeFilter(_ materialType: MaterialTypeEnumeration) {
+    func addTypeFilter(_ materialType: MaterialTypeEnumeration) {
         filterSet.insert(materialType)
         refreshMap()
     }
     
-    internal func removeTypeFilter(_ materialType: MaterialTypeEnumeration) {
+    func removeTypeFilter(_ materialType: MaterialTypeEnumeration) {
         filterSet.remove(materialType)
         refreshMap()
     }
